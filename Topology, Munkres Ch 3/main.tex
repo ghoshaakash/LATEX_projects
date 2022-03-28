@@ -1,0 +1,343 @@
+\documentclass{article}
+\usepackage[a4paper, total={7in, 9.5in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{ amssymb }
+\usepackage{adjustbox}
+\usepackage[english]{babel}
+\usepackage{ mathdots }
+\usepackage{tcolorbox}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{amsthm}
+
+\newtheorem{problem}{Problem}
+\numberwithin{problem}{section}
+\newtheorem{lemma}{Lemma}
+\setlength{\parindent}{0pt}
+
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Bd}{Bd}
+
+
+\title{Topology, Munkres\\ Chapter 3}
+\author{Aakash Ghosh}
+\date{March 2021}
+
+\begin{document}
+\maketitle
+\section{Exercise set-1}
+\begin{tcolorbox}
+\begin{problem}
+Let $\tau$ and $\tau'$ be two topologies on $X$. If $\tau \subset \tau'$ , what does connectedness
+of $X$ in one topology imply about connectedness in the other?
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+Let $X$ be connected in $\tau'$. Then we claim that $X$ is connected in $\tau$. For if $U,V$ be a separation in $\tau$ such that $X=U\cup V$ with $U\cap V=\phi$ then 
+$U,V$ is a separation of $X$ in $\tau'$ too, leading to a contradiction. \\
+We note the converse is not true. Let $X=\{a,b,c\}$ and $\tau=\left\{\{a,b\},\{b,c\},\{b\},\{a,b,c\},\{a,b,c\}\right\}$. It is easy to check $X$ is not separable in $\tau$. Set $\tau'$ to be the discrete topology.It follows that $\tau\subset \tau'$ and a separation of $X$ exists in $\tau'$.
+
+
+\begin{tcolorbox}
+\begin{problem}
+Let $\{A_n\}$ be a sequence of connected subspaces of $X$, such that $A_n \cap A_{n+1}=\phi$
+for all $n$. Show that $\bigcup A_n$ is connected.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+Let $U,V$ be non-empty open sets such that $\bigcup A_n=U\cup V$ and $U\cap V=\phi$.
+Note that each $A_i$ lies entirely in $U$ or $V$ (i.e $A
+_i\subset U$ or $A_i\subset V$) else $A_i\cap U$ and $A_i\cap V$ will be a separation of $A_i$ leading to contradiction. Without loss of generality we can assume $A_1$ lies in $U$. As $V$ is non empty, by the well ordering principle, there exist a minimum $n>1$ such that $A_n\subset V$. But as $p=A_{n}\cap A_{n-1}\in V$, $A_{n-1}\subset V$ which contradicts the minimality of $n$.
+
+
+\begin{tcolorbox}
+\begin{problem}
+Let $\{A_\alpha\}$ be a collection of connected subspaces of $X$; let $A$ be a connected
+subspace of $X$. Show that if $A\cup  A_\alpha \ne \phi$ for all 
+$\alpha$, then $A\cap(
+\bigcup A_\alpha)$ is connected.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+Let $U,V$ be non-empty open sets such that $A\cup\left(\bigcup A_\alpha\right)=U\cup V$ and $U\cap V=\phi$. As we discussed in $P2$, each $A_\alpha$ and $A$ is entirely in $U$ or $V$. Without loss of generality assume $A\subset U$. For each $A_\alpha$, there exist $p_\alpha\in A\cap A_\alpha$. As $p_\alpha\in U$, $A_\alpha\subset U$ for all $\alpha$. Therefore, $A\cup\left(\bigcup A_\alpha\right)\subset U$. As $U\subset A\cup\left(\bigcup A_\alpha\right)$ too, $A\cup\left(\bigcup A_\alpha\right)=U$. Therefore, $V$ is empty, leading to contradiction. 
+
+
+\begin{tcolorbox}
+\begin{problem}
+Show that if $X$ is an infinite set, it is connected in the finite complement topology.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+Let $U,V$ be non-empty open sets such that $X=U\cup V$ and $U\cap V=\phi$. As $X$ is infinite, either $U$ or $V$ is infinite (else $U\cup V$ will be finite, leading to contradiction). Without loss of generality assume $U$ is infinite. As $V$ is open $V^c=U$ is finite, leading to contradiction.
+
+
+\begin{tcolorbox}
+\begin{problem}
+ A space is \textbf{totally disconnected} if its only connected subspaces are one-point
+sets. Show that if $X$ has the discrete topology, then X is totally disconnected.
+Does the converse hold?
+\end{problem}
+\end{tcolorbox}
+Let $A\subset X$, have more than 1 point. Let $a\in A$. Then $\{a\}$ and $A\setminus \{a\}$ is a separation of $A$. Therefore, $X$ is totally disconnected in discrete topology.\\
+We define a topology on $\mathbb Z^+$ given by $\tau=\{A_n|A_n=\{n,n+1,n+2\hdots\}\}\cup\{\phi\}$. It is easy to check this is indeed a topology:
+\begin{enumerate}
+    \item $\mathbb Z^+=A_1\in\tau,\phi\in\tau$
+    \item Note, $A_i\cup A_j=A_j$ if $i\geq j$. Let $\{A_{\alpha_i}\}$ be a collection of open subsets where each $\alpha_\mathbb Z^+$. Then by the well ordering principle, there exist a minimum $\alpha_i=\alpha$. Then:
+    $\bigcup A_{\alpha_i}=A_\alpha\in\tau$.
+    \item Note, $A_i\cap A_j=A_i$ if $i\geq j$. Therefore for a finite subcollection of sets of $\tau$, $A_{\alpha_1},A_{\alpha_2},A_{\alpha_3}\hdots A_{\alpha_n}$ we have:
+    $\bigcap A_{\alpha_i}=A_\alpha\in\tau$ where $\alpha=\max(\alpha_i)$.
+\end{enumerate}
+Therefore, $\tau$ is a topology.
+Let $X\subset \mathbb Z^+$ with more than one point. Let $U,V$ be a separation of $X$. Then we can write $U=A_u\cap X$, $V=A_v\cap X$ for some $A_u,A_v$. Without loss of generality, assume $u>v$. Then $A_v\subset A_u$ and $U\subset V$ leading to contradiction. Therefore, $\left(\mathbb Z^+,\tau\right)$ is totally disconnected where $\tau$ is not the discrete topology. Therefore, the converse doesn't hold.
+
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $A \subset X$. Show that if $C$ is a connected subspace of $X$ that intersects both $A$
+and $X\setminus A$, then $C$ intersects Bd($A$).
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}Assume $C$ doesn't intersects Bd($A$). Note we can interpret Bd($A$)=$\overline{A}\setminus\Int A$. It follows $A\setminus\Bd A=\Int A$ is open and $\Int (X\setminus A)=X\setminus\overline{A}=(X\setminus A)\setminus \Bd(A)$ is open. Therefore $C\cap X=C\cap \Int X$ and $C\cap(X\setminus A)=C\cap \Int(X\setminus A)$ is a separation of $C$, leading to contradiction.
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Is the space $\mathbb R_l$ connected? Justify your answer.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}No. $(-\infty,0)=\bigcup_{n\in\mathbb N}[-n,0)$ and $[0,\infty)=\bigcup_{n\in\mathbb N}[0,n)$ is a separation.  
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Determine whether or not 
+  $\mathbb R^\omega$ is connected in the uniform topology.
+\end{problem}
+\end{tcolorbox}
+
+
+
+
+
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $A$ be a proper subset of $X$, and let $B$ be a proper subset of $Y$ . If $X$ and $Y$ are
+connected, show that
+$$(X\times Y)-(A\times B)$$
+is connected.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}First note that:
+$$(X\times Y)-(A\times B)=\left(X\times B^c\right)\cup \left(A^c\times Y\right)$$
+Note, $X\times\{y\}$ ,$y\in B^c$  is connected( Else if $U_1,V_1$ is a separation of $X\times\{y\}$ then $\pi_1(U_1)$ and $\pi_1(V_1)$ is a separation of $X$). Similarly, $\{x\}\times Y,x\in A^c$ is connected. Let $U,V$ is a separation. Let $(x,y)\in U$ where $(x,y)\in X\times B^c$. Then $X\times\{y\}\subset U$.
+\begin{itemize}
+    \item \textbf{Case 1:} $(x_1,y_1)\in A^c\times Y$. As $X\times\{y\}\subset U$, $(x_1,y)\in U$. Therefore, $\{x_1\}\times Y\subset U$ and $(x_1,y_1)\in U$.
+    \item \textbf{Case 2:} $(x_2,y_2)\in X\times B^c$. Choose some $x_1\in A^c$. Then $(x_1,y_2)\in A^c\times Y$. So $(x_1,y_2)\in U$ and $X\times\{y_2\}\subset U$. Therefore, $(x_1,y_2)\in U$.
+\end{itemize}
+Therefore, $V$ is empty leading to a contradiction. Therefore, the set is connected.\\\\
+\textit{Note: The set looks like inter crossed lines. We first show each line is connected and then show any two line lie on the same set, $U$.}
+
+
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $\{X_\alpha\}_\alpha\in J$ be an indexed family of connected spaces; let $X$ be the product
+space
+$$X=\prod_{\alpha\in J}X_\alpha $$
+Let $a=(a_0)$ be a fixed point of $X$. 
+\begin{enumerate}
+    \item Given any finite subset $K$ of $J$ , let $X_K$ denote the subspace of $X$ consisting
+of all points $x = (x_\alpha)$ such that $x_\alpha = a_\alpha$ for $\alpha\notin K$. Show that 
+$X_K$ is
+connected
+    \item Show that the union $Y$ of the spaces $X_K$ is connected.
+    \item Show that $X$ equals the closure of $Y$ ; conclude that $X$ is connected.
+\end{enumerate}
+\end{problem}
+\end{tcolorbox}
+\textbf{Solutions :}
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $p : X \to Y$ be a quotient map. Show that if each set $p^{-1}({y})$ is connected,
+and if $Y$ is connected, then $X$ is connected.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}Let $~$ be the equivalence relation such that $p(x)=p(y)$ and let $[x]$ be the equivalence class of $x$  under $~$.\\
+Assume $U,V$ is a separation of $X$. Let $x\in U$.
+\begin{lemma}
+For $x\in U$, $[x]\subset U$
+\end{lemma}
+\begin{proof}
+If this is not so then $U\cap [x]$ and $V\cap[x] $ will be a separation of $p^{-1}(x)$ which leads to a contradiction
+\end{proof}
+\begin{lemma}
+$U=p^{-1}(p(U))$,
+\end{lemma}
+\begin{proof}
+Let this be not true. Then there exist $x\notin U$ such that $x\in p^{-1}(p(U))$. Therefore, $p(x)\in U$. Let $p(x)=p(y)$ where $y\in U$. Then $[y]\notin U$ leading to a contradiction.
+\end{proof}
+Similarly we get $V=p^{-1}(p(V))$
+Therefore we note:
+\begin{enumerate}
+    \item $p(U)$ and $p(v)$ are non empty and open as $U,V$ is non-empty and open.
+    \item $p(U)$ and $p(V)$ are disjoint. Else if $r\in p(U)\cap p(V)$ then there exists $u\in U$ and $v\in V$ such that $p(u)=p(v)$ and thus $[u]\not\subset U$ leading to contradiction.
+\end{enumerate}
+But this implies $p(U),p(V)$ is a separation of $Y$ leading to contradiction.
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $Y \subset X$; let $X$ and $Y$ be connected. Show that if $A$ and $B$ form a separation
+of $X \setminus Y$ , then $Y \cup A$ and $Y \cup B$ are connected.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+
+\section{Exercise Set-2}
+
+\begin{tcolorbox}
+\begin{problem}
+  \begin{enumerate}
+      \item Show that no two of the spaces $(0, 1), (0, 1]$ and $[0, 1]$ are homeomorphic.
+[Hint: What happens if you remove a point from each of these spaces?)]
+    \item Suppose that there exist imbeddings $f : X \to Y$ and $g : Y \to X$. Show by
+means of an example that $X$ and $Y$ need not be homeomorphic.
+    \item Show $\mathbb R^n$ and $\mathbb R$ are not homeomorphic if $n > 1$.
+  \end{enumerate}
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+\begin{enumerate}
+    \item Let $[0,1)$ and $(0,1)$ be homeomorphic with $\varphi$ as the homeomorphism. Note $[0,1)-\{0\}=(0,1)$ is connected. Therefore $(0,1)-\{\varphi(0)\}$ is connected (as continuous image of connected spaces are connected). But it is not true as $(0,\varphi(0))$ and $(\varphi(0),1)$ is a separation which is a contradiction. The same logic can be used to show $[0,1]$ and $(0,1)$ is not homeomorphic. \\
+Let $[0,1)$ and $[0,1]$ be homeomorphic with $\psi$ as the homeomorphism. As before, we note $[0,1)-\{\psi(0),\psi(1)\}$ is connected as $[0,1]-\{0,1\}$ is connected. We consider two cases:
+\begin{itemize}
+    \item Either $\psi(0)$ or $\psi(1)$ is $0$: Without loss of generality, assume that $\psi(0)=0$. Then $(0=\psi(0),\psi(0))$ and $(\psi(1),1)$ is a separation of $[0,1]-\{\psi(0),\psi(1)\}=(0,1]-\{\psi(1)\}$
+    \item $\psi(0),\psi(1)\ne 0$: Without loss of generality, assume that $\psi(0)<\psi(1)$[As $\psi$ is homeomorphism, bijection is not possible]. Then $[0,\psi(0))\cup(\psi(0),\psi(1))$ and $(\psi(1),1)$ is a a separation of $[0,1]-\{\psi(0),\psi(1)\}$
+\end{itemize}
+In either case as the image set is disconnected, $\psi$ can't be homeomorphism, leading to a contradiction.
+\item Set $X=(0,1)$ and $Y=(0,1]$. Set $f:X\to Y,f(x)=x$ and $g:Y\to X,g(y)=\frac{y}{2}$. It is easy to check they are embedding and non-homeomrphism follows from above. 
+\item Let $\varphi$ be the homeomorhism. Note $\mathbb R^n-\{0\}$ is path connected, Therefore, $\varphi(\mathbb R^n-\{0\})=\mathbb R-\{\varphi(0)\}$ is path connected which is a contradiction.
+\end{enumerate}
+
+\begin{tcolorbox}
+\begin{problem}
+  Let $f : S^1 \to\mathbb R$ be a continuous map. Show there exists a point $x$ of $S^1$ such
+that $f (x) = f (-x)$.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :} Set $h:S^1\to \mathbb R,h(x)=f(x)-f(-x)$. Take any $x\in S^1$. If $f(x)=f(-x)$ then we are done. If $f(x)>f(-x)$ set $x'=x$, if $f(-x)>f(x)$ set $x'=-x$. Note $f(x')>f(-x')$. Then $h(x')>0$ and $h(-x')<0$. As $S^1$ is (path) connected and $\mathbb R$ is connected, by the intermediate value theorem, there exists $x_0$ such that $h(x_0)=0\Rightarrow f(x_0)=f(-x_0)$.
+\begin{tcolorbox}
+\begin{problem}
+Let $f : X \to X$ be continuous. Show that if $X = [0, 1]$, there is a point $x$ such
+that $f (x) = x$. The point $x$ is called a fixed point of $f$ . What happens if $X$
+equals $[0, 1)$ or $(0, 1)$?
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}Set $h(x)=f(x)-x$. If $f(1)=1$ or $f(0)=0$ then we are done. Else $1>f(1)$, $h(1)<0$ and $0<f(0)$, $h(0)>0$. Then by intermediate value theorem there exists $x_0$ such that $h(x_0)=0$ and $f(x_0)=x_0$.\\
+Let $f(x)=\frac{1+x}{2}$. Then there is no fixed point for $X=[0,1)$ and $X=(0,1)$.
+\begin{tcolorbox}
+
+
+\begin{problem}
+Let $X$ be an ordered set in the order topology. Show that if $X$ is connected, then
+$X$ is a linear continuum.
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+\begin{lemma}
+If $x < y$, there exists $z$ such that $x < z < y$.
+\end{lemma}
+\begin{proof}
+Let no such $z$ exist. Then $U=\{p|p\in X,p>x\}$ and $V=\{p|p\in X,p<y\}$ form a separation of $X$, leading to a contradiction.[If such a $z$ exists, then the proof breaks down as $U\cap V$ at least has $z$ in it and is therefore non-empty].
+\end{proof}
+\begin{lemma}
+$X$ has the least upper bound property.
+\end{lemma}
+\begin{proof}
+Let $\{a_n\}_{n\in\mathbb N}$ be a set of elements bounded above without a least upper bound. Let $B=\{b|b\in X,b$ is a upper bound of $\{a_n\}\}$.Then $U=\bigcup_{n\in\mathbb N}\{p|p\in X,p<a_n\}$ and $V=\bigcup_{b\in B}\{p|p\in X,p>b\}$ is a separation of $X$: They are clearly disjoint and every $x\in X$ is either an upper bound or less than $a_n$ for some $n$.
+\end{proof}
+The result follows.
+
+\begin{tcolorbox}
+\begin{problem}
+Consider the following sets in the dictionary order. Which are linear continua?
+\begin{enumerate}
+    \item  $Z^+ \times [0, 1)$
+    \item $[0, 1) \times Z^+$
+    \item $[0, 1) \times [0, 1]$
+    \item $[0, 1]\times[0, 1)$
+\end{enumerate}
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+\begin{enumerate}
+    \item Yes. It is obvious that between any two elements we can get another element. Let $\{a_n\}$ be a sequence of elements bounded above. Let $z=\max\left(\pi_1(a_n)\right)$ Let $S=\{a_n|\pi_1(a_n)=z\}$.
+    \begin{itemize}
+        \item \textbf{Case 1:} $r=\sup\{\pi_2(a_n)|a_n\in S\}<1$. Then $(z,r)$ is least upper bound
+        \item \textbf{Case 2:} $r=1$. Then $(z+1,0)$ is the upper bound.
+    \end{itemize}
+    \item No. There are no element between $(p,z)$ and $(p,z+1)$ where $p\in[0,1)$ and $z\in\mathbb Z^+$
+    \item Yes. 
+    \item Yes.
+\end{enumerate}
+3,4 is to be done in the same way as that of a ordered square.
+\begin{tcolorbox}
+\begin{problem}
+Show that if $X$ is a well-ordered set, then $X \times [0, 1)$ in the dictionary order is a
+linear continuum.
+\end{problem}
+\end{tcolorbox}
+\textit{A well-order (or well-ordering or well-order relation) on a set $S$ is a total order on $S$ with the property that every non-empty subset of S has a least element in this ordering.}\\
+\textbf{Solution :}Let $(x_1,r_1)$ and $(x_2,r_2)$ be two elements of $X\times [0,1)$. Let $(x_1,r_1)>(x_2,r_2)$. If $x_1>x_2$, set $x=x_1,y=\frac{1+r_1}{2}$, If $x_1=x_2$, set $x=x_1,y=\frac{r_1+r_2}{2}$. Then $(x_1,r_1)>(x,y)>(x_2,r_2)$. Let $(x_i,y_i)_{i\in\mathbb N}$ be a bounded sequence of elements in $X\times [0,1)$. In particular, let $(a,b)$ be an upper bound. Let $L_x=\left\{\pi_1(p)|\text{$p$ is an upper bound of the sequence}\right\}$ Then by well ordering, a minimum $x\in L_x$ exists.
+\begin{itemize}
+    \item \textbf{Case 1:} No element of the form $(x,p)$ exists: Then $(x,0)$ is the least upper bound. 
+    \item \textbf{Case 2:}Some element of the form $(x,p)$ exists. Set $L_y=\left\{\pi_2(p)|\text{$
+    p=(x,y)$ is in the sequence}\right\}$. If $\sup L_y\ne1$ then  $(x,\sup L_y)$ is the desired upper bound. Else if $\sup L_y=1$ set $S=\{a|a>x\}$ and let $s$ be the least element in $S$. Then $(s,0)$ is the least upper bound.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
