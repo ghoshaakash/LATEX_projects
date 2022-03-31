@@ -1,0 +1,166 @@
+\documentclass[oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{tfrupee}
+\usepackage{booktabs}
+\usepackage{float}
+
+
+\let\orupee\rupee
+\def\rupee{\ifmmode\text{\orupee}\else\orupee\fi}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{observation}{Observation}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+
+
+
+\tcbset{mytitle/.style={title={Question~\thetcbcounter\ifstrempty{#1}{}{: #1}}}}
+\newtcolorbox[auto counter, number within=chapter, number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}]{question}[1][]{%
+    enhanced,
+    breakable,
+    fonttitle=\bfseries,
+    mytitle={},
+    #1
+}
+
+
+\title{Outer Measure and Related Things}
+\author{Aakash Ghosh }
+\date{Instructor: Prof. Shirshendu Choudhury}
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{Outer Measure}
+For a given $X$, a outer measure $\mu *: \mathcal{P}(X)\to(0,\infty]$ is defined to be function with the following properties:
+\begin{enumerate}
+    \item $\mu^* (\phi)=0$
+    \item If $A\subseteq B$ then $\mu^*(A)\leq \mu^*(B)$
+    \item $\mu^*\left(\bigcup_{i=1}^\infty A_i\right)\leq \sum_{i=1}^\infty \mu^*(A_i)$ $\forall A_i\in\mathcal{P}(X)$.
+\end{enumerate}
+
+\textbf{Example:} Let $\epsilon\subseteq\mathcal P(X)$ and $f:\epsilon:[0,\infty)$ such that:
+\begin{enumerate}
+    \item $\phi,X\in \epsilon$
+    \item $f(\phi)=0$
+\end{enumerate}
+Then for a subset $A\subseteq X$ define: 
+$$\mu^*(A)=\inf\left\{\left(\sum_{i=0}^\infty\mu^*(A_i)\right)|A\subseteq \bigcup_{i=1}^\infty A_i\right\}$$
+We show that $\mu^*$ defined above is an outer measure.
+\begin{enumerate}
+    \item $\mu^*(\phi)=0$ as $\phi\subseteq\phi$
+    \item Let $A\subseteq B$. As all covers of $B$ are also covers of $A$, $\mu^*(A)<\mu^*(B)$.
+    \item Let $\cup_{j=1}^\infty E_i^j$ be a cover of $A_i$ in $\epsilon$. Then, $\bigcup_{i,j}E_i^j$ covers $A$. Therefore,  $\mu *\left(\bigcup_{i=1}^\infty A_i\right)\leq \sum_{i=1}^\infty \mu^*(A_i)$ $\forall A_i\in\mathcal{P}(X)$
+\end{enumerate}
+In particular, we can set $X=\mathbb{R}$, $\epsilon=\{(a,b)|a,b\in[-\infty,\infty]\}$, and $f(I)=$ length if interval $I$. 
+\begin{definition}[$\mu^*$ measurable sets]
+    A set $A\subseteq X$ is called $\mu^*$ measurable if for all $E\in\mathcal{P}(X)$ we have:
+    $$\mu^*(E)=\mu^*(E\cap A)+\mu^*(E\cap A^c)$$    
+\end{definition}
+Note, as $E\cap A$ and $E\cap A^c$ covers $A$, then it is often enought to prove $\mu^*(E)\geq\mu^*(E\cap A)+\mu^*(E\cap A^c)$. The other way follows trivially from the definition of $\mu^*$
+
+\section{Caratheodory's Extension Theorem}
+THis theorem is used to generates mesure from outer measures. 
+\begin{definition}[Complete Measure]
+    Let $\mu$ be a measure. Let $A$ have size zero and $B\subseteq A$. $\mu$ is a complete measure if $B$ is measurable and $\mu(B)=0$.
+\end{definition}
+
+\begin{theorem}
+    Let $X$ be a non empty set with outer measure $\mu^*$. Let $\mathcal{M}$ be the set of all $\mu^*$ measurable subset of $X$. Let $\mu=\mu^*|_\mathcal{M}$. Then $(X,\mathcal{M},\mu)$ forms a complete measure.
+\end{theorem}
+
+\begin{proof}
+    Put $A=\phi$ and $A=\phi$ in place of $A$ in the statement of $\mu^*$ measurable function to get $X,\phi\in\mathcal{M}$. If $A\in\mathcal{M}$ then $\forall E\in\mathcal{P}(X)$, $\mu^*(E)=\mu^*(E\cap A)+\mu^*(E\cap A^c)=\mu^*(E\cap A^c)+\mu^*(E\cap (A^c)^c)$. Therefore $A^c\in\mathcal M$.\\
+    For showing $\mathcal{M}$ is closed under taking countable union, we shall first prove it for the finite case and then take a limit under apropiate conditions.\\
+    \textbf{Showing $\mathcal{M}$ is closed under finite union}: We just need to show that it holds for union of two sets and then the proof for the union of any arbitary $n<\infty$ set follows from induction. 
+    \begin{align}
+        \mu^*(E)&=\mu^*(E\cap A)+\mu^*(E\cap A^c)\\
+        &=\mu^*(E\cap A\cap B)+\mu^*(E\cap A\cap B^c)+\mu^*(E\cap A^c\cap B)+\mu^*(E\cap A^c\cap B^c)
+    \end{align}
+    We go from (1) to (2) by using the $\mu^*$ measurability of $B$ for $E\cap A$ and $E\cap A^c$.  We know: $A\cup B=(A\cap B)\cup(A^c\cap B)\cup(A\cap B^c)$. Therefore:
+    \begin{align}
+        \mu^*(E)&=\mu^*(E\cap A\cap B)+\mu^*(E\cap A\cap B^c)+\mu^*(E\cap A^c\cap B)+\mu^*(E\cap A^c\cap B^c)\\
+        &=\geq \mu^*(E\cap(A\cup B))+\mu^*(E\cap A^c\cap B^c)\\
+        &=\geq \mu^*(E\cap(A\cup B))+\mu^*(E\cap (A\cup B)^c)
+    \end{align}  
+    As we have mentioned before, this is enough to conclude $A\cup B$ is $\mu^*$ measurable. Note:
+    \begin{align}
+        \mu^*(A\cup B)=\mu^*(A\cup B\cap A)+\mu^*(A\cup B\cap A^c)=\mu^*(A)+\mu^*(B)
+    \end{align}
+    As $\mu^*$ and $\mu$ agree on measurable sets, the result for finite unions is proved.\\
+    Now we sahll attempt the case for the union of infinite number of sets. 
+    Define:
+    $$B_n=\bigcup_{i=1}^n A_i\quad B=\bigcup_{i=1}^\infty A_i$$
+    where each $A_i\in\mathcal{M}$. Therefore:
+    \begin{align}
+        \mu^*(E\cap B_n)=\mu^*(E\cap B_n\cap A_n)+\mu^*(E\cap B_n\cap A_n^c)=\mu^*(E\cap A_n)+\mu^*(E\cap B_{n-1})
+    \end{align}
+    As this is a recurrence relation we get:
+    \begin{align}
+        \mu^*(E\cap B_n)=\sum_{i=1}^n\mu^*(E\cap A_n)    
+    \end{align}
+    Therefore:
+    \begin{align}
+        \mu^*(E)&=\mu^*(E\cap B_n)+\mu^*(E\cap B_n^c)\\
+        &\geq \sum_{i=1}^n\mu^*(E\cap A_i)+\mu^*(E\cap B_n^c)
+    \end{align}
+    Now we take the limit $n\to\infty$ to get:
+    \begin{align}
+        \mu^*(E)&\geq \sum_{i=1}^\infty\mu^*(E\cap A_i)+\mu^*(E\cap B_n^c)\\
+        &\geq \mu^*(E\cap \bigcup_{i=1}^\infty(A_i)+\mu^*(E\cap B_n^c)\\
+        &\geq\mu^*(E\cap B)+\mu^*(E\cap B^c)
+    \end{align}
+    Therefore, $\mathcal{M}$ is closed under countable unions. Take $B=E$ in (11) to get
+    $\mu^*(B)\geq \sum_{i=1}^\infty \mu^*(B\cap A_i)=\sum_{i=1}^\infty \mu^*(A_i)$. As by definition, $\mu^*(B)\leq \sum_{i=1}^\infty \mu^*(A_i)$, equality holds. Therefore, $\mu$ is a measure. Now we need to show this measure is complete. Let $\mu^*(A)=0$ and $B\subseteq A$. Then:
+    $$\mu^*(E)\geq \mu^*(A\cap E)+\mu^*(A^c\cap E)\geq \mu^*(B\cap E)+\mu^*(B^c\cap E)\geq \mu^*(E)$$
+    Therefore, equality must hold and $\mu^*(B)$ is measurable. This completes the proof.
+\end{proof}
+\section{Leabesgue Measure}
+We perform Caratheodory extension on the outer measure on $\mathbb R$ defined in the example. The measure we get is known as the leabesgue measure and is written as $(\mathbb{R},\mathcal{M}_1,m_i)$. The notion can be generalised for higher dimensions where we take $(a_1,b_1)\times (a_2,b_2)\hdots $ to be elements of $\epsilon$ and $f((a_1,b_1)\times (a_2,b_2))=$Volume/Area of the figure. 
+\end{document}
