@@ -61,14 +61,14 @@
 }
 
 
-\title{Lecture Notes for Graphs and Surfaces}
+\title{Lecture Notes for Geometry of Curves and Surfaces\\ and \\the Riemann Uniformization Theorem}
 \author{Aakash Ghosh }
 \date{Instructor: Prof. Somnath Basu}
 \begin{document}
 \maketitle
 \tableofcontents
 
-
+\part{Course Notes}
 \chapter{What to expect}
 First we shall see some theorems and examples and get to know the terms on an intuitive sense. The formal definitions of everything will be provided down the line(probably).
 \section{Four vertex theorem}
@@ -601,11 +601,242 @@ A curve $\gamma$ is called regular if $\gamma'\ne0$
     Therefore:
     $$||(\gamma\circ\varphi)'(t)||=|\varphi'(t)|\times ||\gamma'(\varphi(t)) ||=|\varphi'(t)|S'(\varphi(t))=1$$
     The key step involves noting $||\gamma'(\varphi(t))||=\frac{d}{dt}S(\varphi(t))$
-    \item This is proved in homework 3
+    \item This was supposed to be proved in a homework. I will give the outline of the proof here.
+    \begin{enumerate}
+        \item Prove any diffeomorphism of $(a,b)$ is a open interval
+        \item Prove that if $\gamma$ is unit speed then the length of domain for all unit speed parameterizations are same
+        \item Any two open interval of same lenght are either a shift or a shit+reflection.
+    \end{enumerate}
 \end{enumerate}
 \end{proof}
 
+\subsection{Example - Twisted Cubic}
+The Twisted Cubic is a space curve defined by $\gamma(t)=(t,t^2,t^3)$. Given below are the projections on $x-y,y-z$ and $x-z$ planes.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7267278045445169] 
+\draw    (90,148) -- (90,32) ;
+\draw [shift={(90,30)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(90,150)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5494989490391653] 
+\draw    (22,90) -- (158,90) ;
+\draw [shift={(160,90)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(20,90)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9655294964349719] 
+\draw [color={rgb, 255:red, 14; green, 74; blue, 144 }  ,draw opacity=1 ]   (40,20) .. controls (75,113.75) and (105,112.25) .. (140,20) ;
+%Straight Lines [id:da8101498601648814] 
+\draw    (250,148) -- (250,32) ;
+\draw [shift={(250,30)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(250,150)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da19278232946906293] 
+\draw    (182,90) -- (318,90) ;
+\draw [shift={(320,90)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(180,90)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4766073647632322] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (170,50) .. controls (249,50.25) and (249.5,89.25) .. (250,90) .. controls (250.5,90.75) and (253,49.75) .. (320,50) ;
+%Straight Lines [id:da5245639166698847] 
+\draw    (410,148) -- (410,32) ;
+\draw [shift={(410,30)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(410,150)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da2916868101444383] 
+\draw    (342,90) -- (478,90) ;
+\draw [shift={(480,90)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(340,90)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da7278244460911197] 
+\draw [color={rgb, 255:red, 17; green, 74; blue, 140 }  ,draw opacity=1 ]   (360,140) .. controls (361.5,91.75) and (450,91.25) .. (450,40) ;
+
+% Text Node
+\draw (162,93.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (91,12.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (322,93.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+% Text Node
+\draw (251,12.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (482,93.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (411,12.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+We set the starting point to be $(0,0,0)$. $\gamma'(t)=(1,2t,3t^2)$. $S(t)=\int_0^t\sqrt{1+4u^2+9u^4}du$
+
+
+\subsection{Example - Catenary}
+A catenary is basically the curved formed by hanging uniform cable.
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da46061281192853654] 
+\draw [line width=3]    (40,30) -- (40,190) ;
+%Straight Lines [id:da184976157035888] 
+\draw [line width=3]    (190,30) -- (190,190) ;
+%Curve Lines [id:da17626087817705172] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=2.25]    (40,90) .. controls (99.67,150.33) and (132.33,149.67) .. (190,90) ;
+%Curve Lines [id:da5250705726894731] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (270,180) .. controls (341,181.67) and (441,96.33) .. (440,30) ;
+%Straight Lines [id:da3839605424088759] 
+\draw    (340,190) -- (460,40) ;
+%Shape: Rectangle [id:dp09650817368086184] 
+\draw  [fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ] (402.89,106.53) -- (407.47,100.23) -- (412.67,104) -- (408.09,110.3) -- cycle ;
+%Straight Lines [id:da9571372626114548] 
+\draw    (412.67,104) -- (461,104) ;
+%Straight Lines [id:da5894329132466996] 
+\draw    (355.33,110) -- (403.67,110) ;
+%Shape: Arc [id:dp22589905602526306] 
+\draw  [draw opacity=0] (426.46,81.78) .. controls (430.22,84.77) and (433.31,88.69) .. (435.34,93.41) .. controls (436.76,96.72) and (437.54,100.14) .. (437.74,103.55) -- (407.78,105.26) -- cycle ; \draw   (426.46,81.78) .. controls (430.22,84.77) and (433.31,88.69) .. (435.34,93.41) .. controls (436.76,96.72) and (437.54,100.14) .. (437.74,103.55) ;  
+%Shape: Arc [id:dp9187021553280389] 
+\draw  [draw opacity=0] (385.9,131.25) .. controls (381.94,128.54) and (378.59,124.84) .. (376.23,120.28) .. controls (374.58,117.08) and (373.56,113.71) .. (373.13,110.33) -- (402.89,106.53) -- cycle ; \draw   (385.9,131.25) .. controls (381.94,128.54) and (378.59,124.84) .. (376.23,120.28) .. controls (374.58,117.08) and (373.56,113.71) .. (373.13,110.33) ;  
+%Straight Lines [id:da7278492168354621] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (403.75,62.5) -- (403.75,175.88) ;
+%Straight Lines [id:da2272897388146119] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (411.75,62) -- (411.75,175.38) ;
+
+% Text Node
+\draw (437.33,78.07) node [anchor=north west][inner sep=0.75pt]    {$\theta +d\theta $};
+% Text Node
+\draw (356.67,118.07) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (391.25,169.15) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (413,169.15) node [anchor=north west][inner sep=0.75pt]    {$x+dx$};
+
+
+\end{tikzpicture}\\
+    a) The general shape. The thick red line denotes the hanging cable. b) Analysis using a unit element(shown as thick red box)
+\end{center}
+Let the equation be given by $y=f(x)$. Then we note the following:
+\begin{enumerate}
+    \item $f'(x)=\tan(\theta)$
+    \item $T(x)\cos(\theta)=T(x+\Delta x)\cos(\theta+\Delta\theta)$
+    \item $T(x)\sin(\theta)+g\delta\Delta S=T(x+\Delta x)\sin(\theta+\Delta\theta)$
+\end{enumerate}
+In the equations above, $T(x)$ is the tension at $(x,f(x))$, $\delta$ is the mass per unit length and $\Delta S$ is the length of the unit element. From equation 1 and 2 we get:
+$$\frac{T(x)}{\sqrt{1+[f'(x)]^2}}=T_0(constant)$$
+Put this in 3 to get:
+\begin{align*}
+    &T(x)\frac{\sin(\theta+\Delta \theta)}{\cos(\theta+\Delta \theta)}\cos(\theta)-T(x)\sin(\theta)=g\delta\Delta S\\
+    \Rightarrow&T(x)[\tan(\theta+\Delta\theta)-\tan(\theta)]=g\delta\Delta S\sec(\theta)\\
+    \Rightarrow&T(x)\lim_{\Delta x\to0}\frac{\tan(\theta+\Delta \theta)-\tan(\theta)}{\Delta x}=g\delta\sec(\theta)\lim_{\Delta x\to 0}\frac{\Delta S}{\Delta x}\\
+    \Rightarrow& T(x)f''(x)=g\delta\sec(\theta)\sqrt{1+[f'(x)]^2}\\
+    \Rightarrow&f''(x)=\frac{g\delta}{T(x)\cos(\theta)}\sqrt{1+[f'(x)]^2}\\
+    \Rightarrow&f''(x)=c\sqrt{1+[f'(x)]^2}
+\end{align*}
+Where $c=\frac{g\delta}{T_0}$ is a constant. Now we solve this equation(preferebly with the help of wolfram alpha) to get:
+$$f(x)=\frac{\cosh cx}{c}$$
+
+
 \section{Bending of a curve: Curvature}
+\begin{definition}[Curvature] Let $\gamma$ be a regular curve in $\mathbb R^n$. Let $\Delta\theta$ and $\Delta S$ be as shown below.
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Curve Lines [id:da9830795993367285] 
+\draw    (31,120) .. controls (71,90) and (100.67,168.5) .. (134,108.83) ;
+%Straight Lines [id:da32600501780901125] 
+\draw [color={rgb, 255:red, 7; green, 72; blue, 147 }  ,draw opacity=1 ]   (31,120) -- (93.33,61.83) ;
+%Straight Lines [id:da6697177720117218] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (49.67,112.67) -- (148,93.17) ;
+%Curve Lines [id:da8440040891986524] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (31,120) .. controls (36.75,115.13) and (45.25,112.63) .. (49.67,112.67) ;
+%Straight Lines [id:da7136675888603832] 
+\draw [color={rgb, 255:red, 7; green, 72; blue, 147 }  ,draw opacity=1 ]   (159.67,119.67) -- (222,61.5) ;
+%Straight Lines [id:da48210437719433596] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (159.67,119.67) -- (258,100.17) ;
+%Shape: Arc [id:dp2406064755275249] 
+\draw  [draw opacity=0] (174.94,105.3) .. controls (176.41,108.45) and (177.35,111.89) .. (177.65,115.51) -- (147.75,118) -- cycle ; \draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ] (174.94,105.3) .. controls (176.41,108.45) and (177.35,111.89) .. (177.65,115.51) ;  
+
+% Text Node
+\draw (33,123.4) node [anchor=north west][inner sep=0.75pt]    {$\Delta S$};
+% Text Node
+\draw (181.55,93.95) node [anchor=north west][inner sep=0.75pt]    {$\Delta \theta $};
+
+
+\end{tikzpicture}
+
+\end{center}
+Then the curvature is defined to be rate of change of the tangent vector with curve length or
+$$\kappa(t)=\lim_{\Delta t\to0}\frac{\Delta \theta}{\Delta s}$$
+\end{definition}
+For a unit speed curve, $||\gamma'(S)||=1$. We have the following diagram:
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7136675888603832] 
+\draw [color={rgb, 255:red, 7; green, 72; blue, 147 }  ,draw opacity=1 ]   (72.09,115.72) -- (150.51,20.3) ;
+%Straight Lines [id:da48210437719433596] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (72.09,115.72) -- (195.8,83.73) ;
+%Shape: Arc [id:dp2406064755275249] 
+\draw  [draw opacity=0] (91.46,91.91) .. controls (93.55,97.51) and (94.85,103.71) .. (95.16,110.25) -- (57.49,113.39) -- cycle ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] (91.46,91.91) .. controls (93.55,97.51) and (94.85,103.71) .. (95.16,110.25) ;  
+%Straight Lines [id:da4722233081523145] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (150.51,20.3) -- (195.8,83.73) ;
+
+% Text Node
+\draw (102.71,78.4) node [anchor=north west][inner sep=0.75pt]    {$\Delta \theta $};
+% Text Node
+\draw (191.6,91.8) node [anchor=north west][inner sep=0.75pt]    {$\gamma '( S)$};
+% Text Node
+\draw (123.2,2.6) node [anchor=north west][inner sep=0.75pt]    {$\gamma '( S+\Delta S)$};
+% Text Node
+\draw (176.4,33.6) node [anchor=north west][inner sep=0.75pt]    {$\Delta S$};
+% Text Node
+\draw (128,103.8) node [anchor=north west][inner sep=0.75pt]    {$1$};
+% Text Node
+\draw (94,52.6) node [anchor=north west][inner sep=0.75pt]    {$1$};
+
+
+\end{tikzpicture}
+
+\end{center}
+We note:
+\begin{align*}
+    &||\gamma'(S+\Delta S)-\gamma'(S)||={2\sin\left(\frac{\theta}{2}\right)}\\
+    \Rightarrow&\frac{\Delta\theta}{\Delta S}=\frac{\Delta\theta/2}{\sin\left(\frac{\theta}{2}\right)}\frac{||\gamma'(S+\Delta S)-\gamma'(S)||}{\Delta S}=|\gamma''(S)|
+\end{align*}
+We immidietly notice for curvature to be defined we eed:
+\begin{enumerate}
+    \item $\gamma$ to be Regular
+    \item $\gamma''$ to be defined 
+\end{enumerate}
+\textit{Notation:}If $\gamma$ is unit speed then we use $s$ as the parameter.
+\subsection{Examples}
+\begin{enumerate}
+    \item For a straightline given by $\gamma(t)=\vec{a}+\vec{p}t$, Curvature is 0
+    \item For a circle of radius $r$ given by $\gamma(t)=(x_0,y_0)+\left(r\cos\left(\frac{t}{r}\right),r\sin\left(\frac{t}{r}\right)\right)$, curvature=$||\gamma''||=\frac{1}{r}$
+\end{enumerate}
+\subsection{Calculation of curvature for space curves}
+Let $\gamma$ be a regular $C^3$ curve. The curvature is given by:
+$$\kappa(t):=\frac{||\gamma'(t)\times\gamma''(t)||}{||\gamma'(t)||^3}$$
+\subsection{Remarks}
+\begin{enumerate}
+    \item If $\gamma$ lies on an unit sphere, with $||\gamma''||=1$ Then $<\gamma(t),\gamma(t)>=1\Rightarrow <\gamma(t),\gamma'(t)>=0$. Therefore, $\kappa(t)=1$. In this case, $\gamma''(t)$ essentially measures the rate of change of dirction of the curve.  
+\end{enumerate}
 
 
 
@@ -630,6 +861,7 @@ A curve $\gamma$ is called regular if $\gamma'\ne0$
 
 
 
+\part{The Riemann Uniformization Theorem}
 
 
 
@@ -645,15 +877,7 @@ A curve $\gamma$ is called regular if $\gamma'\ne0$
 
 
 
-
-
-
-
-
-
-
-
-
+\part{End Notes}
 \chapter{Appendix}
 \section{Some specific curves taught in class}
 \subsection{Parabola}

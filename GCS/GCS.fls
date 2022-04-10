@@ -1,7 +1,7 @@
 PWD d:\Repo\LATEX_projects\GCS
 INPUT C:\Users\ghosh\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Repo\LATEX_projects\GCS\main.tex
-OUTPUT main.log
+INPUT d:\Repo\LATEX_projects\GCS\GCS.tex
+OUTPUT GCS.log
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
@@ -726,7 +726,7 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
-OUTPUT main.pdf
+OUTPUT GCS.pdf
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbposter.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
@@ -1063,10 +1063,10 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.multipart.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
-INPUT .\main.aux
-INPUT main.aux
-INPUT main.aux
-OUTPUT main.aux
+INPUT .\GCS.aux
+INPUT GCS.aux
+INPUT GCS.aux
+OUTPUT GCS.aux
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -1136,9 +1136,10 @@ INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\main.toc
-INPUT main.toc
-INPUT main.toc
+INPUT .\GCS.toc
+INPUT GCS.toc
+INPUT GCS.toc
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -1154,7 +1155,7 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
-OUTPUT main.toc
+OUTPUT GCS.toc
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
@@ -1170,8 +1171,7 @@ INPUT .\The_two_trefoil_knots.png
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsl10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\vf\public\yhmath\yhcmex10.vf
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yrcmex10.tfm
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT main.aux
+INPUT GCS.aux
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

@@ -1,0 +1,122 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{observation}{Observation}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+
+
+
+\tcbset{mytitle/.style={title={Question~\thetcbcounter\ifstrempty{#1}{}{: #1}}}}
+\newtcolorbox[auto counter, number within=chapter, number freestyle={\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}]{question}[1][]{%
+    enhanced,
+    breakable,
+    fonttitle=\bfseries,
+    mytitle={},
+    #1
+}
+
+
+\title{Solutions to Questions in Ring theory and Modules for MA3102}
+\author{Aakash Ghosh }
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Tutorial Sheet 1}
+\textbf{1. Give an example of a non-commutative ring without identity.}\\
+\textbf{Solution :} $2\mathbb{Z}=\{x|x=2z,z\in\mathbb{Z}\}$\\\\
+\textbf{2. Let $R$ be a ring with 1 and $a \in R$. Suppose there exists a positive integer $n$ such that $a^n = 0$. Show that $1 + a$ is a unit, and so is $1 - a$.}\\
+\textbf{Solution :}Note that:
+$$(1-a)(1+a+a^2+a^3\hdots a^{n-1})=1-a^n=1$$
+Therefore, $1-a$ is an unit. Set $b=-a$. Then $b^n=0$ and by above $1-b=1+s$ is a unit too.\\\\
+\textbf{3. Let $R$ be a ring such that $r^2 = r$ for all $r \in R$. Show that $R$ is commutative.}\\
+\textbf{Solution :} Let $x,y\in R$. Then note:
+\begin{align*}
+    &x+y=(x+y)^2=x^2+y^2+xy+yx=x+y+xy+yx\\
+    \Rightarrow &0=xy+yx
+\end{align*}
+Set $y=x$. Then we get $0=x^2+x^2=x+x$. Therefore, $x=-x\forall x\in R$. Apply above to get: $$xy=-yx=yx$$
+Therefore, $R$ is commutative.\\\\
+\textbf{4. Let $R$ be a ring with 1 and $a, b \in R$. Prove that $1 - ab \in R^*$ if and only if
+$1 - ba \in R^*$}\\
+\textit{$R^*$ is the set of units of a ring}.\\
+\textbf{Solution :}As $1-ab$ is a unit, there exits $v\in R$ such that $(1-ab)v=1$. Then note:
+$$(1-ba)(1+bva)=1-ba+bva-babva=1-ba+b(1-ba)va=1-ba+ba=1$$
+Therefore, $1-ba$ is an unit too.\\
+\textit{Intution:}We note that $v=1/(1-ab)=1+ab+abab\hdots$. Now note: $1/(1-ba)=1+ba+baba\hdots=1+b(1+ab+abab\hdots)a=1+bva$. Now, of course, such expressions may not exist. But, if we assume the relation to still hold, we get the desired solution.\\\\
+\textbf{5. Does there exist a non-commutative ring with 77 elements?}\\
+\textbf{Solution :}No.
+\begin{theorem}
+    Rings over cyclic groups are always commutative
+\end{theorem}
+\begin{proof}
+    Let $G=<c>$ be a cyclic group. Then for $x,y\in G$ we can write $x=mc$ and $y=nc$ where $mc=c+c+c+\hdots$($m$ times). Then it is easy to see that $xy=mc\cdot nc=mn(c\cdot c)=nm(c\cdot c)=nc\cdot mc=yx$.
+\end{proof}
+Now, we just need to show if $|G|=77$ then $G$ is cyclic. Note: $77=7*11$. pick a element $g$ of $G$. If order of $g$ is $77$ then $G\cong C_{77}$ and we are done. If order of $g$ is 7, then $<g>$  is normal(subgroup of abelian groups are normal) and $G/<g>\cong C_{11}$. Therefore, we can write $G\cong C_{11}\times C_{7}\cong C_{77}$. A similar line of argument follows if $g$ has order 11. Therefore, $G$ is cyclic.\\\\
+\textbf{6. Let $R$ be a ring and $R[x]$ be the polynomial ring over $R$. Show that $R[x]$ forms
+a ring under the usual addition and multiplication of polynomials.}\\
+\textbf{Solution :}Trivial\\\\
+\textbf{7. Does there exist an infinite ring with finite characteristic?}\\
+\textbf{Solution :}Yes. $R=\left(\mathbb{Z}/2\mathbb{Z}\right)\times \left(\mathbb{Z}/2\mathbb{Z}\right)\times \left(\mathbb{Z}/2\mathbb{Z}\right)\hdots$. There are infinite elements but characteristic is $2$.\\\\
+\textbf{8. Does there exist a finite ring with characteristic zero?}\\
+\textbf{Solution :}No. As $G$ is finite, for every $g\in G$, there exists $n_g$ such that $n_gg=0$. Set $n=\prod_{g\in G}n_g$. Then $ng=0\forall g\in G$. Therefore, a finite characteristic exists.\\\\
+\textbf{9. Determine the smallest subring of Q that contains 1/2.}\\
+\textbf{Solution :}$R=\{x|x=\sum_{i\in \mathbb Z} a_i2^i\text{ such that $a_i$ is 0 above for some $i>I_x$},a_i\in\{0,1\}\}$\\
+Alternatively, we consider the question in boolean. Given $0.1_2\in R$. Then $1\in R$ and by extension $10^k_2\in R$ for all $k\in\mathbb{Z}$. All of their linear combination is in $R$ which is equivalent to the set above.\\\\
+\textbf{10. Let $R$ be an integral domain and $kq = 0$ for some non-zero $q \in R$ and some integer $k\ne 0$. Prove that $R$ is of finite characteristic.}\\
+\textbf{Solution :}Note: $(np)\cdot q=p\cdot(nq)=0$. Therefore, $q=0$ or $np=0$. As the first case can't occur, $np=$ for all $p\in R$.\\\\
+\textbf{11. Give an example of a non-commutative simple ring.}\\
+\textbf{Solution :}
+
+
+
+
+
+\chapter{Tutorial Sheet 6}
+
+\end{document}

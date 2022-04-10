@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  29 MAR 2022 03:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  6 APR 2022 04:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Repo/LATEX_projects/GCS/main.tex
-(d:/Repo/LATEX_projects/GCS/main.tex
+**d:/Repo/LATEX_projects/GCS/GCS.tex
+(d:/Repo/LATEX_projects/GCS/GCS.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
@@ -762,7 +762,7 @@ File: pgflibraryshapes.multipart.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )))
 \c@tcb@cnt@question=\count349
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 67.
- (main.aux
+ (GCS.aux
 
 LaTeX Warning: Label `fig:my_label' multiply defined.
 
@@ -788,7 +788,7 @@ LaTeX Warning: Label `fig:my_label' multiply defined.
 LaTeX Warning: Label `fig:my_label' multiply defined.
 
 )
-\openout1 = `main.aux'.
+\openout1 = `GCS.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
@@ -899,11 +899,15 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 
 
 
-{C:/Users/ghosh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc)
+{C:/Users/ghosh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (GCS.toc)
 \tf@toc=\write4
-\openout4 = `main.toc'.
+\openout4 = `GCS.toc'.
 
  [1
+
+
+
+] [2
 
 
 
@@ -924,16 +928,16 @@ Overfull \hbox (23.36879pt too wide) in paragraph at lines 175--177
 [][]
  []
 
-[2
+[3
 
 
 ]
-<The_two_trefoil_knots.png, id=61, 803.0pt x 381.425pt>
+<The_two_trefoil_knots.png, id=64, 803.0pt x 381.425pt>
 File: The_two_trefoil_knots.png Graphic file (type png)
 <use The_two_trefoil_knots.png>
 Package pdftex.def Info: The_two_trefoil_knots.png  used on input line 203.
 (pdftex.def)             Requested size: 230.90128pt x 109.6792pt.
- [3 <./The_two_trefoil_knots.png>] [4]
+ [4 <./The_two_trefoil_knots.png>] [5]
 Chapter 2.
 
 Overfull \hbox (3.54361pt too wide) in paragraph at lines 472--498
@@ -945,7 +949,7 @@ Overfull \hbox (3.68149pt too wide) in paragraph at lines 536--538
 \OT1/cmr/bx/n/10 Step 2(Choos-ing Bump Func-tions): \OT1/cmr/m/n/10 Choose $\OML/cmm/m/it/10 f[] \OT1/cmr/m/n/10 : \U/msb/m/n/10 R[] \OMS/cmsy/m/n/10 !
  []
 
-[5
+[6
 
 ]
 Overfull \hbox (0.8718pt too wide) detected at line 549
@@ -977,46 +981,54 @@ Overfull \hbox (3.11897pt too wide) in paragraph at lines 598--599
 []\OT1/cmr/m/n/10 Inverse of smooth func-tion is smooth and as $\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj \OML/cmm/m/it/10 >
  []
 
-[6]
+[7]
 Overfull \hbox (9.74039pt too wide) detected at line 602
 \OMS/cmsy/m/n/10 jj\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^M \OMS/cmsy/m/n/10 ^^N \OML/cmm/m/it/10 '\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 '[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j ^^B jj\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))\OMS/cmsy/m/n/10 jj \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 '[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )) = 1
  []
 
-[7
+[8] [9
+
+] [10
+
+
+] [11
+
+
 
 ]
 Chapter 3.
 
-Overfull \hbox (8.26878pt too wide) in paragraph at lines 666--666
-[]\OT1/cmr/bx/n/10 Definition 11 \OT1/cmr/m/n/10 (Dif-fer-en-tiable func-tion)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/it/10 A con-tin-u-ous func-
+Overfull \hbox (8.26878pt too wide) in paragraph at lines 890--890
+[]\OT1/cmr/bx/n/10 Definition 12 \OT1/cmr/m/n/10 (Dif-fer-en-tiable func-tion)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/it/10 A con-tin-u-ous func-
  []
 
 
-Overfull \hbox (26.63101pt too wide) in paragraph at lines 702--702
+Overfull \hbox (26.63101pt too wide) in paragraph at lines 926--926
 []\OT1/cmr/bx/n/14.4 Homeomorphism, Dif-feo-mor-phism
  []
 
-[8
+[12
 
-] [9
 
-] (main.aux)
+] [13
+
+] (GCS.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40566 strings out of 478582
- 1038657 string characters out of 2844344
- 1443012 words of memory out of 3000000
- 58086 multiletter control sequences out of 15000+600000
+ 40572 strings out of 478582
+ 1038912 string characters out of 2844344
+ 1443062 words of memory out of 3000000
+ 58092 multiletter control sequences out of 15000+600000
  482801 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,103p,925b,753s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,15n,103p,924b,753s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/ghosh/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/ghosh/AppData/Roaming/MiKTeX/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (10 pages, 303996 bytes).
+Output written on GCS.pdf (14 pages, 321293 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
+ 186 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  180 words of extra memory for PDF output out of 10000 (max. 10000000)
 

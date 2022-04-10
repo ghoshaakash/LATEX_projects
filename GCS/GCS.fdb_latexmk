@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1648505387 "d:/Repo/LATEX_projects/GCS/main.tex" "main.pdf" "main" 1648505400
-  "C:/Users/ghosh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1648494479 80937 69c9fe62dbfcb9bfda3cad7108b482e4 ""
+["pdflatex"] 1649198554 "d:/Repo/LATEX_projects/GCS/GCS.tex" "GCS.pdf" "GCS" 1649198561
+  "C:/Users/ghosh/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1648585743 80971 404ead2b60a4ffdb794a215b6db855fd ""
   "C:/Users/ghosh/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1648494488 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/ghosh/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1648494490 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/ghosh/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1648494494 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -268,13 +268,13 @@
   "C:/Users/ghosh/AppData/Roaming/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "C:/Users/ghosh/AppData/Roaming/MiKTeX/tex/latex/yhmath/omxyhex.fd" 1584531306 433 6f009616205848d6bf5a6cf4ba5366c1 ""
   "C:/Users/ghosh/AppData/Roaming/MiKTeX/tex/latex/yhmath/yhmath.sty" 1584531306 4974 0d87ecb9c52cb398cf8866a2c0fb9d8d ""
+  "GCS.aux" 1649198561 5182 7b1262e1070498ba036de0b7bb94700c "pdflatex"
+  "GCS.tex" 1649198558 64470 3fa4b1dbb4e1b440a05b8ee971f8bfb3 ""
+  "GCS.toc" 1649198561 1768 8acf5486c5a3c042c57656ea958d12dd "pdflatex"
   "The_two_trefoil_knots.png" 1648472518 18899 1a6469a3e88e9dcdbcb36b72b0484404 ""
-  "d:/Repo/LATEX_projects/GCS/main.tex" 1648505367 49884 499275e6fe30ead06875404005df11f9 ""
-  "main.aux" 1648505398 4289 736353cc515502a08833e889d2606c41 "pdflatex"
-  "main.tex" 1648505367 49884 499275e6fe30ead06875404005df11f9 ""
-  "main.toc" 1648505398 1206 770f96547fd7ef40686e88f794c861e4 "pdflatex"
+  "d:/Repo/LATEX_projects/GCS/GCS.tex" 1649198558 64470 3fa4b1dbb4e1b440a05b8ee971f8bfb3 ""
   (generated)
-  "main.aux"
-  "main.log"
-  "main.pdf"
-  "main.toc"
+  "GCS.aux"
+  "GCS.log"
+  "GCS.pdf"
+  "GCS.toc"
