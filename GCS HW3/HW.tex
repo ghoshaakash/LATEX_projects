@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[a4paper, total={7in, 9.5in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{ amssymb }
+\usepackage{adjustbox}
+\usepackage[english]{babel}
+\usepackage{ mathdots }
+\usepackage{tcolorbox}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{ mathrsfs }
+
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}
+\setlength{\parindent}{0pt}
+
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Bd}{Bd}
+
+
+\title{Third Internal Exam-MA3205}
+\author{Aakash Ghosh}
+\date{14$^{th}$ April 2021}
+
+\begin{document}
+\begin{center}
+    \Large{Third Internal Exam Solutions}    
+\end{center}
+\large{
+\textbf{Name:} Aakash Ghosh\hfill \textbf{Course Name:} MA3205\\
+\textbf{Roll No:} 19MS129\hfill\textbf{Date:} $14^{th}$ April, 2022}\\\\
+\begin{tcolorbox}
+\begin{problem}
+Let $\mathscr{S}$ be the pseudo-sphere.
+\begin{enumerate}
+    \item Compute the Gauss map for this surface and show that it is differentiable.
+    \item For a regular chart $(U,\sigma)$ and a region $R\subseteq U$, define the area of $R$ to be:
+        $$A_{\sigma}(R):=\int\int_R||\sigma_u\times \sigma_v||dudv$$
+    Fix a regular chart $(U,\sigma)$ around $p\in\mathscr{S}$ so that $\sigma(0)=p$. Using the restricted Gauss Map $\mathscr{G}:U\to S^2$, we define
+    $$A_N(R)=\int\int_R||N^\sigma_u\times N^{\sigma}_v||dudv$$
+    Compute the limit
+        $$\lim_{r\to 0}\frac{A_N(B_r(0))}{A_\sigma(B_r(0))}$$
+\end{enumerate}
+\end{problem}
+\end{tcolorbox}
+\textbf{Solution :}
+\begin{enumerate}
+    \item Define $S=\{(x,y)|0<x^2+y^2<1\}$. We parmeterize $\mathscr{S}$ by the map:
+            $$\sigma:S\to\mathscr{S},\sigma(u,v)=(u,v,\cosh^{-1}\left(\frac{1}{\sqrt{u^2+v^2}}\right)-\sqrt{1-(u^2+v^2)})$$
+        For the sake of convinience, we set $\sqrt{u^2+v^2}=r$. Then we can rewrite the map as:
+            $$\sigma(u,v)=(u,v,\cosh^{-1}{\left(\frac{1}{r}\right)}-\sqrt{1-r^2})$$
+        We now calculate $\sigma_u$ and $\sigma_v$ to get:
+        \begin{align*}
+            \sigma_u(u,v)=\left(1,0,u\left(\frac{1}{\sqrt{1-u^2-v^2}}-\frac{1}{(u^2+v^2)\sqrt{1-u^2-v^2}}\right)\right)=\left(1,0,-u\frac{\sqrt{1-r^2}}{r^2}\right)\\
+            \sigma_v(u,v)=\left(0,1,v\left(\frac{1}{\sqrt{1-u^2-v^2}}-\frac{1}{(u^2+v^2)\sqrt{1-u^2-v^2}}\right)\right)=\left(0,1,-v\frac{\sqrt{1-r^2}}{r^2}\right)
+        \end{align*}\
+        We now compute the cross product:
+            $$\sigma_u\times \sigma_v= \begin{vmatrix}
+            \hat{i} & \hat{j} & \hat{k} \\
+            1 & 0 & -u\frac{\sqrt{1-r^2}}{r^2} \\
+            0 & 1 & -v\frac{\sqrt{1-r^2}}{r^2}
+            \end{vmatrix}=\left(u\frac{\sqrt{1-r^2}}{r^2},v\frac{\sqrt{1-r^2}}{r^2},1\right)  $$
+            $$||\sigma_u\times \sigma_v||=\sqrt{(u^2+v^2)\frac{{1-r^2}}{r^4}+1}=\sqrt{\frac{1-r^2}{r^2}+1}=\frac{1}{r}$$
+        We therefore get the Gauss Map $N^\sigma$
+            $$N^\sigma=\frac{\sigma_u\times \sigma_v}{||\sigma_u\times \sigma_v||}=\left(u\frac{\sqrt{1-r^2}}{r},v\frac{\sqrt{1-r^2}}{r},r\right)$$
+        As $||N^{\sigma}||^2=(u^2+v^2)\frac{1-r^2}{r^2}+r^2=1$, $N^\sigma(u,v)\in S^2$\\
+        As $r=\sqrt{u^2+v^2}\ne0$, $N^{\sigma}$ is differentiable in $S$.  
+        \item  Let $\gamma=\sigma^{-1}$. Consider the chart $\tilde{\sigma}(u,v)=\sigma\left((u,v)+\gamma(p)\right)$, $\tilde\sigma(0)=p$. Then the following holds true:
+        \begin{itemize}
+            \item $\tilde\sigma_u(u,v)=\sigma_u((u,v)+\gamma(p)),\tilde\sigma_v(u,v)=\sigma_v((u,v)+\gamma(p))$
+            \item $N^{\tilde{\sigma}}(u,v)=N^{\sigma}((u,v)+\gamma(p))$
+            \item $N^{\tilde{\sigma}}_u(u,v)=N^{\sigma}_u((u,v)+\gamma(p))$,$N^{\tilde{\sigma}}_v(u,v)=N^{\sigma}_v((u,v)+\gamma(p))$
+        \end{itemize}
+        Therefore: 
+        \begin{align*}
+            A_{{\tilde{\sigma}}}(R)&=\int\int_R ||{\tilde{\sigma}}_u(u,v)\times {\tilde{\sigma}}(u,v)||dudv\\
+            &=\int\int_R ||{{\sigma}}_u((u,v)+\gamma(p))\times {{\sigma}}((u,v)+\gamma(p)||dudv\\
+            &=\int\int_{R+p} ||{{\sigma}}_u(u,v)\times {{\sigma}}(u,v)||dudv=A_{\sigma}(R+p)\\  
+        \end{align*}
+        \begin{align*}
+            A_{N^{\tilde{\sigma}}}(R)&=\int\int_R ||N^{\tilde{\sigma}}_u(u,v)\times N^{\tilde{\sigma}}(u,v)||dudv\\
+            &=\int\int_R ||N^{{\sigma}}_u((u,v)+\gamma(p))\times N^{{\sigma}}((u,v)+\gamma(p)||dudv\\
+            &=\int\int_{R+p} ||N^{{\sigma}}_u(u,v)\times N^{{\sigma}}(u,v)||dudv=A_{N^\sigma}(R+p)\\  
+        \end{align*}
+        We first calculate $N^\sigma_u$ and $N^\sigma_v$
+            \begin{align*}
+                N^\sigma_u=&\left(-\dfrac{u^4+2v^2u^2+v^4-v^2}{\sqrt{1-u^2-v^2}\left(u^2+v^2\right)^\frac{3}{2}},-\dfrac{vu}{\sqrt{1-u^2-v^2}\left(u^2+v^2\right)^\frac{3}{2}},\frac{u}{\sqrt{u^2+v^2}}\right)\\
+                =&\left(-\frac{r^4-v^2}{r^3\sqrt{1-r^2}},-\frac{uv}{r^3\sqrt{1-r^2}},\frac{u}{r}\right)
+            \end{align*}
+            \begin{align*}
+                N^\sigma_v=&\left(-\dfrac{vu}{\sqrt{1-u^2-v^2}\left(u^2+v^2\right)^\frac{3}{2}},-\dfrac{u^4+2v^2u^2+v^4-u^2}{\sqrt{1-u^2-v^2}\left(u^2+v^2\right)^\frac{3}{2}},\frac{v}{\sqrt{u^2+v^2}}\right)\\
+                =&\left(-\frac{uv}{r^3\sqrt{1-r^2}},-\frac{r^4-u^2}{r^3\sqrt{1-r^2}},\frac{v}{r}\right)
+            \end{align*}
+            We now calculate the cross product $N^\sigma_u\times N^\sigma_v$
+
+            \begin{align*}
+                N^\sigma_u\times N^\sigma_v&=
+                \begin{vmatrix}
+                    \hat{i} &\hat{j} &\hat{k}\\
+                    -\frac{r^4-v^2}{r^3\sqrt{1-r^2}} &-\frac{uv}{r^3\sqrt{1-r^2}} &\frac{u}{r}\\
+                    -\frac{uv}{r^3\sqrt{1-r^2}} &-\frac{r^4-u^2}{r^3\sqrt{1-r^2}} &\frac{v}{r}
+                \end{vmatrix}\\
+                &=\left(\frac{u(r^4-u^2-v^2)}{r^4\sqrt{1-r^2}},\frac{v(r^4-u^2-v^2)}{r^4\sqrt{1-r^2}},\frac{(r^4-u^2)(r^4-v^2)}{r^6(1-r^2)}-\frac{u^2v^2}{r^6(1-r^2)}\right)\\
+                &=\left(-u\frac{\sqrt{1-r^2}}{r^2},-v\frac{\sqrt{1-r^2}}{r^2},-1 \right)
+            \end{align*}
+            $$||N^\sigma_u\times N^\sigma_v||=\sqrt{(u^2+v^2)\frac{{1-r^2}}{r^4}+1}=\sqrt{\frac{1-r^2}{r^2}+1}=\frac{1}{r}=||\sigma_u\times \sigma_v||$$
+            Therefore:
+            $$\lim_{r\to 0}\frac{A_{N^{\tilde{\sigma}}}(B_r(0))}{A_{\tilde\sigma}(B_r(0))}=\lim_{r\to 0}\frac{A_{N^\sigma}(B_r(p))}{A_\sigma(B_r(p))}=\lim_{r\to 0}\frac{\int\int_{B_r(p)}||\sigma_u\times\sigma_v||dudv}{\int\int_{B_r(p)}||N^\sigma_u\times N^\sigma_v||dudv}=1$$
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}

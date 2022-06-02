@@ -1,22 +1,22 @@
-PWD d:\Repo\LATEX_projects\Outer Measure, Lebesgue Measure and things
+PWD d:\Repo\LATEX_projects\A course in Combinatorics, van Lint
 INPUT C:\Users\ghosh\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\Repo\LATEX_projects\Outer Measure, Lebesgue Measure and things\Outer measure and related things.tex
-OUTPUT Outer measure and related things.log
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT d:\Repo\LATEX_projects\A course in Combinatorics, van Lint\Solutions.tex
+OUTPUT Solutions.log
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\base\inputenc.sty
@@ -726,7 +726,7 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
-OUTPUT Outer measure and related things.pdf
+OUTPUT Solutions.pdf
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbposter.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
@@ -847,28 +847,6 @@ INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\caption\caption3.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\caption\caption3.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\caption\caption3.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\tfrupee\tfrupee.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
@@ -880,6 +858,17 @@ INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\physics\physics.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\physics\physics.sty
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\physics\physics.sty
@@ -1028,6 +1017,16 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\extarrows\extarrows
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\extarrows\extarrows.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
@@ -1064,10 +1063,10 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.multipart.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
-INPUT .\Outer measure and related things.aux
-INPUT Outer measure and related things.aux
-INPUT Outer measure and related things.aux
-OUTPUT Outer measure and related things.aux
+INPUT .\Solutions.aux
+INPUT Solutions.aux
+INPUT Solutions.aux
+OUTPUT Solutions.aux
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -1134,8 +1133,25 @@ INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\tex\latex\yhmath\omxyhex.fd
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\ghosh\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsl10.tfm
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\Solutions.toc
+INPUT Solutions.toc
+INPUT Solutions.toc
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+OUTPUT Solutions.toc
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\ghosh\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
@@ -1150,12 +1166,16 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yhcmex10.tfm
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
-INPUT C:\Users\ghosh\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT .\Fig 2.png
+INPUT .\Fig 2.png
+INPUT Fig 2.png
+INPUT .\Fig 2.png
+INPUT .\Fig 2.png
+INPUT .\Fig 2.png
+INPUT .\Fig 2.png
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\vf\public\yhmath\yhcmex10.vf
 INPUT C:\Users\ghosh\AppData\Roaming\MiKTeX\fonts\tfm\public\yhmath\yrcmex10.tfm
-INPUT Outer measure and related things.aux
+INPUT Solutions.aux
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -1164,6 +1184,8 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
@@ -1174,11 +1196,11 @@ INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsl10.pfb
+INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsl10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
-INPUT C:\Users\ghosh\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

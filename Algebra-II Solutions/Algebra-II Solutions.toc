@@ -1,2 +1,0 @@
-\contentsline {chapter}{\numberline {1}Tutorial Sheet 1}{2}{}%
-\contentsline {chapter}{\numberline {2}Tutorial Sheet 6}{4}{}%

@@ -16,6 +16,7 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{txfonts}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}[theorem]{Definition}
@@ -69,6 +70,9 @@
 \tableofcontents
 
 \part{Course Notes}
+\onecolumn
+Those are the course notes on geometry of curves and surfaces taken by Dr. Somnath Basu in Spring of 2022. The course mostly followed \textbf{Elementary Differential Geometry} by \textbf{Andrew Pressley}. I presonally found \textbf{Differential geometry by Spivak(vol 2)} to be particularly good, especially if one has covered vol 1 to a certain extent.
+\twocolumn
 \chapter{What to expect}
 First we shall see some theorems and examples and get to know the terms on an intuitive sense. The formal definitions of everything will be provided down the line(probably).
 \section{Four vertex theorem}
@@ -835,8 +839,229 @@ Let $\gamma$ be a regular $C^3$ curve. The curvature is given by:
 $$\kappa(t):=\frac{||\gamma'(t)\times\gamma''(t)||}{||\gamma'(t)||^3}$$
 \subsection{Remarks}
 \begin{enumerate}
-    \item If $\gamma$ lies on an unit sphere, with $||\gamma''||=1$ Then $<\gamma(t),\gamma(t)>=1\Rightarrow <\gamma(t),\gamma'(t)>=0$. Therefore, $\kappa(t)=1$. In this case, $\gamma''(t)$ essentially measures the rate of change of dirction of the curve.  
+    \item If $\gamma$ lies on an unit sphere, with $||\gamma''||=1$ Then $<\gamma(t),\gamma(t)>=1\Rightarrow <\gamma(t),\gamma'(t)>=0$. Therefore, $\kappa(t)=\frac{||\gamma''(t)||}{||\gamma'(t)||^2}=||\gamma''(t)||$. In this case, $\gamma''(t)$ or acceleration essentially measures the rate of change of dirction of the curve.  
+    \item Let $\eta(t)=\gamma\circ u(t)$ be a reparameterization of $\gamma$. Then:
+    \begin{itemize}
+        \item $\eta'(t)=\gamma'\left(u(t)\right)\frac{du}{dt}$
+        \item $\eta''(t)=\gamma''\left(u(t)\right)\left(\frac{du}{dt}\right)^2+\gamma'(u(t)).\frac{d^2u}{dt^2}$
+    \end{itemize}
+    It follows $\eta'(t)\times \eta''(t)=\left(\frac{du}{dt}\right)^3\gamma'\left(u(t)\right)\times \gamma''\left(u(t)\right)$ and:
+    $$\kappa_{\gamma}\left(u(t)\right)=\kappa_\eta\left(t\right)$$
+    Therefore, we conclude curvatuere is invariant under reparameterization.
 \end{enumerate}
+\begin{lemma}
+    If $\gamma''\ne 0$ for a plane curve, then $\gamma$ turns left if $\text{det}\left(\gamma'(0),\gamma''(0)\right)$ is posative and right if the determinant is negetive. 
+\end{lemma}
+\begin{proof}
+    We may assume $\gamma(0)=0$ and $\gamma'(0)=(1,0)$( this can be achived by an isometry+ suitable reprameterizatio). We therefore have $\gamma''\perp\gamma'$. Therefore $\gamma''=(0,c)$ and the value of the dterminant is $c$. For $\Delta t>0$ note:
+    $$\gamma(\Delta t)=\gamma(0)+\Delta t\gamma'(0)+\frac{1}{2}
+    \left(\Delta t\right)^2\gamma''(0)\hdots=\left(\Delta t,\frac{1}{2}\Delta t^2c\right)+\epsilon$$
+    The curve turns right if $c<0$ and left $c>0$ which is what we needed to prove.
+\end{proof}
+\begin{remark}
+    Our expression of curvature requires a suitable definition of cross product which is not available in higher dimensions. So we have this alternate formulation for curvature:
+    $$\kappa(t)=\frac{||\gamma''\langle \gamma',\gamma'\rangle-\gamma'\langle \gamma',\gamma''\rangle||}{||\gamma'||^4}$$
+\end{remark}
+One can check (I haven't) that in $\mathbb R^3$ this reduces to the usual definition.
+\section{Osculating Circles and Planes}
+Let $\gamma$ be a regular $C^2$ curve with $|||\gamma'|=1$. Let $\gamma''(s)\ne 0$ at some $s\in\mathbb R$. The osculating plane is defined as $\text{span}\{\gamma',\gamma''\}$
+\begin{theorem}
+    Let $\gamma$ be parameterized with $\gamma''\ne0$. 
+    \begin{enumerate}
+        \item For $s_1,s_2,s_3$ sufficently close to $s$, the points $\gamma(s_1),\gamma(s_2)\&\gamma(s_3)$ are not co-linear.
+        \item As $s_1,s_2,s_3$ tend to $s$, the plane spanned by $s_1,s_2,s_3$ tend to the oscullating plane. 
+        \item The circumcircle $C(s_1,s_2,s_3)$ associated to $\gamma(s_1),\gamma(s_2),\gamma(s_3)$ tend to be a circle lying on the osculating plane \& passes through $\gamma(s)$ with radius $$1/\gamma''(s)$$
+        \item For sufficently close to $s$, there is a plane with $\gamma(s_1)$ and tangent to $\gamma$ at $s$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    The proof was supposed to be here, but unfortunately I dont have it. I have to revisit this place later and fill in the balnks or ask sir about it.
+\end{proof}
+\section{Relation between $d=d(P,Q)$ and $s= $ arc length from $P$ to $Q$}
+
+\begin{center}
+    
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+    
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+    
+    %Curve Lines [id:da11399484730231146] 
+    \draw    (41.5,151) .. controls (42,66.75) and (190,103.75) .. (189,132.75) ;
+    %Curve Lines [id:da9481136710420994] 
+    \draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=1.5]    (80.5,101.75) .. controls (127,91.25) and (153.5,108.25) .. (162.5,110.75) ;
+    %Straight Lines [id:da22787375387757003] 
+    \draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ]   (80.5,101.75) -- (162.5,110.75) ;
+    
+    % Text Node
+    \draw (113.5,77.4) node [anchor=north west][inner sep=0.75pt]    {$s$};
+    % Text Node
+    \draw (113.5,108.4) node [anchor=north west][inner sep=0.75pt]    {$d$};
+    % Text Node
+    \draw (71,82.4) node [anchor=north west][inner sep=0.75pt]    {$P$};
+    % Text Node
+    \draw (162.5,92.9) node [anchor=north west][inner sep=0.75pt]    {$Q$};
+    
+    
+    \end{tikzpicture}
+    
+    \end{center}
+    
+We can fix $P$ as $\gamma(0)$, $\gamma'(s)=1$ by a suitable reparameterization. Then
+\begin{align*}
+    d^2=||\gamma(s)-\gamma(0)||^2\\
+    s=\int_0^s||\gamma'(u)||du
+\end{align*}
+\begin{theorem}
+    If $\gamma$ is $C^3$ then:
+    \begin{enumerate}
+        \item $\lim_{s\to0}\frac{d}{s}=1$
+        \item $\lim_{s\to0}\frac{d-s}{s^3}=\frac{-1}{24}||\gamma''(0)||^2$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+
+
+
+
+
+\section{Twisting of a curve: Torsion}
+Torsion is a measure of how much the osculating plane turn as we move along the curve. 
+\begin{definition}[Torsion]
+	Let $\gamma:(\alpha,\beta)\to\mathbb R^3$ be a regular curve such that the osculating plane is defined at all times. We define the torsion of $\gamma$ at $s$ as
+	$$\tau(s)=\lim_{\Delta s\to0}\frac{\Delta \theta}{\Delta S}$$
+	where $\Delta \theta$ is the angle between the osculating planes at $s$ and $s+\Delta s$
+\end{definition}
+We can consider the unit normal to the osculating planes as
+$$\mathcal{N}(s)=\frac{\gamma'(s)\times\gamma''(s)}{||\gamma'(s)\times\gamma''(s)||}$$
+Note:
+\begin{enumerate}
+	\item  $\mathcal{N}$ is perpendicular to the osculating plane.
+	\item The angle between the normals is precisely the angle between the planes
+\end{enumerate}
+Torsion is given by
+$$\tau(t)=\frac{\text{det}\begin{vmatrix}\gamma'(t)&\gamma''(t)&\gamma'''(t)\end{vmatrix}}{||\gamma'(t)\times\gamma''(t)||^2}$$
+\begin{remark}
+	\begin{enumerate}
+		\item $\tau$, like $\kappa$ is an invariant. 
+		\item If $\tau=0$ everywhere, the curve lies on a plane.
+	\end{enumerate}
+\end{remark}
+\subsection{Examples}
+\begin{itemize}
+	\item For a circular helix given by $\gamma(t)=(\lambda t,r\cos\omega t,r\sin\omega t)$, the torsion is given by 
+	$$\tau(t)=\frac{\lambda\omega}{r^2\omega^2+\lambda^2}$$
+	\item For the twisted cubic given by $\gamma(t)=(t,t^2,t^3)$
+	$$\tau(t)=\frac{3}{1+9t^2+9t^4}$$
+\end{itemize}
+\section{Fernet-Serret frames}
+This is perhaps the most important (and useful!) theorem on curves taught in this course. 
+Define
+$$\mathbb{T}=\frac{d}{dt}\gamma(t)\quad \mathbb{N}=\frac{\frac{d\mathbb T}{dt}}{\left|\left|\frac{d\mathbb T}{dt}\right|\right|}\quad\mathbb B=\mathbb T\times \mathbb N$$
+\begin{theorem}[Fernet-Serret]
+For a unit speed curve with nowhere vanishing curvature, the following holds
+\begin{equation*}
+	\begin{bmatrix}
+		\mathbb{T}'\\\mathbb{N}'\\\mathbb{B}'
+	\end{bmatrix}=
+	\begin{bmatrix}
+		0&\kappa&0\\
+		-\kappa&0&\tau\\
+		0&-\tau&0
+	\end{bmatrix}
+	\begin{bmatrix}
+		\mathbb{T}\\\mathbb{N}\\\mathbb{B}
+	\end{bmatrix}
+\end{equation*}	
+\end{theorem}
+\begin{proof} We shall go through this step by step.
+	\begin{enumerate}
+		\item {$\mathbb{T},\mathbb{N},\mathbb{B}$} forms an orthoinormal basis\\
+			$\mathbb N$ and $\mathbb T$ are permpendicular to each other. As $B$ is the cross product of two orthogonal vectors, $\mathbb B\perp\mathbb{N},\mathbb{B}\perp\mathbb{T}$. By definition they all have length 1.
+		\item $\mathbb T'=\kappa \mathbb N$\\
+		This follows rather simply as for unit speed curves we have $\kappa=||\gamma''||$ and therefore, by definition, we have:
+		$$\kappa\mathbb N=\mathbb T'$$
+		\item $\mathbb B'=c\mathbb N$ for some scalar $c$.\\
+			Note that
+			$$\langle \mathbb B,\mathbb B\rangle=1\Rightarrow \langle \mathbb B',\mathbb B\rangle+\langle \mathbb B,\mathbb B'\rangle=0\Rightarrow \langle \mathbb B',\mathbb B\rangle=0$$
+			As $\mathbb T,\mathbb N,\mathbb B$ span the space, we have: $\mathbb B'=a\mathbb T+b\mathbb N$
+			Nut we note:
+			$$\langle\mathbb B,\mathbb T \rangle=0\Rightarrow \langle\mathbb  B',\mathbb T\rangle+\langle \mathbb B,\mathbb T'\rangle=0$$
+			But $\mathbb T'=\kappa \mathbb N$ and $\mathbb N\perp \mathbb B$. Therefore $\langle \mathbb B,\mathbb T'\rangle=0$ and 
+			$$\langle\mathbb  B',\mathbb T\rangle=0$$
+			It follows that $a=0$ and we set $c=b$.
+		\item $c=-\tau$\\
+			We shall solve $\text{det}\begin{vmatrix}
+				\gamma'(t)&\gamma''(t)&\gamma'''(t)
+			\end{vmatrix}$
+			in two ways.
+			\begin{enumerate}
+				\item 
+				\begin{align*}
+					&\text{det}\begin{vmatrix}
+						\gamma'(t)&\gamma''(t)&\gamma'''(t)
+					\end{vmatrix}=\left(\gamma'(t)\times\gamma''(t)\right)\cdot\gamma'''(t)\\
+					=&(\mathbb  T\times\mathbb T' )\cdot(\mathbb T'')=(\mathbb  T\times\mathbb T' )\cdot(\mathbb T'')=(\mathbb  T\times\kappa\mathbb  N)\cdot(\kappa'\mathbb  N+\kappa\mathbb  N')\\
+					=&\kappa^2(\mathbb  T\times\mathbb  N)\cdot \mathbb  N'=\kappa^2 \mathbb  B\cdot\mathbb  N'
+				\end{align*}
+				\item Note for unit speed curves, $\gamma'\perp \gamma''$, $||\gamma'||=1$ and $||\gamma''||=\kappa$. Therefore, we have:
+				\begin{align*}
+					&\text{det}\begin{vmatrix}
+						\gamma'(t)&\gamma''(t)&\gamma'''(t)
+					\end{vmatrix}=\tau(t)||\gamma'(t)\times\gamma''(t)||^2=\tau(t)\kappa^2(t)
+				\end{align*}
+			\end{enumerate}
+			Therefore, we get $\mathbb  B\cdot \mathbb  N'=\tau\kappa$.
+				\begin{align*}
+					&\langle \mathbb  B,\mathbb  N\rangle=0\\
+					\Rightarrow&\langle \mathbb  B',\mathbb  N\rangle=-\langle \mathbb  B,\mathbb  N'\rangle=-\tau
+				\end{align*}
+		\item  Similar to before, we have:
+				$$\langle\mathbb  N,\mathbb  N\rangle=1\Rightarrow\langle\mathbb  N',\mathbb  N\rangle=0$$
+				We write $\mathbb  N'=\alpha\mathbb  T+\beta \mathbb  B$. Now note that
+				\begin{align*}
+					\langle \mathbb  T,\mathbb  N\rangle=0\Rightarrow\langle \mathbb  T,\mathbb  N'\rangle+\langle\mathbb  T',\mathbb  N\rangle=0 \Rightarrow \alpha=-\kappa\\
+					\langle \mathbb  B,\mathbb  N\rangle=0\Rightarrow\langle \mathbb  B,\mathbb  N'\rangle+\langle\mathbb  B',\mathbb  N\rangle=0 \Rightarrow \beta=\tau
+				\end{align*}
+	\end{enumerate}
+	The proof is completed. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Surfaces-Charts,Tangent Spaces and Fundamental Forms}
+\section{Surfaces}
+\begin{definition}[Surface]
+A surface $\sum\subset \mathbb R^3$ is a subset satisfying the following property: For $p\in\sum$, there exists a open set $W\subseteq R^3$ around $p$ and an open set $U\subseteq \mathbb R^2 $ such that there exists a homeomorphism
+$$\varphi:U\to W\cap \sum $$ 	
+\end{definition}
+\begin{remark}
+
+	
+	\begin{enumerate}
+		\item The pair $\left((W\cap\sum),\varphi^{-1}\right)$ is called a chart around $p$.
+		\item Given a surface and a point $p\in\sum$, we can find a chart $U',\psi$ around $p$ such that $\psi:U\to B_1(0)\subseteq \mathbb R^2$
+	\end{enumerate}
+\end{remark}
+
+
+
+
 
 
 
@@ -862,6 +1087,16 @@ $$\kappa(t):=\frac{||\gamma'(t)\times\gamma''(t)||}{||\gamma'(t)||^3}$$
 
 
 \part{The Riemann Uniformization Theorem}
+
+
+
+
+
+
+
+
+
+
 
 
 
