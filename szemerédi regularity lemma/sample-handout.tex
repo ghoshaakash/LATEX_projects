@@ -1,0 +1,62 @@
+\documentclass{tufte-handout}
+
+\title{\Huge{Szemerédi Regularity Lemma}}
+
+\author[Aaksh Ghosh]{Aakash Ghosh(19MS129)}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+
+\begin{document}
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+\end{abstract}
+
+\noindent Let $G$ be a graph and let $A$ and $B$ be disjoint set of vertices of $G$. Let $e(A,B)$ be the number of edges from $A$ to $B$. Define $d(A,B)=\frac{e(A,B)}{|A||B|}$  \sidenote{Note that $d(A,B)$ is a somewhat normalised measure of how well two vertex set is connected  with each other. The value of $d$ will range from 0(i.e no connection) to 1(i.e all possible edges are present and very well connected)}
+
+\begin{lemma}
+  If $X\subset A$ and $Y\subset B$ with $\frac{|X|}{|A|}\geq 1-\delta$ and $\frac{|Y|}{|B|}\geq 1-\delta$ where $0\leq \delta\leq\frac{1}{2}$. Then:
+  \begin{align}
+    |d(X,Y)-d(A,B)|\leq 2\delta\\
+    |d^2(X,Y)-d^2(A,B)|\leq 4\delta
+  \end{align}  
+\end{lemma}
+
+
+\bibliography{sample-handout}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
