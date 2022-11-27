@@ -1,0 +1,47 @@
+\contentsline {chapter}{\numberline {1}Basic Modelling and Linear Regression using OLS}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Linear models}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Normal equations}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Linear models with multiple variables}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Matrix representation of Linear models}{7}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Ordinary Least Squares(OLS) Estimation method}{7}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Non-Linear Models}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Dealing with categorical parameter}{9}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Parameters that take two values}{9}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Parameters that take multiple values}{10}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Confidence in parameters}{11}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Estimators}{11}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Variance in estimates}{11}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Hypothesis testing and measure of significance}{12}{subsection.1.5.3}%
+\contentsline {section}{\numberline {1.6}Omitted Variable Bias}{12}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Interaction variables}{13}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Instrumental Variables}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Endogenity errors}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Correction using Instrumental variable}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}2 step least square(2SLS)}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Example of 2SLS using simulated data in \faIcon {r-project}}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Creation of the simulated dataset}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}2SLS analysis on $x,z,y$}{16}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Probit models}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Dummy variables}{19}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Probit model}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Goodness of fit for a probit model}{20}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Receiver Operating Characteristic(ROC) curve}{20}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Use of probit models}{20}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Insample and Outsample Prediction}{20}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Example of data analysis on \faIcon {r-project} using simwagem.txt}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Preliminary Analysis}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Analysis: Effect of Education on Earning}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Analysis: Is return to education higher in urban area?}{25}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Prediction: Being self-employed}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Analysis: Fitness of probit model}{27}{section.4.6}%
+\contentsline {chapter}{\numberline {5}\faIcon {r-project} cookbook}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction to \faIcon {r-project} environment}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Analysis}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Manual Walk-through}{30}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Analysis of simwagem}{31}{subsection.5.2.2}%
+\contentsline {chapter}{Bibliography}{33}{chapter*.2}%
+\contentsfinish 

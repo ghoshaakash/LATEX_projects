@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=2cm]{geometry}
+\title{Lecture Notes For Analysis}
+\date{$25^{th}$ October,2022}
+
+\author{Aakash Ghosh(19MS129)}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+	\fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{definition}{Definition}[]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+\newtheorem*{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\section*{References:}
+\begin{enumerate}
+	\item Fourier Series: Texts and Readings in Mathematics, Rajendra Bhatia.
+	\item An Introduction to Harmonic Analysis, Yitzhak Katznelson
+\end{enumerate}
+\section{Motivation}
+\begin{definition}[$2\pi$ periodic functions]
+	A function $f:\mathbb{R}\to\mathbb{R}$ or $\mathbb{C}$ is said to be $2\pi$ periodic if $f(x+2\pi)=f(x)\forall x\in\mathbb R$
+\end{definition}
+\begin{enumerate}
+	\item \textbf{Periodicity: }A $2\pi$ periodic function can also be thought to have $2n\pi$ Periodicity where $n\in\mathbb{Z}\{0\}$. 
+	\item \textbf{Bijection of $2\pi$ periodic function and continuous function on circle:} A $2\pi$ periodic function $f$ is fully described by 
+	$$f:[0,2\pi]\to\mathbb{R},f(0)=f(2\pi)\quad\text{or}\quad f:[-\pi,\pi]\to\mathbb{R},f(-\pi)=f(\pi)$$
+	We define the $F:\mathbb{T}\to\mathbb{R}$ where $\mathbb{T}=\{z|z\in\mathbb C,|z|=1\}$ such that:
+	$$F(e^{i\theta})=f(\theta)$$
+	This establishes a bijection between $2\pi$ periodic function and continuous function on $\mathbb T$. Properties like continuity and differentiability are carried over. 
+	\item \textbf{Change of variable: }
+	Define a map $\phi$ from $X$ to $Y$. Let $\nu$ be a measure defined on $X$. Then we can define a corresponding measure $\mu$ on $Y$ defined as 
+	$$\mu(E)=\nu(\phi^{-1}(E))$$
+	Then we have the following formula for changing the variable:
+	$$\int_Efd\mu=\int_{\phi^{-1}(E)}f\circ\phi d\nu$$
+	\item \textbf{Integration of functions on a circle: }We define a normalized/probabilistic Lebesgue measure defined as
+	$$\tilde m(E)=\frac{1}{2\pi}m(E)$$ 
+	For a map $F:\mathbb T\to\mathbb R$ we have:
+	$$\int_\mathbb TFd\tilde m=\frac{1}{2\pi}\int_{[-\pi,\pi]}fdm=\frac{1}{2\pi}\int_{-\pi}^\pi fd\theta$$
+	\item $$\frac{1}{2\pi}\int_{-\pi}^\pi e^{in\theta}=\begin{cases}
+		0\quad\text{if }n\ne0\\
+		1\quad\text{if }n=0
+	\end{cases}$$
+\end{enumerate}
+\subsection{Some notions from complex analysis}
+\begin{definition}[Unit Disc, $\mathbb{D}$]
+We define the unit disc as the set $\mathbb{D}=\{z:|z|<1\}$	
+\end{definition}
+\begin{definition}[Closure of Unit Disc, $\overline{\mathbb{D}}$]
+We define the closure unit disc as the set $\mathbb{D}=\{z:|z|\leq1\}$	
+\end{definition}
+\begin{definition}[Unit Circle, $\mathbb{T}$]
+We define the boundary of a unit disc as $\mathbb{T}=\{z:|z|=1\}$
+\end{definition}
+\begin{remark}
+Note that $\mathbb{T}$ is written as $S^1$ in topological contexts.
+\end{remark}
+\begin{definition}[Harmonic Functions]
+A function $f$ is said to be Harmonic in a domain $\Omega$ if $\frac{\partial^2}{\partial x^2}f$ and $\frac{\partial^2}{\partial y^2}f$ are well-defined in $\Omega$ and $\Delta f=\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)f=0$
+\end{definition}
+\subsection{The Dirichlet Problem and Fourier's big idea}
+This is a type of PDE. Assume we are given a function $f\in C(\mathbb{T})$. We are interested in knowing if there exists a harmonic function $u$ such that $u|_{C(\mathbb{T})}=f$. Fourier noticed that $e^{in\theta}$ is harmonic. So if we can represent $f$ is the following form
+$$f=\sum_{i=\mathbb{Z}}a_ne^{in\theta}$$
+then we are done. But the problem with this idea is that this doesn't happen for all functions.(It happens for a large class of functions though.)
+\section{Preliminary Ideas}
+\begin{lemma}
+	If $f$ is continuous function on $\mathbb{R}$ then the following holds:
+	\begin{enumerate}
+		\item $\int_a^bf(x)dx=\int_{a+2\pi}^{b+2\pi}f(x)dx$
+		\item $\int_{-\pi}^\pi f(x)dx=\int_{-\pi}^\pi f(x+a)dx$
+		\item $\int_a^{a+2\pi}f(x)dx$ is independent of $a$.
+	\end{enumerate}
+	Those holds even if $f\in L^1[-\pi,\pi]$ 
+\end{lemma}\noindent
+We define the map $\Gamma_{\theta_o}$ as below:
+$$\Gamma_{\theta_o}F(e^{i\theta})=F(e^{i(\theta-\theta_o)})$$ 
+We note that 
+$$\int_\mathbb{T}\Gamma_{\theta_o}Fd\tilde{m}=\int_\mathbb{T}Fd\tilde{m}$$
+Therefore, $\Gamma_{\theta_o}$ is an isometry on $L^1(\mathbb{T})$. As $C(\mathbb{T})$ is dense in $L^p(\mathbb{T})$ for $1\leq p\leq \infty$, we can extend the previous idea and conclude $\Gamma_{\theta_o}$ is an isometry on $L^p(\mathbb{T})$ for $1\leq p\leq \infty$.
+\begin{lemma}
+If $f\in L^p(\mathbb{T})$ then the following hold:
+\begin{enumerate}
+	\item $\Gamma_\theta\Gamma_{\theta_o}f=\Gamma_{\theta+\theta_o}f$
+	\item $\lim_{\theta\to\theta_0}||\Gamma_\theta f-\Gamma_{\theta_o}f||_p=0$
+\end{enumerate}
+\end{lemma}
+\section{Convolution}
+\begin{definition}[Convolution]
+We define the convolution of two functions $f,g$ as 
+$$f*g(x)=\frac{1}{2\pi}\int_{-\pi}^\pi f(x-y)g(y)dy$$
+\end{definition}
+\begin{lemma}
+	\begin{enumerate}
+		\item If $f,g\in L^1(\mathbb{T})$ then $f*g\in L^1(\mathbb{T})$ and $$||f*g||_1\leq ||f||_1||g||_1$$
+		\item If $f\in L^p(\mathbb{T}),g\in L^1(\mathbb{T})$ then:
+		$$||f*g||_p\leq ||f||_p||g||_1$$
+		\item If $f\in L^p(\mathbb{T}),g\in L^{p*}(\mathbb{T})$ such that $1/p+1/p*=1$ then:
+		$$||f*g||_\infty\leq ||f||_p||g||_{p*}$$
+	\end{enumerate}
+\end{lemma}
+\begin{theorem}[Young's inequality]
+If 	$f\in L^p(\mathbb{T}),g\in L^q(\mathbb{T})$, then 
+$$||f*g||_r\leq ||f||_p||g||_{q}$$
+where $1+1/r=1/p+1/q$
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

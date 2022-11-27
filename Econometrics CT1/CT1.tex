@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm} 
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\usepackage{mhchem}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solution:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+\title{Solutions for Econometrics Class Test 1 }
+\author{Aakash Ghosh }
+\date{November 2022}
+
+\usepackage{amsmath}
+
+
+\newtheorem{defn}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\usepackage {tfrupee}%%Use rupee by \rupee
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color[HTML]{172774},
+  commentstyle=\color[HTML]{EEEEEE},
+  stringstyle=\color[HTML]{E94560},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}%%USe between begin and end lstlisting
+\usepackage{ stmaryrd }
+
+
+\makeatletter
+
+
+\begin{document}
+\lstset{language=R}
+
+\large\textbf{Aakash Ghosh} \hfill \textbf{}   \\
+Email: ag19ms129@iiserkol.ac.in  \hfill ID: 19MS129 \\
+\normalsize Course: HU4102 \hfill Term: Autmn 2022\\
+\noindent\rule{7in}{2.8pt}
+\section{Data Preparation}
+
+\section{Solutions}
+\begin{problem}{1}
+Find the gender ratio in 0-15 yrs old for Haryana and Kerala.
+\end{problem}
+\begin{solution}
+
+\end{solution} 
+
+\begin{problem}{2}
+Compare the percapita consumption expenditure of UP and TN.   
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+
+\begin{problem}{3}
+Prepare an educational tranition matrix education level of mothers and their sons.
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+
+\begin{problem}{4}
+What percent of sons are employed in agriculture given their fathers work in agriculture.
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+\end{document}

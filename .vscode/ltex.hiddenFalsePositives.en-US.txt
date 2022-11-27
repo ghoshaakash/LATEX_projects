@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThis is the Von Neumman-Fréchet theorem.\\E$"}

@@ -1,0 +1,730 @@
+\documentclass[notoc]{tufte-book}
+
+\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
+
+%%
+% Book metadata
+
+
+
+
+
+\title{{Analysis 5} }
+
+\author[Aakash Ghosh]{Aakash Ghosh (19MS129)}
+
+
+
+
+
+
+
+%%
+% If they're installed, use Bergamo and Chantilly from www.fontsite.com.
+% They're clones of Bembo and Gill Sans, respectively.
+%\IfFileExists{bergamo.sty}{\usepackage[osf]{bergamo}}{}% Bembo
+%\IfFileExists{chantill.sty}{\usepackage{chantill}}{}% Gill Sans
+
+%\usepackage{microtype}
+
+%%
+% Just some sample text
+\usepackage{lipsum}
+
+%%
+% For nicely typeset tabular material
+\usepackage{booktabs}
+
+%%
+% For graphics / images
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+%%
+% Prints argument within hanging parentheses (i.e., parentheses that take
+% up no horizontal space).  Useful in tabular environments.
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+
+%%
+% Prints an asterisk that takes up no horizontal space.
+% Useful in tabular environments.
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+
+%%
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+
+%%
+% Some shortcuts for Tufte's book titles.  The lowercase commands will
+% produce the initials of the book title in italics.  The all-caps commands
+% will print out the full title of the book in italics.
+\newcommand{\vdqi}{\textit{VDQI}\xspace}
+\newcommand{\ei}{\textit{EI}\xspace}
+\newcommand{\ve}{\textit{VE}\xspace}
+\newcommand{\be}{\textit{BE}\xspace}
+\newcommand{\VDQI}{\textit{The Visual Display of Quantitative Information}\xspace}
+\newcommand{\EI}{\textit{Envisioning Information}\xspace}
+\newcommand{\VE}{\textit{Visual Explanations}\xspace}
+\newcommand{\BE}{\textit{Beautiful Evidence}\xspace}
+
+\newcommand{\TL}{Tufte-\LaTeX\xspace}
+
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+	\ifcase\month\or January\or February\or March\or April\or May\or June\or
+	July\or August\or September\or October\or November\or
+	December\fi\space\number\year
+}
+
+
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+	%\sffamily\fontsize{14}{16}\selectfont
+	\begin{fullwidth}
+	\sffamily\large
+	\begin{doublespace}
+	\noindent\allcaps{#1}\\% epigraph
+	\noindent\allcaps{#2}% author
+	\end{doublespace}
+	\end{fullwidth}
+}
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+\usepackage{units}
+
+% Typesets the font size, leading, and measure in the form of 10/12x26 pc.
+\newcommand{\measure}[3]{#1/#2$\times$\unit[#3]{pc}}
+
+% Macros for typesetting the documentation
+\newcommand{\hlred}[1]{\textcolor{Maroon}{#1}}% prints in red
+\newcommand{\hangleft}[1]{\makebox[0pt][r]{#1}}
+\newcommand{\hairsp}{\hspace{1pt}}% hair space
+\newcommand{\hquad}{\hskip0.5em\relax}% half quad space
+\newcommand{\TODO}{\textcolor{red}{\bf TODO!}\xspace}
+\newcommand{\na}{\quad--}% used in tables for N/A cells
+\providecommand{\XeLaTeX}{X\lower.5ex\hbox{\kern-0.15em\reflectbox{E}}\kern-0.1em\LaTeX}
+\newcommand{\tXeLaTeX}{\XeLaTeX\index{XeLaTeX@\protect\XeLaTeX}}
+% \index{\texttt{\textbackslash xyz}@\hangleft{\texttt{\textbackslash}}\texttt{xyz}}
+\newcommand{\tuftebs}{\symbol{'134}}% a backslash in tt type in OT1/T1
+\newcommand{\doccmdnoindex}[2][]{\texttt{\tuftebs#2}}% command name -- adds backslash automatically (and doesn't add cmd to the index)
+\newcommand{\doccmddef}[2][]{%
+	\hlred{\texttt{\tuftebs#2}}\label{cmd:#2}%
+	\ifthenelse{\isempty{#1}}%
+		{% add the command to the index
+			\index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2}}% command name
+		}%
+		{% add the command and package to the index
+			\index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2} (\texttt{#1} package)}% command name
+			\index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}% package name
+		}%
+}% command name -- adds backslash automatically
+\newcommand{\doccmd}[2][]{%
+	\texttt{\tuftebs#2}%
+	\ifthenelse{\isempty{#1}}%
+		{% add the command to the index
+			\index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2}}% command name
+		}%
+		{% add the command and package to the index
+			\index{#2 command@\protect\hangleft{\texttt{\tuftebs}}\texttt{#2} (\texttt{#1} package)}% command name
+			\index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}% package name
+		}%
+}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quotation}\ttfamily\parskip0pt\parindent0pt\ignorespaces}{\end{quotation}}% command specification environment
+\newcommand{\docenv}[1]{\texttt{#1}\index{#1 environment@\texttt{#1} environment}\index{environments!#1@\texttt{#1}}}% environment name
+\newcommand{\docenvdef}[1]{\hlred{\texttt{#1}}\label{env:#1}\index{#1 environment@\texttt{#1} environment}\index{environments!#1@\texttt{#1}}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}\index{#1 package@\texttt{#1} package}\index{packages!#1@\texttt{#1}}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}\index{#1 class option@\texttt{#1} class option}\index{class options!#1@\texttt{#1}}}% document class option name
+\newcommand{\docclsoptdef}[1]{\hlred{\texttt{#1}}\label{clsopt:#1}\index{#1 class option@\texttt{#1} class option}\index{class options!#1@\texttt{#1}}}% document class option name defined
+\newcommand{\docmsg}[2]{\bigskip\begin{fullwidth}\noindent\ttfamily#1\end{fullwidth}\medskip\par\noindent#2}
+\newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
+\newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
+
+% Generates the index
+\usepackage{makeidx}
+\makeindex
+
+
+\usepackage{amsmath}
+
+
+
+
+\definecolor{c1}{HTML}{000000}
+\definecolor{c2}{HTML}{1E5128}
+\definecolor{c5}{HTML}{4E9F3D}
+
+
+\definecolor{c3}{HTML}{4E9F3D}
+\definecolor{c4}{HTML}{F2FFE9}
+
+% chapter format
+\titleformat{\chapter}%
+  {\huge\rmfamily\itshape\color{c1}}% format applied to label+text
+  {\llap{\colorbox{c1}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
+  {2pt}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+% section format
+\titleformat{\section}%
+  {\normalfont\Large\itshape\color{c2}}% format applied to label+text
+  {\llap{\colorbox{c2}{\parbox{1.5cm}{\hfill\color{white}\thesection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+% subsection format
+\titleformat{\subsection}%
+  {\normalfont\large\itshape\color{c5}}% format applied to label+text
+  {\llap{\colorbox{c5}{\parbox{1.5cm}{\hfill\color{white}\thesubsection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+  \setcounter{secnumdepth}{2}
+
+\let\orupee\rupee
+\def\rupee{\ifmmode\text{\orupee}\else\orupee\fi}
+
+\usepackage{tcolorbox}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tikz,lipsum,lmodern}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+
+\setcounter{tocdepth}{2}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=c2
+    }
+
+\newtheorem{defn}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}{Remark}
+
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{0.0pc}%
+  \setlength{\JustifyingParindent}{0.0pc}%
+  \setlength{\parindent}{0pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+\makeatother
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+
+\maketitle
+
+
+
+
+% r.5 contents
+\tableofcontents
+
+
+\chapter{Signed Measure}
+\section{Introduction}
+\begin{defn}[Signed Measure]
+	Given a measurable space $(X,\mathcal{M})$, a signed measure is a function $\nu:\mathcal{M}\to[-\infty,\infty]$ with the following properties:
+\begin{enumerate}
+	\item $\nu(\phi)=0$
+	\item $\nu$ can assume either $\infty$ or $-\infty$ but not both 
+	\item If $\{E_j\}$ is a sequence of disjoint sets in $\mathcal{M}$, then $\sum_{i=1}^\infty \nu(E_i)=\nu\left(\cup_{i=1}^\infty E_i \right)$
+\end{enumerate}
+\end{defn}
+\marginnote{	
+One should note that normal measures are also signed measure, the only difference is the extension of the range of the measure function to cover almost all of $\mathbb R$.
+}
+\section{Upper and lower continuity}
+
+\begin{theorem}[Uppercontinuity]
+	Let $\{E_i\}$ be a countable collection of measurable set with $E_i\subseteq E_{i+1}$. Then:
+	\begin{align}
+		\lim_{i\to\infty}\nu(E_i)=\nu\left(\bigcup_{i=1}^\infty E_i\right)
+	\end{align}
+\end{theorem}
+
+\begin{theorem}[Lowercontinuity]
+	Let $\{E_i\}$ be a countable collection of measurable set with $E_{i+1}\subseteq E_{i}$. Then:
+	\begin{align}
+		\lim_{i\to\infty}\nu(E_i)=\nu\left(\bigcap_{i=1}^\infty E_i\right)
+	\end{align}
+\end{theorem}
+
+\begin{proof}
+Same as what we do for unsigned measure
+\end{proof}
+
+\section{Positive,Negetive and Null Set}
+
+\begin{defn}[Positive set]
+	A set whose every mesurable subset $E$ satisfies $\nu(E)\geq0$ is called a positive set.
+\end{defn}
+\noindent In a similar fashion we define :
+
+\begin{defn}[Negetive set]
+	A set whose every mesurable subset $E$ satisfies $\nu(E)\leq0$ is called a positive set.
+\end{defn}
+
+\begin{defn}[Null set]
+	A set whose every mesurable subset $E$ satisfies $\nu(E)=0$ is called a positive set.
+\end{defn}
+
+\noindent We consider an example. Let $\mu$ be an unsigned measure and let $f$ be a measurable $L^1$ function . Let us define a measure $nu$ as:
+\begin{align}
+	\nu(E)=\int_Efd\mu
+\end{align}
+Then $\nu$ is a signed measure. If $E$ is a set such that $f\geq0$ $\mu.a.e$ on $E$ then $E$ is a positive set. Similarly we can find negetive and null sets.
+
+\begin{lemma}
+	\begin{enumerate}
+		\item Subsets of positive sets are positive
+		\item Countable\sidenote{A countable union is needed as in case of uncountable union, there will be a chance that the union will not belong to the sigma algebra; a sigma algebra is closed in countable union and not under arbitary union} union of positive sets are positive
+	\end{enumerate}
+	Similar results are also valid for null and negetive sets.
+\end{lemma}
+
+\noindent The next lemma will be required for the proof of \textbf{Hahn Decomposition Theorem} in the next section.
+
+
+\begin{lemma}
+	Let $\nu$ be a signed measure which doesn't attain $\infty$. A set with a positive measure has a positive subset.
+\end{lemma}
+
+\section{Hahn Decomposition}
+
+\begin{theorem}[Hahn Decompositiopn Theorem]
+	lf $\nu$ is a signed measure on $(X,\mathcal M)$, there 
+	exist a positive set $P$ and a negative set $N$ for $\nu$ such that $P\cup N = X$ and $P\cap N =\phi$ 
+	Moreover if  $P', N'$ is another such pair, then $P\Delta P' (= N \Delta N')$ is null in $\nu$.
+\end{theorem}
+\noindent\textbf{\textit{Proof Outline :}}
+\begin{enumerate}
+	\item Define $m=\sup_{\text{positive sets}}\nu(P)$
+	\item Take a sequence $\{p_i\}$ such that $\lim_{i\to\infty}\nu(p_i)=m$
+	\item Show if $P=\bigcup p_i$ then $\nu(P)=m$
+	\item Show if $N=P^c$ and if $N$ has a set with positive measure, then by lemma 4, there is contradiction.
+	\item If $E\subseteq P\Delta P'$ and $\nu(E)\ne0$. Without loss of generality assume $E'=E\cap P$ is not null. Then $E'\subseteq P'^c=N'$ which contradicts negetivity of $N'$ 
+\end{enumerate}
+\section{Jordan Decomposition}
+
+\begin{defn}[Mutually singular measures]
+Two measures $\nu$ and $\mu$ are said to be mutually singular if there exists a partition of $X$ in $E$ and $F$ such that 	$X=E\sqcup F$ and $E$ is null in $\mu$ and $F$ is null in $\nu$\sidenote{That is to say that the measures $\nu$ and $\mu$ "lives" on different sets.}
+\end{defn}\noindent
+\textbf{Notation: }If $\nu$ and $\mu$ are mutuallysingular, then we denote it as:
+$$\nu\perp\mu$$
+\begin{theorem}[Jordan Decomposition Theorem]
+Given a (signed) measure $\nu$ there exists \textbf{unique} positive measures $\nu^+,\nu^-$ such that:
+\begin{align}
+	\nu=\nu^+-\nu^-\quad\nu^+\perp\nu^-
+\end{align}	
+\end{theorem}\noindent
+\textbf{\textit{Proof Outline:}}
+\sidenote{As I understand it, the main idea is if there is two decomposition as outlined in step 2 and 3, then we have 4 sets to deal with:
+\begin{itemize}
+	\item $P\cap F$ and $E\cap N$: which are null as they are intersection of positive and negetive sets
+	\item $P\cap E$ where $\mu^+$ and $\nu^+$ agree and $\mu^-,\nu^-=0$
+	\item $N\cap F$ where $\mu^-$ and $\nu^-$ agree and $\mu^+,\nu^+=0$
+\end{itemize}
+Make this nice and you get the proof outlined.
+}
+\begin{enumerate}
+	\item Existance follows by Hahn decomposition.
+	\item Start by assuming the decomposition is not unique and theere exists two such decomposition $\nu=\nu^+-\nu^-=\mu^+-\mu^-$.
+	\item There exists partition of $X$ in $E,F$ due to $\mu^+,\mu^-$ and in $P,N$ due to $\nu^+,\nu^-$. If $A$ is measurable , show that $$\mu^+(A)=\nu (A\cap E)=\nu(A\cap E\cap P)+\nu(A\cap E\cap N)$$
+	\item As $E$ is positive and $N$ is negetive, show that $A\cap E\cap N$ is a null set. Repeat or $\nu^+$ and get similar results 
+	\item Show $\nu^+=\mu^+$ and in a similar way $\mu^-=\nu^-$
+\end{enumerate}
+\section{Total Variation Measure}
+\begin{defn}[Total Variation Measure]
+	If a measure $\nu$ decomposes in singular $\nu^+$ and $\nu^-$ then we define the total variation measure $|\nu|$ as
+	\begin{align}
+		|\nu|=\nu^++\nu^-
+	\end{align}
+\end{defn}\marginnote{This works before as by Hahn-Jordan, the decomposition is unique. The definition is important as by Lemma 7 and Lemma 8, we see that properties of $\nu$ is reflected in $|\nu|$}
+\begin{lemma}
+	The following statements are equivalent:
+	\begin{enumerate}
+		\item $E$ is null in $\nu$
+		\item $\nu^+(E)=0$ and $\nu^-(E)=0$\sidenote{For unsigned measures, being null and having a measure 0 is same.}
+		\item $|\nu|(E)=0$
+	\end{enumerate}
+\end{lemma}
+
+\begin{lemma}
+	The following statemwents are equivalent:
+	\begin{enumerate}
+		\item $\nu\perp\mu$
+		\item $\nu^+\perp\mu$ and $\nu^-\perp\mu$
+		\item $|\nu|\perp\mu$
+	\end{enumerate}
+\end{lemma}
+\noindent {Proof for lemma 7 and 8 is  at the  end, they are given as exercise in Folland, ch3}. Other properties which gets reflected are finiteness and $\sigma-$finiteness.
+\section{Absolute Continuity}
+\begin{defn}[Absolute Continuity]
+Let $\mu$ be an unsigned measure. We say $\nu$ is absolutely continious with respect to $\mu$ if for any measurable set $E$, $\mu(E)=0\implies \nu(E)=0$
+\end{defn}
+\noindent\textbf{Notation:} $\nu$ is absolutely continious with respect to $\mu$ is denoted by:
+\begin{align*}
+	\nu\ll\mu
+\end{align*}
+Unlike mutual singulaity, $\nu\ll\mu$ doesn't imply $\mu\ll\nu$. In a sense, being mutually singular and being absolutely continious are exclusive concepts. If $\nu\perp\mu$ and $\nu\ll\mu$ then $\nu=0$
+
+\begin{lemma}
+	The following statements are equivalent:
+	\begin{enumerate}
+		\item $\nu\ll\mu$
+		\item $\nu^+\ll\mu$ and $\nu^-\ll\mu$
+		\item $|\nu|\ll\mu$ 
+	\end{enumerate}
+\end{lemma}
+\begin{lemma}
+	If $\nu$ and $\mu$ are finite measures, $\nu\ll\mu$ if and only if for every $\epsilon>0$ there exists $\delta>0$ usch that $|\nu(E)|<\epsilon$ whenever $\mu(E)<\delta$ \sidenote{This lemma gives some motivation for the nomenclature of  absolute continuity }
+\end{lemma}\noindent
+\textit{\textbf{Proof Outline: }}
+\begin{enumerate}
+	\item By Lemma 9, we need to show this is true for $|\nu|$ and we will be done. This is why, without loss of generality, we can assume $\nu$ is unsigned.
+	\item \textbf{\textit{Don't understand why this is trivial}}
+	\item Make a decresing sequence of mesurable sets
+	\item Show if there exists $\epsilon$ with no such $\delta$ then $\mu$ of intersection goes to 0 but $\nu$ of intersection stays above $\epsilon$. This contradicts absolute continuity.
+\end{enumerate}
+\section{Radon-Nikodym theorem}
+\begin{theorem}[Radon-Nikodym theorem]
+	The theorem has two parts:
+	\begin{enumerate}
+		\item For a measure space, with $\sigma-$finite measure signed measure $\nu$ and  $\sigma-$finite measure unsigned measure$\mu$p, there is a unique decomposition of $\nu$ in $\nu_1$ and $\nu_2$ such that $\nu_1\ll\mu$ and $\nu_2\perp\mu$
+		\item There exists a function $f$ which is integrable in the etended sense such that $\nu_1(E)=\int_Efd\mu$. Moreover, if there are two such functions $f_1,f_2$ then $f_1=f_2$ $\mu.a.e$. 
+	\end{enumerate}
+\end{theorem}
+\textbf{\textit{Proof Outline:}}\\
+\begin{enumerate}
+	\item \textbf{Step 1: $\nu$, $\mu$ are finite}\\
+		\begin{enumerate}
+			\item Note that $\nu(E)=\int_Efd\mu+\nu_2(E)\Rightarrow \nu(E)\geq\int_Efd\mu$
+			\item Make a family of function $\mathcal{F}$ which satisfy this. 
+			\item Let $\alpha$ be suprema of the integral of $f$ in family. Find $f_n$ whose integral approach $\alpha$. Set $g_n(x)=\max\{f_1(x),f_2(x)\hdots f_n(x)\}$. Show $g_n$ is increasing and is in $\mathcal{ F}$. Find limit of $g_n$ as $g$. Use MCT to show that $\alpha$ is attained by $g$.\sidenote{The reason to take a in first place is because we don't know if $f_n$ converges. The reason we take such a $g_n$ is sothat we can intechange the limit and integral by applying MCT.}
+			\item  Set $\nu_2=\nu-\nu_1$. Show $\nu_2\perp\mu$. 
+		\end{enumerate}
+	\item  \textbf{Step 2: Assume $\sigma,\mu$ are $\sigma-$finite.}
+	\begin{enumerate}
+		\item Divide $X$ in disjoint countable $B_i$ each with finite measure.
+		\item Restrict $\mu$ and $\nu$ in $B_i$ to get $\mu_i,\nu_i$. Repeat step 1 to get $f_i,\nu^1_i,\nu^2_i$ in $B_i$. Set $f=\sum f_i,\nu^1=\sum\nu^1_i,\nu^2=\sum\nu^2_i$
+	\end{enumerate} 
+	\item \textbf{Step 3: Uniqueness of decomposition}:
+	If $\nu_1,\nu_2$ and $\hat\nu_1,\hat\nu_2$ are two decomposition then $\nu_1-\hat\nu_1=\hat\nu_2-\nu_2$. Now $(\nu_1-\hat\nu_1)\ll\mu$ and $\nu_2-\hat\nu_2\perp\mu$. So $\nu_1-\hat\nu_1=0$
+	\item \textbf{Step 4: Uniqueness of $f$ :}
+	If $f,g$ are two such functions then $\int_E(f-g)=0$ or $f=g$ $\mu.a.e$.  	
+\end{enumerate}
+The decomposition of $\nu$ is called \textbf{Leabesgue decomposition}. The $f$ obtained in part 2 is called the \textbf{Radon-Nikodym derivative}.\\
+If $\nu\ll\mu$ then the existance of Radon Derivative doesn't require $\sigma$ finiteness of $\nu$\sidenote{This is a really nasty tyeorem- Check for all conditions before applying. Both $\nu$ and $\mu$ should be sigma finite for decomposition to exist. $\nu$ should be absolutely cts and $\mu$ should be $\sigma$ finite for the derivative to exist.}
+
+\section{Solutions to Real Analysis By Folland, Section 3.1,3.2}
+\subsection{Solutions to problems in section 3.1}
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.1]
+	Prove Proposition 3.1.\\\noindent
+	{Propotion 3.1} is Theorem 1\&2 mentioned here.
+\end{tcolorbox}\noindent
+\textbf{Solution 1 outline:} We do it as instructed in the book, by copying Theorem 1.8 from the book.\\
+\textbf{Solution 2 outline:} Decompose $\mu$ by Hahn Decomposition and apply upper/lower continuity on each of them  individually.\sidenote{Proof of Hahn decomposition doesn't assume upper/lower continuity}\\
+\textbf{Proof 1:}\\\noindent
+By the second condition of definition 1, we can assume $\mu>-\infty$.\\ 
+\noindent \textbf{Proving Uppercontinuity:} If some $E_i=\infty$ we are done. Else , set $E_0=\phi$. Define $F_i=E_i\setminus E_{i-1}$. Not that any two $F_i,F_j$ is disjoint. Then $\cup_{i=1}^\infty E_i= \cup_{i=1}^\infty F_i$. It follows that:
+\begin{align*}
+	\mu\left(\bigcup_{i=1}^\infty E_i\right)=&\mu\left(\bigcup_{i=1}^\infty F_i\right)
+	=\sum_{i=1}^\infty \mu\left(F_i\right)=\lim_{i\to\infty}\mu(E_i)
+\end{align*}
+The last step follows by countable additivity.\\\noindent
+\noindent \textbf{Proving Lowercontinuity:}
+Set $F_j=E_1\setminus E_j$. Then $F_i\subseteq F_{i+1}$ and $\mu(E_1)=\mu(F_j)+\mu(E_j)$. Also, $\cup_{i=1}^\infty F_j=E_1\setminus(\cap_{i=1}^\infty E_j)$. Apply uppercontinuity to get: 
+\begin{align*}
+	\mu(E_1)=\mu\left(\bigcap_{i=1}^\infty E_j\right)+\lim_{j\to\infty}\mu(F_j)=\mu\left(\bigcap_{i=1}^\infty E_j\right)+\mu(E_1)-\lim_{j\to\infty}\mu(E_j)
+\end{align*}
+\begin{align*}
+	\Rightarrow \lim_{j\to\infty}\mu(E_j)=\mu\left(\bigcap_{i=1}^\infty E_j\right)
+\end{align*}
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.2]
+	If $\nu$ is a signed measure, $E$ is $\nu$-null iff  $|\nu|(E)=0$. Also, if $\nu$ and $\mu$ are signed 
+measures, $\nu\perp\mu$ iff  $\nu^+\perp\mu$ and $\nu^-\perp\mu$
+\end{tcolorbox}\noindent
+\textbf{Solution outline:} This the the problem corresponding to lemma 7 and 8. In both case we shall show
+$1\Rightarrow2\Rightarrow3\Rightarrow1$.\\
+\textbf{Solution part-1(Proof of lemma 7): }\\
+The Steps are based on lemma 7.
+\begin{itemize}
+	\item \textbf{Step 1: $1\Rightarrow 2$}\\
+		Let $P,N$ be the decomposition of $N$ in positive and negetive sets using HJD[Hahn Jordan Decomposition].  Let $E$ be a null set. Then:
+		\begin{align*}
+			\nu^+(E)=&\nu^+(E\cap P)-\nu^-(E\cap N)\\
+			=&\nu^+(E\cap P)\\
+			=&\nu(E\cap P)-\nu^-(E\cap P)\\
+			=&\nu(E\cap P)=0
+		\end{align*}
+		Similar reult is obtained for $\nu^-$. For unsigned measures, a measure zero set is null set, so we are done.
+	\item \textbf{Step 2: $2\Rightarrow 3$}\\
+	This is the easy step.
+	\begin{align*}
+		|\nu|(E)=\nu^+(E)+\nu^-(E)=0
+	\end{align*}
+	\item \textbf{Step 3: $3\Rightarrow 1$}\\
+	Note that for any measurable subset $A$ of $E$ we have $|\nu|(A)=0$. We also have:
+	$$|\nu(A)|=|\nu^+(A)-\nu^-(A)|\leq \nu^+(A)+\nu^-(A)=|\nu|(A)=0$$
+	$$\Rightarrow \nu(A)=0$$
+	Therefore, $E$ is null in $\nu$
+\end{itemize}
+\textbf{Solution part-2(Proof of lemma 8): }\\
+The Steps are based on lemma 8.
+\begin{itemize}
+	\item \textbf{Step 1: $1\Rightarrow 2$}\\
+	Let $P,N$ be the decomposition of $N$ in positive and negetive sets using HJD[Hahn Jordan Decomposition]. Let $A,B$ be the disjoint decomposition of $X$ for $\nu$ and $\mu$. Then it is easy to check every element lies in one of the four sets: $A\cap P,A\cap N,B\cap P,B\cap N$. Now note,
+	\begin{itemize}
+		\item Decomposition of $X$ for $\nu^+$ and $\mu$ is achived by $A\cap P$ and $(A\cap N)\cup (B\cap P)\cup(B\cap N)$
+		\item Decomposition of $X$ for $\nu^-$ and $\mu$ is achived by $A\cap N$ and $(A\cap P)\cup (B\cap P)\cup(B\cap N)$
+	\end{itemize} 
+	\item  \textbf{Step 2: $2\Rightarrow 3$}\\
+	Let decomposition of $X$ for $\nu^+$ and $\mu$ be $E_1,F_1$ and for $\nu^-$ and $\mu$ be $E_2,F_2$. We calim the decomposition of $X$ for $|\nu|$ and $\mu$ is given by $E_1\cup E_2$ and $F_1\cap F2$.\sidenote{This is low-key motivated by the decomposition in step 1.}
+	Note that $|\nu|$ is null in $F_1\cap F_2$ both $\nu^+$ and $\nu^-$ is null in $F_1,F_2$. $\mu$ is null in both $E_1$ and $E_2$. By lemma 3, part 2, $\mu$ is null in $E_1\cup E_2$.
+	\item   \textbf{Step 3: $3\Rightarrow 1$}\\
+	Let $A,B$ be the disjoint decomposition of $X$ for $|\nu|$ and $\mu$. We claim this is the appropiate decomposition for $\nu$ and $\mu$ as well. It is already known $\mu$ is null in $A$. As $|\nu$ is null in $B$, $\nu$ is null in $B$ follows from lemma 7($3\Rightarrow1$). 
+\end{itemize}
+
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.3]
+	Let $\nu$ be a signed measure on $(X,\mathcal M)$. Prove
+	\begin{enumerate}
+		\item $\mathcal L^1(\nu)=\mathcal L^1(|\nu|)$
+		\item If $f\in\mathcal{L}^1(\nu)$, $|\int fd\nu|\leq \int|f|d|\nu|$
+		\item If $e\in\mathcal M$, $|\nu|(E)|=\sup \{|\int_Efd\nu|:|f|\leq 1\}$
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Solution outline:} Our main goal will be to study $f$ on the decomposition of $X$ made by $HJD$ due to $\nu$\\
+\textbf{Solution part-1:}\\
+Let $X$ be decomposed into positive set $P$ and negetive set $N$. We assume $\nu>-\infty$. Let $f\in\mathcal{L}^1(\nu)$. Let $\chi_E$ denote the characteristic function on $E$. Then we have:
+\begin{align}
+	\int|f|d|\nu|=\int|f|(\chi_P+\chi_N)d(\nu^++\nu^-)=\int|f|d\nu^++\int|f|d\nu^-<\infty
+\end{align}
+Therefore, $f\in\mathcal L^1(|\nu|)$.\\
+
+Now assume $f\in\mathcal L^1(|\nu|)$. Then as before,
+\begin{align}
+	\infty>\int|f|d|\nu|=\int|f|(\chi_P+\chi_N)d(\nu^++\nu^-)=\int|f|d\nu^++\int|f|d\nu^-
+\end{align}
+But as $\nu+,\nu^-$ are both unsigned we can conclude that $\int|f|d\nu^+,\int|f|d\nu^-<\infty$. Therefore, $f\in\mathcal L^1(\nu)$\\
+\textbf{Solution part-2:}\\
+\begin{align*}
+	\left|\int fd\nu\right|=&\left|\int f(\chi_P+\chi_N)d(\nu^+-\nu^-)\right|\\
+	=&\left|\int f d\nu^+-\int f d\nu^- \right|\\
+	\leq&\left|\int f d\nu^+\right|+\left|\int f d\nu^- \right|\\
+	\leq&\int |f| d\nu^++\int |f| d\nu^-=\int|f|d|\nu|
+\end{align*}
+\textbf{Solution part-2:}\\
+Firt we show that $|\nu|(E)$ is an upper bound and then we show that it is attained. For any measurable $f$ with $|f|\leq1$ we have:
+$$\left|\int_Efd\nu\right|\leq \int_E|f|d|\nu|\leq \int_Ed|\nu|=|\nu|(E)$$
+Therefore, $|\nu|(E)$ is an upper bound. Now set $f=\chi_P-\chi_N$. For any $x\in X$,either  $x\in P$ or $x\in N$. Therefore $f(x)\in\{1,-1\}$.  
+\begin{align*}
+	\left|\int f_Ed\nu\right|=&\left|\int_E (\chi_P-\chi_N)(\chi_P+\chi_N)d(\nu^+-\nu^-)\right|\\
+	=&\left|\int_E(\chi_P^2-\chi_N^2)d(\nu^+-\nu^-)\right|\\
+	=&\left|\int_E\chi_P^2d\nu^++\int_E\chi_N^2d\nu^-\right|\\
+	=&\left|\int_E\chi_Pd\nu^++\int_E\chi_Nd\nu^-\right|\\
+	=&|\nu^+(E\cap P)+\nu^+(E\cap N)|\\
+	=&|\nu^+(E\cap P)+\nu^+(E\cap N)+\nu^+(E\cap N)+\nu^+(E\cap P)|\\
+	=&\nu^+(E)+\nu^-(E)=|\nu|(E)
+\end{align*}
+
+
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.4]
+	If $\nu$ is a signed measure and $\lambda$ and $\mu$  are unsigned measures such that $\nu=\lambda-\mu$ then $\lambda\geq\nu^+,\mu\geq\nu^-$
+\end{tcolorbox}
+\textbf{Solution outline: }There are two ways to do this. The easy but long way is to show that this is true for positive and negetive sets respectively and then stich things up. The hard and short way is to do the same stiching but in a single line.\\
+\textbf{Proof : }\\
+Let $X=P\sqcup N$ be the Hahn Jordan decomposition of $X$ in positive set $P$ and negative set $N$. Assume $E\subseteq P$. Then:
+\begin{align*}
+	\nu(E)=\nu^+(E)+\nu^-(E)=\nu^+(E)=\lambda(E)-\mu(e)\leq\lambda(E)
+\end{align*}
+\begin{align*}
+	\nu^-(E)=0\leq\mu(E)
+\end{align*}
+The same steps can be repeated on subsets of $N$. Now for any measurable set $E$, we have:
+\begin{align*}
+	\nu^+(E)=\nu^+(E\cap P)+\nu^+(E\cap N)\leq \lambda(E\cap P)+\lambda(E\cap N)=\lambda(E)\\
+	\nu^-(E)=\nu^-(E\cap P)+\nu^-(E\cap N)\leq \mu(E\cap P)+\mu(E\cap N)=\mu(E)
+\end{align*}
+Which completes the proof.\\
+The following hard and short proof was given by Nitish:
+$$\nu^+(E)=\nu(E\cap P)=\lambda(E\cap P)-\mu(E\cap P)\leq \lambda(E\cap P)\leq \lambda(E)$$
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.5]
+	If $\nu_1,\nu_2$ are signed measures that both omit $\infty$ or $-\infty$ then 
+	$$|\nu_1+\nu_2|\leq|\nu_1|+|\nu_2|$$
+\end{tcolorbox}
+\textbf{Proof :}\\
+We note that:
+$$\nu_1+\nu_2=(\nu_1^++\nu_2^+)-(\nu_1^-+\nu_2^-)$$
+We use  the result of the previous question. Treat $\nu_1^++\nu_2^+$ as $\lambda$ and $\nu_1^-+\nu_2^-$ as $\mu$. 
+$$|\nu_1+\nu_2|=(\nu_1+\nu_2)^++(\nu_1+\nu_2)^-\leq (\nu_1^++\nu_2^+)+(\nu_1^-+\nu_2^-)=|\nu_1|+|\nu_2| $$
+
+
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.6]
+	Suppose $\nu(E) = \int f d\mu$, where $\mu$ is a positive measure and $f$ is an extended 
+$\mu-$integrable function. Describe the Hahn decompositions of $\nu$ and the positive, 
+negative, and total variations of $\nu$ in terms of $f$ and $\mu$·
+\end{tcolorbox}
+\textbf{Solution outline :}\\
+By the nature of Hahn Jordan we aill be done once we find out any suitable decomposition: the theorem will take care of uniqueness. The proof uses the folling insight: $E$ will be a positive set in $\nu$  if $f>\geq0$ in $E$.\\
+\textbf{Proof :}\\
+Set:
+$$P=\{x|f(x)\geq0\}$$
+$$N=\{x|f(x)<0\}$$
+It is easy to see that $X=P\sqcup N$. It follows that:
+$$\nu(E)=\int_{E\cap P}fd\mu+\int_{E\cap N}fd\mu=\int_E|f|\chi_Pd\mu-\int_E|f|\chi_Nd\mu$$
+Note that $\nu^+(E)=\int_E|f|\chi_Pd\mu$, $\nu^-(E)=\int_E|f|\chi_Nd\mu$ is a valid decomposition of $\nu$ in positive measures. It follows that the toatal variation measure is:
+$$|\nu(E)|=\nu^+(E)+\nu^-(E)=\int_E|f|(\chi_P+\chi_N)d\mu=\int_E|f|d\mu$$
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.7]
+	Suppose $\nu$ is signed measure on $(X,\mathcal M)$ and $E\in\mathcal M$
+	Then:
+	\begin{enumerate}
+		\item $\nu^+(E)=\sup\{\nu(F)|F\subseteq E,F\in\mathcal M\}$ and $\nu^-(E)=\inf\{\nu(F)|F\subseteq E,F\in\mathcal M\}$
+		\item $|\nu|(E)=\sup\{\sum_{i=1}^n|\nu(E_j)||n\in \mathbb{N},E=\bigsqcup_{j=1}^n E_j\}$
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Solution outline :}For both cases we show that the relevant figures are upper bound and the upper bound is attained.\\
+\textbf{Proof :}\\
+\begin{enumerate}
+	\item $\nu^+(E)$ is an uupper bound as $\nu^+(E)\geq\nu^+(F)\geq \nu(F)$. Set $F=E\cap P$ where $P$ is the positive set in Hahn Jordan decomposition of $X$. Similar thing is to be done for $\nu^-$
+	\item For any $\{E_j\},1\leq j\leq n,E=\bigsqcup_{j=1}^n E_j$ note that $|\nu|(E_j)\geq |\nu(E_j)|$ and $\sum_{i=1}^n|\nu(E_j)|\leq \sum_{i=1}^n|\nu|(E_j)=|\nu|\left(\cup_{j=1}^nE_j\right)=|\nu|(E)$. The bound is attained by setting $n=2$, $E_1=P,E_2=N$ where $P,N$ are positive and negetive sets in $X$ as found by Hahn Jordan decomposition.
+\end{enumerate}
+
+
+\subsection{Solutions to problems in section 3.2}
+\marginnote{Those problems are harder than the ones in 3.1. This is not something I appreciate. Also I don't have much time. So I will upload hand written solutions for this part.}
+
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.8]
+	Show that the following statements are equivalent:
+	\begin{enumerate}
+		\item $\nu\ll\mu$
+		\item $\nu^+\ll\mu,\nu^-\ll\mu$
+		\item $|\nu|\ll\mu$
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Proof :}\\
+Let $X=P\sqcup N$ be the decomposition of $X$ in positive set $P$ and negetive set $N$ according to Hahn Jordan decompositon. \\
+\textbf{Part 1: (1$\Rightarrow$2)}\\
+For $E\in\mathcal{M}$,
+$$\mu(E)=0\Rightarrow \mu(E\cap P)=0\Rightarrow\nu(E\cap P)=0\Rightarrow\nu^+(E\cap P)=0\Rightarrow\nu^+(E)=0$$
+$$\mu(E)=0\Rightarrow \mu(E\cap N)=0\Rightarrow\nu(E\cap N)=0\Rightarrow\nu^-(E\cap N)=0\Rightarrow\nu^-(E)=0$$
+Therefore, $\nu^+\ll\mu,\nu^-\ll\mu$\\
+\textbf{Part 1: (2$\Rightarrow$3)}\\
+For $E\in\mathcal{M}$ and $\mu(E)=0$ we have $\nu+(E)=0,\nu^-(E)=0$. Therefore,
+$|\nu|(E)=\nu^+(E)+\nu^-(E)=0$ and we can conclude $|\nu|\ll\mu$ \\
+\textbf{Part 3: (3$\Rightarrow$1)}\\
+For $E\in\mathcal{M}$ and $\mu(E)=0$ we have $|\nu|(E)=0$. We note that 
+$$0\leq |\nu(E)|=|\nu^+(E)-\nu^-(E)|\leq\nu^+(E)+\nu^-(E)=|\nu|(E)=0$$
+It follows that $\nu(E)=0$. Therefore, $\nu\ll\mu$.
+
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.9]
+	Suppose $\{\nu_j\}$ is a sequence of unsigned measures. 
+	\begin{enumerate}
+		\item If $\nu_j\perp \mu$ for all $j$ then $\sum_{j=1}^\infty \nu_j\perp \mu$
+		\item If $\nu_j\ll \mu$ for all $j$ then $\sum_{j=1}^\infty \nu_j\ll \mu$
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Solution outline :}The second part is easy. In the first part getting the appropiate decomposition of $X$ is the crucial step. Studying the problem with $\nu_!,\nu_2$ helped in my case. The key insight is union and intersection of null sets are null.\\
+\textbf{Proof :}\\
+\begin{enumerate}
+	\item For every $j$ there exists a decomposition of $X$ as $F_j\sqcup E_j$ such that $\mu(F_j)=0$, $\nu(E_j)=0$. Set $F=\cup_{i=1}^\infty F_j,E=\cap_{i=1}^\infty E_j$. It follows that $\nu_j(F)\leq \nu_j(F_j)=0\Rightarrow\sum_{j=1}^\infty \nu_j(F)=0 $ and $\mu(E)\leq \sum_{i=1}^\infty \mu(E_j)=0\Rightarrow\mu(E)=0$
+	\item Let $\mu(E)=0$. Then $\forall j\in\mathbb{N},\nu_j(E)=0\Rightarrow\sum_{j=1}^\infty\nu_j(E)=0$.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=c4,colframe=c3,title=Problem 3.10]
+	Theorem 3.5 may fail if $\nu$ is not finite. Show this for the following cases:
+	\begin{enumerate}
+		\item $d\nu(x)=\frac{dx}{x}$ and $d\mu(x)=dx$ on (0,1)
+		\item $\nu$ is the counting measure and $\mu(E)=\sum_{n\in E}2^{-n}$ on $\mathbb{N}$
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Proof: }\\
+Proving absolute continuity is easy in every case.
+\begin{enumerate}
+	\item Set $\epsilon=1/2$. Let there exist some $\delta<1$ for which the theorem holds. Consider the set $E=(0,\min(\delta,1))$. Note that $\mu(E)\leq \delta$. But $\int_E d\nu=\infty>\epsilon$. We need to prove that the integral diverges. Consider the following sequence of increasing functions $\{f_n\},f_n=\chi_{[\frac{1}{n},1]}$. It is easy to see that $f_n\to 1$ on $(0,1)$ and $f_n$ is increasing. Note that $\int_E f_nd\nu=\int_{1/n}^\delta\frac{1}{x}dx=\ln(n)+\ln(\delta)$. By monotone convergence theorem, we have:
+	$$\int_Ed\nu=\int_E\lim_{n\to\infty} f_nd\nu=\lim_{n\to\infty}\int_E f_nd\nu=\infty$$
+	\item We use the fact that $\{\sum_{i=1}^n1/2^i\}$ is a cauchy sequence. Set $\epsilon=1$. Assume a delta exists. There exists $N$ such that $\sum_{i=N}^\infty 1/2^i\leq \delta$. Set $E=\{N,N+1,N+2\hdots\}$. Therefore, $\mu(E)<\delta$ but $\nu(E)=\infty>\epsilon$   
+\end{enumerate}
+
+
+
+
+
+
+\backmatter
+
+\bibliography{sample-handout}
+\bibliographystyle{plainnat}
+
+
+\printindex
+
+\end{document}
+

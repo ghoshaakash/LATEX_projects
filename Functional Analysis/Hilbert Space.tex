@@ -1,0 +1,504 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{fullpage} % changes the margin
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{mhchem}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solution:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+\usepackage{mathtools}
+
+\DeclarePairedDelimiterX{\inp}[2]{\langle}{\rangle}{#1, #2}
+
+\newtheorem*{definition}{Definition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%Header-Make sure you update this information!!!!
+\noindent
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\large\textbf{Aakash Ghosh} \hfill \textbf{}   \\
+Email: ag19ms129@iiserkol.ac.in  \hfill ID: 19MS129 \\
+\normalsize Course: Functional Analysis\hfill Term: Autumn 2022\\
+\noindent\rule{7in}{2.8pt}
+\section{Hilbert Space}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Problem 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}{7.1}
+    Let $V$ be a real Banach space and assume that the parallelogram
+    identity holds in $V$. Define
+        $$<u,v>=1/4(||u+v||^2-||u-v||^2)$$
+    Show that this defines an inner product which induces the given norm
+    and hence that $V$ is a Hilbert space.
+\end{problem}
+\begin{solution}
+This is the Von Neumman-Fréchet theorem. 
+\begin{enumerate}
+    \item $\langle x,y\rangle=\langle y,x\rangle$ follows from properties of norm.
+    \item Let $x,y,z\in V$. Then we have:
+    \begin{align*}
+       ||x+y+z||+||x-y+z||=2||x+z||^2+2||y||^2\\ 
+       ||x+y+z||+||-x+y+z||=2||y+z||^2+2||x||^2\\ 
+    \end{align*}
+    Sum and half it to get:
+    \begin{align*}
+    ||x+y+z||= ||x+z||+||y+z||+||x||+||y||-(1/2)||x-y+z||-(1/2)||-x+y+z||   
+    \end{align*}
+    Replace $z$ by $-z$ to get:
+    \begin{align*}
+    ||x+y-z||= ||x+z||+||y+z||+||x||+||y||-(1/2)||x-y-z||-(1/2)||-x+y-z||   
+    \end{align*}
+    Note that $||x-y-z||=||-x+y+z||,||-x+y-z||=||x-y+z||$. Subtract the last two equations to get:
+    $$\inp{x+y}{z}=||x+y+z||-||x+y-z||=||x+z||+||y+z||-||x+z||-||y+z||=\inp{x}{z}+\inp{y}{z}$$
+    \item Set $y=x$ to get $\inp{2x}{z}=2\inp{x}{z}$. Note that $\inp{0}{z}=0$. Set $y=-x$ to get $\inp{-x}{z}=-\inp{x}{z}$. Extend by induction to get $\inp{nx}{z}=n\inp{x}{z}$ for $n\in\mathbb Z$.
+    \item For some rational $p/q$ where $p,q\in\mathbb Z,q\ne0$, we note $\inp{(p/q)x}{z}=\inp{(p/q)x}{(q/q)z}=pq\inp{x/q}{z/q}=(pq)/q^2\inp{x}{z}=(p/q)\inp{x}{z}$.[The fact that $\inp{x/q}{z/q}=1/q^2\inp{x}{z}$ follows from direct computation.]
+    \item Note that $||\cdot||$ is continuous function. So for any real number $r\in\mathbb{R}$ we have a sequence $\{q_n\},q_n\in\mathbb N$ such that $q_n\to r$ and so $\inp{rx}{z}=\lim_{n\to\infty}\inp{q_nx}{z}=\lim_{n\to\infty}q_n\inp{x}{z}=r\inp{x}{z}$ 
+    \item It follows trivially that $\inp{x}{x}=(1/4)||2x||^2=||x||^2\Rightarrow||x||=\sqrt{\inp{x}{x}}$. 
+\end{enumerate}
+\end{solution} 
+
+
+\begin{problem}{7.4}
+    Let $H$ be a Hilbert space and let $M$ be a non-zero and proper closed subspace of $H$. Let $P:H\to M$ be the orthogonal projection of $H$ onto $M$. Show that $||P||=1$.
+\end{problem}
+\begin{solution}
+    For $m\in M$, we have: $P(m)=m$. Set $\tilde m=\frac{1}{||m||}m$ to get $P(\tilde m)=\tilde m$. As $||\tilde m||=1$ it follows that $||P||\geq 1$. For any $v\in H$, we have: $v=v_{M}+v_{M^{\bot}}$. Therefore,
+    \begin{align*}
+        &\inp{P(v)}{P(v)}=\inp{v_M}{v_M}\leq\inp{v_M}{v_M}+\inp{v_{M^{\bot}}}{v_M}+\inp{v_{M}}{v_{M^\bot}}+\inp{v_{M^\bot}}{v_{M^\bot}}\\
+        &\Rightarrow||P(v)||^2\leq ||v||^2\\
+        &\Rightarrow||P||\leq 1
+    \end{align*}
+    Therefore, $||P||=1$. 
+\end{solution}
+
+\begin{problem}{7.5}
+    Let $H=l_2^n$. Let $J$ be the $n\times n$ matrix all of whose elements are $1/n$. Show that 
+    $$||J||_{2,n}=||I-J||_{2,n}=1$$
+\end{problem}
+\begin{solution}
+ Consider a vector given by $v=(v_1,v_2\hdots v_n)$. Set $s=\sum_{i=1}^{n}v_n$. Then $J(v)=(s/n,s/n\hdots s/n)$. We note that:
+ \begin{align*}
+    ||J(v)||^2&=\displaystyle\sum_{i=1}^{n}s^2/n^2\\ 
+    &=s^2/n\\
+    &=\left(\sum_{i=1}^nv_i\right)^2/n\leq\left(\sum_{i=1}^nv_i^2\right)=||v||^2
+ \end{align*}
+ Therefore, $||J||\leq 1$. But we note that for $v=(1,1,\hdots1)$, $J(v)=v$. Therefore, $||J||\geq 1$. So $||J||=1$. Note that $(I-J)(v)=(v_1-s,v_2-s\hdots v_i-s\hdots v_n-s)$. Therefore,
+ \begin{align*}
+    ||J(v)||^2&=\sum_{i=1}^n(v_i-s/n)^2\\
+    &=\sum_{i=1}^nv_i^2-2(s/n)\sum_{i=1}^nv_i+s^2/n\\
+    &=||v||-2(s/n)(s)+s^2/n\\
+    &=||v||-s^2/n\leq||v||
+\end{align*}
+Therefore, $||J||\leq 1$. Set $v=(1,-1,0,0\dots)$. Note that $s-0$ in this case and so $||J(v)||=||v||$. So $||J||\geq 1$. It follows that $||J||=1$. 
+\end{solution}
+
+
+\begin{problem}{7.6}
+Show that the following matrix describes an orthogonal projection in $l_2^3$. Find the range of the projection. 
+$$T=\frac{1}{3}\begin{bmatrix}
+    2&-1&-1\\
+    -1&2&-1\\
+    -1&-1&2
+\end{bmatrix}$$    
+\end{problem}
+\begin{solution}
+    We note that $e_1=\frac{1}{\sqrt2}(1,-1,0)$ and $e_2=\frac{1}{\sqrt2}(1,0,-1)$ are eigen vectors with eigen values $1$. Moreover, we note that $T(1,1,1)=0$. Set $e_3=(1,1,1)$. We note that $e_3$ is orthogonal to $span\inp{e_1}{e_2}$ and $v=\sum_{i=1}^3c_ie_i=\sum_{i=1}^2c_ie_i$. So $T^2=T$ and thus $T$ is projection on $span\inp{e_1}{e_2}$. It follows that range of $T$ is $span\inp{e_1}{e_2}$ as well. 
+\end{solution}
+\begin{problem}{7.7}
+    Let $$K=\{(a,b)\in\mathbb R^2|a,b\geq0\}$$ If $a\leq 0$ and $b\leq 0$, calculate $P_K(z)$ where $z=(a,b)$. 
+\end{problem}
+\begin{solution}
+    Let $\alpha=(x,y)\in K$. Then $\inp{z}{\alpha}=\inp{(a,b)}{(x,y)}=ax+by$. Now as $a,b\leq 0$ and $x,y\geq 0$, we have $\inp{z}{\alpha}\leq 0$. This can be written as $\inp{z-0}{\alpha-0}\leq 0$. As $K$ is closed and convex, it follows that  $P_K(z)=0$
+\end{solution}
+\begin{problem}{7.8}
+    Let $H$ be a real Hilbert space and let $K$ be a closed convex cone in
+    $H$ with vertex at the origin. 
+    \begin{enumerate}
+        \item If $x, y \in K$ and if $\alpha$ and $\beta$ are non-negative scalars, show that
+        $\alpha x + \beta y \in K$.
+        \item If $x\in H$, show that $P_K(x)$ is characterized by the following relations:
+        $$(x,P_K(x))=||P_K(x)||^2\text{ and }(x-P_K(x),y)=0\forall y\in K$$
+    \end{enumerate}
+\end{problem}
+
+\begin{solution}
+    \begin{definition}[Closed convex cone with tip at origin]
+        A cone is a subset of a vector space with the property that if $x\in V$ then $cx\in V$ for all $c\in\mathbb R^+$.
+    \end{definition}
+    \begin{enumerate}
+        \item If $x,y\in K$ then $(\alpha+\beta)x,(\alpha+\beta)y\in K$. It follows that $\frac{\alpha}{\alpha+\beta}(\alpha+\beta)x+\frac{\beta}{\alpha+\beta}(\alpha+\beta)y=\alpha x+\beta y\in K$.
+        \item The statement is false. Ref: 7.7. Note that $K$ is closed convex cone and the second condition is not fullfilled. 
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}{7.9}
+    Let $H=L^2(-\pi,\pi)$. Write down explicitly the orthogonal projection of each of the following closed subspaces
+    \begin{enumerate}
+        \item $M=\{f\in H|f(t)=f(-t)$ for every  $t\in(-\pi,\pi)\}$
+        \item $M=\{f\in H|\int_{-\pi}^\pi f(t)dt=0\}$
+        \item $M=\{f\in H|f\equiv 0$ on $(-\pi,0)\}$
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item We claim $P_M(f)=\frac{f(x)+f(-x)}{2}$. Let $g\in M$. Then note that $g-P_M(f)$ is even. Note that $(f-P_M(f))(x)=\frac{f(x)-f(-x)}{2}$ is odd. So $\left(g-P_M(f)\right)\left(f-P_M(f)\right)$  is odd and thus $$\inp{f-P_M(f)}{g-P_M(f)}=\int_{-\pi}^\pi\left(g-P_M(f)\right)\left(f-P_M(f)\right)=0$$So the claimed form of $P_M(f)$ is correct.
+        \item We claim $P_M(f)(x)=f(x)-\frac{\int_{-\pi}^\pi f(t)dt}{2\pi}$. Let $g\in M$. Set $h=g-P_M(f)$. Note that $h\in M$. Then note that:
+        \begin{align*}
+            \inp{f-P_M(f)}{h}=\int_{-\pi}^{\pi}\left[\frac{\int_{-\pi}^\pi f(t)dt}{2\pi}\right]h(x)dx=\left[\frac{\int_{-\pi}^\pi f(t)dt}{2\pi}\right]\int_{-\pi}^\pi h(x)dx=0
+        \end{align*}
+        So the claimed form of $P_M(f)$ is correct.
+        \item Define:
+        \begin{align*}
+            f_1(t)=\begin{cases}
+                f(t)&\text{ if }t<0\\
+                0&\text{ if }t\geq 0\\
+            \end{cases}
+            \quad\text{ \ and\  }\quad
+            f_2(t)=\begin{cases}
+                0&\text{ if }t< 0\\
+                f(t)&\text{ if }t\geq  0\\
+            \end{cases}
+        \end{align*}
+        It follows trivially that $f=f_1+f_2$.  We claim $P_M(f)(x)=f_2(x)$. Let $g\in M$. Set $h=g-P_M(f)$. Note that $h\in M$. It follows that:
+        \begin{align*}
+            \inp{f-P_M(f)}{h}=\int_{-\pi}^{\pi}f_1(t)h(t)=\int_{-\pi}^{0}f_1(t)\times 0+\int_{0}^{\pi}0\times h(t)=0
+        \end{align*}
+        So the claimed form of $P_M(f)$ is correct.
+    \end{enumerate}
+\end{solution}
+\begin{problem}{7.19}
+    Consider the space $L^2(0,1)$. Define $r_0(t)\equiv 1$ and 
+    $$r_n(t)=\sum_{i=1}^{2^n}(-1)^{i-1}\chi_{\left[\frac{i-1}{2^n},\frac{i}{2^n}\right]}(t)$$
+    \begin{enumerate}
+        \item Show that $r_n(t)=sgn(\sin 2^n\pi t),0\leq t\leq 1 $
+        \item Show that $\{r_n(t)\}_{n=0}^\infty$ is orthonormal in $L^2(0,1)$, but it is not complete. 
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    
+\begin{enumerate}
+    \item Follows from the fact that for $x\in\left(\frac{i-1}{2^n},\frac{i}{2^n}\right)$ we have\  $2^n\pi x\in[(i-1)\pi,i\pi]$ and so $sgn(\sin(2^n\pi x))=(-1)^{i-1}$. 
+    \item Consider $\inp{r_n}{r_m}$ where $n>m$. Note that for $1\leq i\leq 2^m$:
+    \begin{align*}
+        \int_{\frac{i-1}{2^m}}^{\frac{i}{2^m}}r_n(t) r_m(t)dt&=(-1)^i\int_{\frac{i-1}{2^m}}^{\frac{i}{2^m}}r_n(t)dt\\
+        &=(-1)^i\int_{\frac{i-1}{2^m}}^{\frac{i}{2^m}}\sum_{j=2^{n-m}i}^{2^{n-m}i}(-1)^{j-1}\chi_{\left[\frac{j-1}{2^n},\frac{j}{2^n}\right]}(t)dt\\
+        &=(-1)^i\sum_{j=2^{n-m}i}^{2^{n-m}i}\int_{\frac{i-1}{2^m}}^{\frac{i}{2^m}}(-1)^{j-1}\chi_{\left[\frac{j-1}{2^n},\frac{j}{2^n}\right]}(t)dt\\
+        &=(-1)^i\sum_{j=2^{n-m}i}^{2^{n-m}i}\frac{(-1)^{j-1}}{2^n}=0
+    \end{align*}
+    Therefore, $\inp{r_n}{r_m}=\int_0^1r_n(t)r_m(t)dt=\sum_{i=1}^{2^m}\int_{\frac{i-1}{2^m}}^{\frac{i}{2^m}}r_n(t) r_m(t)dt=0$. It is easy to see $\inp{r_n}{r_n}=\int_0^1|r_n(t)|dt=1$. This proves orthonormality.\\
+    Assume the given basis is complete. Define $f$ as below:
+    $$f(x)=\begin{cases}
+       \sum_{n=1}^\infty \frac{1}{(n+1)^2}r_n(x)&\quad\text{ if }x\leq \frac{1}{2}\\
+       0&\quad\text{ if }x> \frac{1}{2}\\ 
+    \end{cases}=\sum_{i=1}^\infty \frac{1}{(n+1)^2}r_n(x)\chi_{(0,\frac{1}{2}]}$$
+    Note that $|f(x)|\leq \sum_{i=1}^\infty \frac{1}{(n+1)^2}<\infty$. As $f$ is bounded on bounded set, it is in $L^2(0,1)$. By our assumption, we can write $f(t)=\sum_{i=0}^\infty c_ir_i(t)$
+    where 
+    \begin{align*}
+        c_n&=\inp{f}{r_n}=\inp*{\sum_{i=1}^\infty \frac{1}{(i+1)^2}r_i(x)\chi_{(0,\frac{1}{2}]}}{r_n}\\
+        &=\sum_{i=1}^\infty \frac{1}{(i+1)^2}\int_0^1 r_i(x)\chi_{(0,\frac{1}{2}]}r_n(x)dx\\
+        &=\sum_{i=1}^\infty \frac{1}{(i+1)^2}\int_0^{1/2} r_i(x)r_n(x)dx\\
+    \end{align*}
+    Define $t=2x$. Note that $r_n(x)=sgn(\sin 2^n\pi x)=sgn(\sin 2^{n-1}\pi 2x)=sgn(\sin 2^{n-1}\pi t)=r_{n-1}(t)$. Substituting above we get:
+    \begin{align*}
+        c_n&=\sum_{i=1}^\infty \frac{1}{(i+1)^2}\int_0^{1/2} r_i(x)r_n(x)dx\\
+        &=\sum_{i=1}^\infty \frac{1}{2(i+1)^2}\int_0^{1} r_{i-1}(t)r_{n-1}(t)dt\\
+        &=\sum_{i=0}^\infty \frac{1}{2(i+2)^2}\int_0^{1} r_{i}(t)r_{n-1}(t)dt\\
+        &=\sum_{i=0}^\infty \frac{1}{2(i+2)^2}\inp{r_{i}}{r_{n-1}}=\frac{1}{2\left[(n-1)+2\right]^2}=\frac{1}{2(n+1)^2}\\
+    \end{align*}
+    But note that for $x\leq 1/2$, we have $f(x)-\sum_{i=0}^\infty c_ir_i(x)=\sum_{n=1}^\infty \frac{1}{(n+1)^2}r_n(x)-\sum_{i=0}^\infty \frac{1}{2(i+1)^2}r_i(x)=f(x)/2-\frac{1}{2}\ne 0$ which contradicts the assumption of completion. So the given basis is not complete. 
+\end{enumerate}
+\end{solution}
+
+\begin{problem}{7.20}
+    Let $(a,b)\in\mathbb R$ be a finite interval and let $\{\phi_n\}_{n\in\mathbb N}$ be an orthonormal basis for $L^2(a,b)$. Define
+    $$\Phi_{i,j}(x,y)=\phi_(x)\times\phi_j(y)$$
+    for $(x,y)\in(a,b)\times(a,b)$. Show that $\{\Phi_{i,j}\}_{i,j\in\mathbb{R}}$ is a basis for $L^2(a,b)\times(a,b)$.
+\end{problem}
+\begin{solution}
+    Orthonormality follows from the following:
+    $$\inp{\Phi_{i,j}}{\Phi_{i',j'}}=\int\int_{(a,b)\times(a,b)}\phi_i(x)\phi_j(y)\phi_{i'}(x)\phi_{j'}(y)dxdy=\int_{(a,b)}\phi_{i}(x)\phi_{i'}(x)dx\int_{(a,b)}\phi_{j}(y)\phi_{j'}(y)dy=\delta_{i,i'}\delta_{j,j'}$$
+    Let there exist $f$ such that $\inp{f}{\Phi_{i,j}}=0$ for all $i,j\in\mathbb  N$. Then we note that:
+    \begin{align*}
+        &\int_a^b\int_a^bf\Phi_{i,j}dxdy=\int_a^b\int_a^bf(x,y)\phi_{i}(x)\phi_j(y)dxdy=0\\
+        \Rightarrow&\int_a^b\left(\int_a^bf(x,y)\phi_{i}(x)dx\right)\phi_j(y)dy=0
+    \end{align*}
+    Define $f_1(y)=\int_a^bf(x,y)\phi_{i}(x)dx$. Substituting we have for all $j\in\mathbb N$:
+    \begin{align*}
+        &\int_a^b\left(\int_a^bf(x,y)\phi_{i}(x)dx\right)\phi_j(y)dy=0\\
+        \Rightarrow&\int_a^bf_1(y)\phi_j(y)dy=0\\
+        \Rightarrow&\inp{f_1}{\phi_j}=0
+    \end{align*}
+    As $\phi_j$ is a complete orthonormal basis it follows that $f_1(y)$ is $0$ almost everywhere. Therefore, for all $i\in\mathbb{N}$:
+    \begin{align*}
+        \int_a^bf(x,y)\phi_{i}(x)dx=0\Rightarrow \inp{f(x,y)}{\phi_{x}}=0
+    \end{align*}
+    Again, as $\phi_j$ is a complete orthonormal basis it follows that $f(x,y)$ is $0$ almost everywhere. As $\inp{f}{\Phi_{x,y}}=0\forall x,y\in\mathbb{N}\Rightarrow f=0$, we claim $\{\Phi_{i,j}\}_{i,j\in\mathbb{N}}$ is a complete orthonormal basis. 
+\end{solution}
+\begin{problem}{7.21}
+Show that the sets 
+$$\left\{\frac{1}{\sqrt{\pi}}\right\}\cup \left\{\sqrt\frac{2}{{\pi}}\cos nt|n\in\mathbb N\right\}$$    
+is a complete orthonormal set in $L^2(0,\pi)$.
+\end{problem}
+\begin{solution}
+    Orthonormality of the first set with respect to the rest follows trivially. Write $\cos nt=\frac{1}{2}(e^{int}+e^{-int})$. Then we have:
+    \begin{align*}
+        \inp*{\sqrt\frac{2}{{\pi}}\cos nt}{\sqrt\frac{2}{{\pi}}\cos mt}=\frac{1}{2\pi}\int_{0}^\pi\left(e^{i(n+m)t}+e^{-i(n+m)t}+e^{i(n-m)t}+e^{i(m-n)t}\right)dt
+    \end{align*}
+    The above expression is 0 if $n\ne m$ and $1$ if $n=m$. This proves orthonormality. Extend $f$ evenly by defining
+    $$f_0(x)=\begin{cases}
+        f(x)&\quad\text{ if }x>0\\
+        f(-x)&\quad\text{ if }x<0\\
+        0&\quad\text{ if }x=0\\
+    \end{cases}$$
+    Consider the fourier expansion of  $f_0$. As $f_0$ is even and $\sin$ is odd function,
+    \begin{align*}
+        \int_{-\pi}^\pi f_0\sin nt dt=0
+    \end{align*}
+    We get a fourier expansion of $f_0(x)=a_0+\sum_{i=1}^\infty a_n\cos nt$. But $f=f_0|_{(0,\pi)}$, Therefore $f(x)=a_0+\sum_{i=1}^\infty a_n\cos nt$ for any $f\in L^2(0,\pi)$ which proves completeness. 
+\end{solution}
+\begin{problem}{7.22}
+Let $f,g\in L^2(-\pi,\pi)$ and let their fourier series be given by  
+\begin{align*}
+    f(t)=&\frac{a_0}{2}+\sum_{i=1}^\infty(a_n\cos nt+b_n\sin nt)\\
+    g(t)=&\frac{c_0}{2}+\sum_{i=1}^\infty(c_n\cos nt+d_n\sin nt)
+\end{align*}
+Show that 
+$$\frac{1}{\pi}\int_{-\pi}^\pi f(t)g(t)=\frac{a_0c_0}{2}+\sum_{n=1}^\infty(a_nc_n+b_nd_n)$$
+\end{problem}
+\begin{solution}
+    We know $\left\{\frac{1}{\sqrt{2\pi}}\right\}\cup\bigcup_{n\in\mathbb N}\left\{\frac{1}{\sqrt\pi}\cos nt\right\}\cup\bigcup_{n\in\mathbb N}\left\{\frac{1}{\sqrt\pi}\sin nt\right\}$ forms a complete orthonormal basis for $L^2(-\pi,\pi)$. Rewrite $f,g$ as follows:
+    \begin{align*}
+        f(t)=&\frac{a_0\sqrt{2\pi}}{2}\times\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^\infty(a_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\cos nt+b_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\sin nt)\\
+        g(t)=&\frac{c_0\sqrt{2\pi}}{2}\times\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^\infty(c_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\cos nt+d_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\sin nt)
+    \end{align*}
+    Define:
+    \begin{align*}
+        f_N(t)=&\frac{a_0\sqrt{2\pi}}{2}\times\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^N(a_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\cos nt+b_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\sin nt)\\
+        g_N(t)=&\frac{c_0\sqrt{2\pi}}{2}\times\frac{1}{\sqrt{2\pi}}+\sum_{n=1}^N(c_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\cos nt+d_n\sqrt{\pi}\times\frac{1}{\sqrt{\pi}}\sin nt)
+    \end{align*}
+    We know that $f_N\xrightarrow[L^2]{}f,g_N\xrightarrow[L^2]{}g$. As the inner product is continuous, it follows that $\inp{f}{g}=\lim_{n\to\infty}\inp{f_N}{g_N}$. Note that
+    $$\inp{f}{g}=\lim_{n\to\infty}\inp{f_N}{g_N}=\lim_{n\to\infty}\left(\pi a_0c_0+\sum_{i=1}^N(\pi a_nc_n+\pi b_nd_n)\right)=\pi a_0c_0+\sum_{n\in\mathbb N}(\pi a_nc_n+\pi b_nd_n)$$
+    The statement follows by re-arrangement. 
+\end{solution}
+
+
+\begin{problem}{7.25}
+    Compute the fourier series of the function:
+    $$f(x)=\begin{cases}
+        -1&\quad\text{ if }-\pi\leq x< 0\\
+        1&\quad\text{ if }0<x\leq  \pi
+    \end{cases}$$
+\end{problem}
+\begin{solution}
+    We write 
+    \begin{align*}
+        f(t)=&{a_0}\times\frac{1}{\sqrt{2\pi}}+\sum_{i=1}^\infty\left(a_n\times\frac{1}{\sqrt{\pi}}\cos nt+b_n\times\frac{1}{\sqrt{\pi}}\sin nt\right)\\
+    \end{align*}
+    We know $\left\{\frac{1}{\sqrt{2\pi}}\right\}\cup\bigcup_{n\in\mathbb N}\left\{\frac{1}{\sqrt\pi}\cos nt\right\}\cup\bigcup_{n\in\mathbb N}\left\{\frac{1}{\sqrt\pi}\sin nt\right\}$ forms a complete orthonormal basis for $L^2(-\pi,\pi)$. So we have:
+    \begin{align*}
+        a_0&=\int_{-\pi}^\pi f(t)\times\frac{1}{\sqrt{2\pi}}dt=0\\
+        a_n&=\int_{-\pi}^\pi f(t)\times\frac{1}{\sqrt{\pi}}\cos ntdt=0\\
+        b_n&=\int_{-\pi}^\pi f(t)\times\frac{1}{\sqrt{\pi}}\sin ntdt=2\int_{0}^\pi f(t)\times\frac{1}{\sqrt{\pi}}\sin ntdt=2\int_{0}^\pi\frac{1}{\sqrt{\pi}}\sin ntdt=\frac{2}{\sqrt\pi}\frac{1-\cos n\pi}{n}
+    \end{align*}
+    Therefore, the required expansion is:
+    $$f(x)=\frac{4}{\pi}\sin t+\frac{4}{3\pi}\sin 3t+\frac{4}{5\pi}\sin 5t\hdots$$
+\end{solution}
+
+\begin{problem}{7.26}
+    Compute the Fourier cosine series of the function $f(t) = \sin t$ On
+$[0, \pi]$.
+\end{problem}
+\begin{solution}
+    By 7.21, we know that
+    $$\left\{\frac{1}{\sqrt{\pi}}\right\}\cup \left\{\sqrt\frac{2}{{\pi}}\cos nt|n\in\mathbb N\right\}$$    
+    forms a complete orthonormal basis. 
+    Write $f=\frac{a_0}{\sqrt{\pi}}+\sum_{i=1}^\infty a_n\sqrt\frac{2}{{\pi}}\cos nt$. Then we have:
+    \begin{align*}
+        a_0&=\int_{0}^\pi \sin t\frac{1}{\sqrt{\pi}}dt=\frac{2}{\sqrt\pi}\\
+        a_i&=\int_{0}^\pi \sin t\frac{\sqrt{2}}{\sqrt{\pi}}\cos ntdt=\begin{cases}
+            \frac{2\sqrt 2}{\sqrt\pi (1-n^2)}&\text{ if }n\text{ is even}\\
+            0&\text{ if }n\text{ is odd}
+        \end{cases}
+    \end{align*}
+\end{solution}
+
+\begin{problem}{7.27}
+    \begin{enumerate}
+        \item Compute the Fourier sine series and the Fourier cosine series of the function $f(t) = t$ on $[0, \pi]$.
+        \item Evaluate:
+        $$\sum_{n=1}^\infty \frac{1}{n^2}\quad \text{ and } \quad \sum_{n=1}^\infty \frac{1}{n^4}$$
+        using Parseval's identity.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item The basis of the cosine series is given by
+        $$\left\{\frac{1}{\sqrt{\pi}}\right\}\cup \left\{\sqrt\frac{2}{{\pi}}\cos nt|n\in\mathbb N\right\}$$  
+        This is an orthogonal basis. The coefficients are given by:
+        \begin{align*}
+            a_0&=\int_{0}^\pi t\frac{1}{\sqrt\pi}dt=\frac{\pi^{3/2}}{2}\\
+            a_n&=\int_{0}^\pi  t\frac{\sqrt{2}}{\sqrt{\pi}}\cos ntdt=\frac{\sqrt2}{\sqrt\pi}\frac{\cos(n\pi-1)}{n^2}=\begin{cases}
+                \sqrt{\frac{2}{\pi}}\frac{-2}{n^2}&\quad\text{ if }n\text{ is odd}\\
+                0&\quad\text{ if }n\text{ is even}
+            \end{cases}
+        \end{align*}
+        The basis of sine series is  given by:
+        \begin{align*}
+            \left\{\sqrt\frac{2}{{\pi}}\sin nt|n\in\mathbb N\right\}
+        \end{align*}        
+        This is an orthogonal basis. The coefficients are given by:
+        \begin{align*}
+            a_n=\int_{0}^\pi  t\frac{\sqrt{2}}{\sqrt{\pi}}\sin ntdt=-\dfrac{\sqrt{2}\pi\cos\left(n\pi\right)}{\sqrt{{\pi}}\,n}
+        \end{align*}
+    \item By Perseval's identity we have
+    \begin{align*}
+        ||f||_{L^2}=\sum_{i=0}^\infty{a_i}^2
+    \end{align*}Note that $||f||_{L^2}=\int_0^\pi f^2(t)dt=\frac{\pi^3}{3}$. 
+    By using $\left\{\frac{1}{\sqrt{\pi}}\right\}\cup \left\{\sqrt\frac{2}{{\pi}}\cos nt|n\in\mathbb N\right\}$ as our orthonormal basis we get:
+    \begin{align*}
+        &\frac{\pi^3}{3}=\frac{\pi^3}{4}+\sum_{n=\text{odd}}\frac{2}{\pi}\frac{4}{n^4}\\
+        \Rightarrow &\sum_{n=\text{odd}}\frac{1}{n^4}=\frac{\pi^4}{96}
+    \end{align*}
+    Set $S=\sum_{n\in\mathbb{N}}\frac{1}{n^4}$. We have:
+    \begin{align*}
+        &S=\sum_{n\in\mathbb{N}}\frac{1}{n^4}=\sum_{n=\text{even}}\frac{1}{n^4}+\sum_{n=\text{odd}}\frac{1}{n^4}=\sum_{n\in\mathbb N}\frac{1}{(2n)^4}+\sum_{n=\text{odd}}\frac{1}{n^4}\\
+        \Rightarrow &S=\frac{S}{16}+\frac{\pi^4}{96}\\
+        \Rightarrow &S=\frac{\pi^4}{90}
+    \end{align*}
+    Doing the same with the sine series gives $\sum_{n\in\mathbb N}\frac{1}{n^2}=\frac{\pi^2}{6}$
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}{7.30}
+    Let $H$ be an infinite dimensional separable Hilbert space. Let $\{e_k\}_{k=1}^\infty$ be an orthonormal basis for $H$. Let $\{\lambda_k\}_{k=1}^\infty$ be a bounded sequence of scalars. For $x\in H$, define
+    $$A(x)=\sum_{k=1}^\infty \lambda_k\inp{x}{e_k}e_k$$
+    Show that $A$ is well-defined for each $x\in H$ and that $A\in\mathcal L(H)$
+\end{problem}
+\begin{solution}
+    For $x,y\in H$ and $c_1,c_2\in \mathbb R$. Then we note
+    \begin{align*}
+        A(c_1x+c_2y)=\sum_{k=1}^\infty \lambda_k\inp{c_1x+c_2y}{e_k}=\sum_{k=1}^\infty \lambda_k(c_1\inp{x}{e_k}+c_2\inp{y}{e_k})=c_1A(x)+c_2A(y)
+    \end{align*}
+    Let $\lambda_i\leq M\forall i\in\mathbb N$. Then:
+    $$||A(x)||^2=\sum_{n\in\mathbb N}\lambda _k^2\inp{x}{e_k}^2\leq \sum_{n\in\mathbb N}M^2\inp{x}{e_k}^2=\sum_{n\in\mathbb N}\inp{Mx}{e_k}^2=||Mx||^2$$
+    So $||A(x)||\leq ||Mx||=M||x||\Rightarrow ||A||\leq M$. As $A$ is linear and bounded, it is continuous. \\
+    As $||A||$ is well-defined, the series converges and the operator is well-defined. 
+\end{solution}
+
+\section{CT-2, 2021}
+Almost every question is of the form ” Justify true or false”. If it is true prove
+it otherwise give counter example or proper reason.
+\begin{problem}{1}
+    Let $B=\left\{e_{n}, n \in \mathbb{N}\right\}$ be an orthonormal basis of Hilbert space $H$ over $\mathbb{R}$. Let $\left\{x_{n}\right\}$ be a bounded sequence in $\mathbb{R}$ and set a new sequence
+$$y_{n}=\frac{x_{1} e_{1}+x_{2} e_{2}+. . x_{n} e_{n}}{n}, n \in \mathbb{N} $$
+(i) Find (with justification) $$ \lim _{n \longrightarrow \infty}\left\|y_{n}\right\|_{H}$$\  \\
+(ii) The sequence $\sqrt{n} y_{n} \rightarrow 0$ in $\sigma\left(H, H^{*}\right)$ i.e. weakly converges to zero. Justify your answer.
+\end{problem}
+\begin{solution}Let $M$ be an upper bound of $|x_n|$.\\
+(i) We note that:
+$$||y_n||^2=\sum_{i=1}^n\frac{x_i^2}{n^2}\leq\sum_{i=1}^n\frac{M^2}{n^2}=\frac{M^2}{n}$$
+It follows trivially that $\lim_{n\to\infty}||y_n||_{H}=0$\\
+(ii) Let $T$ be linear operator in $H$. By Riez Representation, we have $T(\cdot)=\inp{\cdot}{w}$. Let $w=\sum_{n\in\mathbb N}w_ne_n$ where $\lim_{n\to\infty }|w_n|< M'/\sqrt{n}$ for any $M'\in\mathbb R^+$. We know this happens because $\sum_{n\in\mathbb{N}}w_n^2$ converges. Then:
+$$\lim_{n\to\infty}T(\sqrt n y_n)=\lim_{n\to\infty}\sqrt{n}\inp{y_n}{w}=\lim_{n\to\infty}\frac{1}{\sqrt{n}}\sum_{i=1}^nx_iw_i<\lim_{n\to\infty}\frac{1}{\sqrt{n}}\sum_{i=1}^n\frac{MM'}{\sqrt{i}}$$
+We approximate by integrals:
+$$\sum_{i=1}^n\frac{1}{\sqrt{i}}= 1+\sum_{i=2}^n\frac{1}{\sqrt{i}}\leq 1+\sum_{i=2}^n\int_{i-1}^i\frac{1}{\sqrt{t}}dt=\alpha+\beta\sqrt n $$
+Putting above we get: 
+$$\lim_{n\to\infty}T(\sqrt ny_n)\leq \lim_{n\to\infty} \frac{1}{\sqrt{n}}(\alpha+\beta \sqrt{n})MM'$$
+Now $\frac{1}{\sqrt{n}}(\alpha+\beta \sqrt{n})$ is bounded and $M'$ can be taken to be as close to 0 as we want. So $\lim_{n\to\infty}T(\sqrt ny_n)=0$. As this holds for any $T$, $\sqrt ny_n\rightharpoonup 0$.\\
+\textbf{Alternate Solution :}\\
+Assume $w_i,x_i\geq 0$ for all $i$. Let $w^N=\sum_{n=1}^Nw_ie_i$. Now $w^N\to w$ and $y_n\to 0$. Therefore
+$$\lim_{n\to \infty}\inp{\sqrt n y_n}{w}=\lim_{n\to \infty}\lim_{m\to \infty}\inp{\sqrt n y_n}{w^m}=\lim_{m\to \infty}\lim_{n\to \infty}\inp{\sqrt n y_n}{w^m}=0$$
+If all the coefficients are not in $\mathbb R^+$, then:
+$$|\lim_{n\to\infty}\inp{\sqrt ny_n}{w^m}|=\left|\lim_{n\to\infty}\sum_{i=1}^n\sqrt n\frac{x_iw_i}{n}\right|\leq \lim_{n\to\infty}\sum_{i=1}^n\sqrt n\frac{|x_i||w_i|}{n}$$
+Set $y_n'=\sum_{i=1}^n |x_i|e_i/n$ and $w'=\sum_{i=1}^\infty |w_i|e_i$ and apply the above result to get:
+$$|\lim_{n\to\infty}\inp{\sqrt ny_n}{w}|\leq 0$$
+So $\lim_{n\to\infty}T(\sqrt ny_n)=0$ and $\sqrt ny_n\rightharpoonup 0$.
+\end{solution}
+
+\begin{problem}{2}
+    (i) Let $E=C[0,1]$ with sup norm. If $g_{n} \in E$ and $g_{n} \rightarrow g$ in $\sigma\left(E, E^{*}\right)$ i.e. weakly converges to $g$. Then the sequence $\left\{g_{n}\right\}$ converges point wise on $[0,1]$. Justify your answer.\\ \\
+    (ii) If a sequence $\left\{h_{n}\right\} \in E$ is point wise convergent, then it is a weak convergent sequence. Justify your answer.    
+\end{problem}
+\begin{solution}
+    \ \\
+    (i)Set $J_x=f(x)$. As $g_n\rightharpoonup g$, for any $x\in\mathbb R$ we have $J_x(g_n)\to J_x(g)$ or $g_n(x)\to g(x)$. Therefore, $g_n\to g$ point wise. \\
+    (ii) No. Consider $T(f)=\int_{0}^1fdx$. Set 
+    $$h_n(x)=\begin{cases}
+        nx&\quad\text{ if }x\leq 1/n\\
+        2n-nx&\quad\text{ if }1/n\leq x\leq 2/n\\
+        0&\quad\text{ if }x\geq 2/n\\
+    \end{cases}$$
+    Note that $h_n\to 0$ point wise but $T(h_n)\not\to  T(0)$. So it is not weakly convergent.  
+\end{solution}
+
+\begin{problem}{3}
+    (i) Let $H$ be a Hilbert space over $\mathbb{R}$. If $x_{n} \rightarrow x$ in $\sigma\left(H, H^{*}\right)$ i.e. weakly converges to $x$ and $\left\|x_{n}\right\|_{H}$ converges to $\|x\|_{H}$ in $\mathbb{R}$. Then $x_{n} \longrightarrow x$ in $H$ i.e. converges in normed $\|.\|_{H}$ topology or strong topology. Justify your answer.\\ \\
+    (ii) Let $H$ be a Hilbert space. If $K \subset H$ is compact in weak topology $\sigma\left(H, H^{*}\right)$ then $K$ is bounded and closed in weak topology $\sigma\left(H, H^{*}\right)$. Justify your answer.
+\end{problem}
+\begin{solution}
+    \ \\
+    (i) Note that
+    \begin{align*}
+        \inp{x-x_n}{x-x_n}=\inp{x}{x}+\inp{x_n}{x_n}+2\inp{x_n}{x}
+    \end{align*}
+    Now we know $\inp{x_n}{x_n}=||x_n||^2\to ||x||^2$. As $T=\inp{\cdot}{x}$ is a linear functional of $H$ and $x_n\rightharpoonup x$, it follows that $T(x_n)\to T(x)$. Putting those substitutions above we get:
+    \begin{align*}
+        \inp{x-x_n}{x-x_n}=\inp{x}{x}+\inp{x_n}{x_n}-2\inp{x_n}{x}\to 2||x||^2-2||x||^2=0
+    \end{align*}
+    Therefore $||x-x_n||\to 0$which implies strong convergence.\\
+    (ii) As $K$ is compact and every $T\in H^{*}$ is continuous, $T(K)$ is compact and bounded. As image of $K$ is bounded in any linear functional, it is bounded in normed topology. Let $x\in K^c$. As compact sets are closed we have some weakly open set $U_x$ such that $U_x\cap K=\phi$. But as weak topology is a subset of normed topology, we can conclude that $U_x$ is also open in normed topology and $x$ is an exterior point. As every point in $K^c$ is exterior in normed topology, we claim $K^c$ is strongly open or $K$ is strongly closed.
+\end{solution}
+
+\noindent\rule{7in}{2.8pt}
+
+\end{document}
+ 
