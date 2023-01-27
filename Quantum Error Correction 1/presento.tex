@@ -1,0 +1,186 @@
+%!TEX program = lualatex
+\documentclass{beamer}
+\usetheme{metropolis} 
+
+% Presento style file
+\usepackage{config/presento}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+\usepackage{pifont}
+
+% custom command and packages
+\input{config/custom-command}
+ 
+% Information
+\title{Probability and Wiener process}
+\subtitle{}
+\author{Aakash Ghosh}
+\institute{19MS129}
+\date{$1^{st}$ November, 2022}
+
+\begin{document}
+
+% Title page
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+
+% sections in the presentation
+\begin{frame}{Timeline}    
+    We are going to look at:
+    \begin{enumerate}
+        \item Probability from a measure theoretic viewpoint\pause
+        \item The Law of Large Numbers (LLN)\pause
+        \item The Central Limit Theorem (CTL)\pause
+        \item Weiner Processes
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Probability from a measure theoretic viewpoint}}}
+\begin{frame}{Terminology}
+    We look at some terminology used by probabilists  and their analysis counterparts.\pause
+    \begin{enumerate}
+         \item A \textcolor{colorgreen}{Sample Space} is a \textcolor{colorblue}{Measure Space}\pause
+         \item A \textcolor{colorgreen}{Measurable set} is an \textcolor{colorblue}{Event}\pause
+         \item A \textcolor{colorgreen}{Measurable function} is a \textcolor{colorblue}{Random Variable}\pause
+         \item The \textcolor{colorgreen}{integral $\int fd\mu$} is called the \textcolor{colorblue}{Expectation or Mean of Random Variable $f$}.\pause We will denote expectations with \textcolor{colororange}{$E[\cdot]$}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Terminology}
+    \begin{enumerate}
+         \item The \textcolor{colorblue}{Variance} of a Random Variable \textcolor{colororange}{$X$} is defined as \textcolor{colororange}{$\sigma^2(X)=\inf_{a\in\mathbb R}E[(X-a)^2]$}.\pause If \textcolor{colororange}{$X$} has the second moment, then \textcolor{colororange}{$a=E[X]$}.\pause
+         \item The \textcolor{colorblue}{Standard Deviation} is defined as the \textcolor{colororange}{$\sigma(X)=\sqrt{Var(X)}$}.\pause
+         \item We define the \textcolor{colorblue}{distribution} of \textcolor{colororange}{$X$} to be \textcolor{colororange}{$F(t)=P(X<t)$}\pause
+        \everymath{\color{colororange}}
+         \item For random variables $\{X_i\}_{i=1}^n$, we can define a joint distribution by considering a map from $\Omega\to \mathbb R^n$ and the measure defined by the distribution function given by $F(t_1,t_2\hdots)=P(\cap \{X_i\leq t_i\})$
+    \end{enumerate}
+    
+\end{frame}
+
+
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Independence of events}}}
+\begin{frame}{Independence of Events}
+A set of events $\{E_i\}_{i=1}^n$ is called \textcolor{colorblue}{ A set of Independent Events} if for any subset $\{E_{i_k}\}$ of those events we have:
+\begin{tcolorbox}
+    $$P(\cap E_{i_k})=\prod P(E_{i_k})$$
+\end{tcolorbox}\pause
+We can extend this definition to an infinite collection $\{E_i\}_{i=1}^\infty$ by requiring   $\{E_i\}_{i=1}^k$ to be an independent set of event for all $k\in\mathbb N$.
+\end{frame}
+\begin{frame}{Extension of independence to sub sigma algebras}
+    Let $\{\mathcal A_i\}_{i=1}^n$ be a collection of sub sigma algebras. We call this set independent if for any choice of $A_i\in \mathcal A_i$ we have $\{A_i\}_{i=1}^n$ to be an independent set of events.\pause\\ A thing to note is if we define $\mathcal A_i$ to be the sigma algebra defined by $E_i$, then we get the definition given before this. 
+\end{frame}
+
+
+\begin{frame}{Independence of Random variables}
+    We call a set of Random variables $\{X_i\}_{i=1}^n$ to be an \textcolor{colorblue}{Indpendent set of random variables} if for any collection of measurable sets $B_i\in \mathcal B_\mathbb R$ we have $\{X_i^{-1}(B_i)\}$ to be a set of independent events.\\\pause
+    Such a collection is uniquely characterized by the fact that the joint distribution is the product of the individual distributions, i.e. 
+    \begin{tcolorbox}
+        $$P_{(X_1,X_2,X_3\hdots)}=\prod P_{(X_i)}$$
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{Properties of Independent Random Variables}
+    Independence is a rather strong property, and we get some non-trivial results.\pause For a collection of random variables $\{X_i\}_{i=1}^n$ 
+    \begin{enumerate}
+         \item $P_{X_1+X_2...}=P_{X_1}*P_{X_2}*\hdots$\pause
+         \item $E(\prod|X_j|)=\prod E(|X_j|)$\pause
+         \item $\sigma^2(\sum X_i)=\sum\sigma^2(X_i)$\pause
+         \item In general for a measurable $f$, and independent random Variables $X,Y$, we have $E(X.(f\circ Y))=E(X)E(f\circ Y)$\pause
+    \end{enumerate}
+\end{frame}
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Law of large numbers(LLN)}}}
+\begin{frame}{The Idea behind LLN}
+    The idea behind LLN is that when an experiment is run multiple times, the resulting result is close to the mean expectations.\\\pause Another way to think about this is to note that the probability (measure) the set taking values away from the expectation is low which is something we expect: points with higher probability gets highlighted when we perform integrations.\\\pause
+    There are some restriction on random variables for which this law can be applied, and we look at three variations.
+\end{frame}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\begin{frame}{The Weak Law of large numbers.}
+    The Weak Law of Large Numbers that if $\left\{X_j\right\}_1^{\infty}$ is a sequence of independent $L^2$ random variables with means $\left\{\mu_j\right\}$ and variances $\left\{\sigma_j^2\right\}$, and if $n^{-2} \sum_1^n \sigma_j^2 \rightarrow 0$ as $n \rightarrow \infty$, then $n^{-1} \sum_1^n\left(X_j-\mu_j\right) \rightarrow 0$ in probability as $n \rightarrow \infty$.\\\pause\vfil
+
+    \noindent
+    \cmark This is very easy to prove: Only requires Chebyshev's inequality\\\pause
+
+    \noindent
+    \xmark As the name of the theorem suggests, the conditions can be relaxed.
+\end{frame}
+
+\begin{frame}{The strong law of natural numbers}
+    Let $\left\{X_j\right\}_1^{\infty}$ be a sequence of independent $L^2$ random variables with means $\left\{\mu_j\right\}$ and variances $\left\{\sigma_j^2\right\}$. If $n^{-2} \sum_1^n \sigma_j^2 \rightarrow 0$ as $n \rightarrow \infty$, then $n^{-1} \sum_1^n\left(X_j-\mu_j\right) \rightarrow 0$ in probability as $n \rightarrow \infty$.\\
+    \noindent
+    \cmark Relaxes the bounds on $\lim_{n\to\infty}n^{-2}\sum_{i=1}^n\sigma_i^2$\\\pause
+
+
+    \noindent
+    \xmark Requires some work for a full prove. In particular, the  Borel-Cantelli lemma and Kolmogorov's Inequality identity is required. 
+\end{frame}
+
+\begin{frame}{The strong law of natural numbers for IIDs}
+    If $\left\{X_n\right\}_1^{\infty}$ is a sequence of independent identically distributed $L^1$ random variables with mean $\mu$, then $n^{-1} \sum_1^n X_j \rightarrow \mu$ almost surely as $n \rightarrow \infty$.    \pause\\
+    \begin{itemize}
+        \item For IIDs relaxation we get a relaxation with respect to the presence of the second moment.
+    \end{itemize}
+\end{frame}
+
+\framecard[colorgreen]{{\color{white}\hugetext{The Central Limit Theorem (CLT)}}}
+
+\begin{frame}{Weak/Vague convergence of measure}
+ Let $\{\mu_n\}_{n=1}^\infty$ be a sequence of Borel measures on an LCH $X$. We say the \textcolor{colorblue}{sequence converges to $\mu$ vaguely} if for any $f\in C_C(X)$  we have $\int fd\mu_n\to \int f d\mu$.\pause\\
+ If $X=\mathbb R$, then by Riesz Representation theorem, we have some function $f_n$ such that $\mu_n(E)=\int_E f_ndm$. Then it is sufficient that $f_n$ converges to $f$ on the points of continuity of $f$. 
+\end{frame}
+
+\begin{frame}{The Central Limit Theorem (CLT)}
+    Let $\left\{X_j\right\}$ be a sequence of independent identically distributed $L^2$ random variables with mean $\mu$ and variance $\sigma^2$. As $n \rightarrow \infty$, the distribution of $(\sigma \sqrt{n})^{-1} \sum_1^n\left(X_j-\mu\right)$ converges vaguely to the standard normal distribution $\nu_0^1$, and for all $a \in \mathbb{R}$,
+$$
+\lim _{n \rightarrow \infty} P\left(\frac{1}{\sigma \sqrt{n}} \sum_1^n\left(X_n-\mu\right) \leq a\right)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^a e^{-t^2 / 2} d t
+$$
+\end{frame}
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Wiener Processes}}}
+
+\begin{frame}{A physical background}
+    Wiener Processes occur naturally in nature in the form of Brownian motion. We start with the following assumptions:
+    \begin{enumerate}
+        \item For an increasing sequence $\{t_i\}_{i=1}^\infty$, the set of random variables $\{X(t_i+1)-X(t_i)\}_{i=1}^\infty$ are independent.\\\pause
+        \item As there are no external factors and the process is homogenous, we can assume $X(t+r)-X(t)$ depends on $r$ only (and not on $t$).\pause
+        \item Divide $n$ in small sections of length $\delta$. Then we note $X(t+n)-X(n)=\sum_{i=1}^{t/\delta}X(t+(k+1)\delta)-X(t+k\delta)$. We can therefore consider the distribution to be the limiting sum of and infinite series of itself.\pause Therefore, it stands to reason that the distribution is a normal distribution.\pause
+        \item Moreover, it is easy to see from the properties of IID's that $\sigma^2(X(t+k)-X(t))=k\sigma^2(X(t+1)-X(t))$
+    \end{enumerate}
+\end{frame}
+\begin{frame}{The distribution function}
+    From the above heuristic considerations, owe guess that $X$ has the following distribution :
+    \begin{tcolorbox}
+        $$X(t+k)-X(k)\sim \nu_{0}^{C(k)}$$
+    \end{tcolorbox}
+    \hdots which indeed supports our assumptions.
+\end{frame}
+\end{document}
