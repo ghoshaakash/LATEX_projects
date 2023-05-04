@@ -1,0 +1,562 @@
+% !TeX program = LuaLaTeX
+\documentclass[12pt,oneside]{book}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage[left=0.5in,right=1.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{mhchem}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{titlesec, blindtext, color}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{sidenotes} 
+\usepackage{esdiff}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\usepackage{esvect}
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=blue!8] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solution:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+\setlength\parindent{0pt}
+
+
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor[HTML]{0e4eb3}{\Huge|}\hsp}{0pt}{\Huge\bfseries}
+
+\titleformat{\section}[hang]{\huge\bfseries}{\thesection\hsp\textcolor[HTML]{db3949}{\huge|}\hsp}{0pt}{\huge\bfseries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \newgeometry{left=7.5cm,top=1.2cm,right=1cm}
+    \begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=1,inner sep=0pt] at (current page.center)
+    {\includegraphics[width=\paperwidth,height=\paperheight]{graphics/cover.png}};
+    \end{tikzpicture}
+    \vphantom{A}
+    \vfill
+    \noindent{\fontsize{35}{35} \selectfont \bfseries\sffamily\noindent\textcolor{black}{Probability}}
+    \\{\fontsize{20}{35} \selectfont \bfseries\sffamily \textcolor{black}{Aakash Ghosh, Chat GPT, Aditya}}
+    \par
+    \noindent
+    \makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+    \par
+    \noindent
+    {\large\sffamily\textcolor{black}{Written in Pain}}
+\end{titlepage}
+\clearpage
+
+%\setmainfont{KITTY CAT}
+\setmainfont{Meows}
+
+\tableofcontents
+
+\chapter{Basic Stuff}
+\section{Probability measures and Random variable}
+\begin{marginfigure}%
+    \includegraphics[width=2.4\marginparwidth]{graphics/(40).png}
+\end{marginfigure}%
+\begin{enumerate}
+    \item A probability measure is a finite measure space with a total measure of $1$. The corresponding $\sigma$ algebra is called the event space. 
+    \item \textbf{Definition: [Random Variable]}\\
+    A \textbf{Random Variable} is a measurable function.
+    \item \textbf{Definition: [CDF]}\\
+    We define the $CFD$ of a Random Variable(RV) as:
+    $$F(x)=P(X\leq x)=P\circ X^{-1}(-\infty,x]$$
+    Note that this defines a push forward measure on $\mathbb R$. We use $\mu$ and $F$ interchangeably.
+    \item Properties of CDF:
+    \begin{enumerate}
+        \item It is monotone increasing
+        \item It is right continuous. 
+        \item It has both left and right limits
+        \item If $P(X=x)=0\forall x\in\mathbb R$, it is said to be continuous RV. It is equivalent to $F$ being continuous. 
+        \item For a discrete RV, there are countable many $x$ such that $P(X=x)\ne0$.
+        \item $\lim_{x\to\infty}F(x)=1,\lim_{x\to-\infty}F(x)=0$ 
+    \end{enumerate}
+    \item \textbf{Definition: [Support]}\\ We define the support of a discrete distribution as:
+    $$S=\{x|P(X=x)\ne 0\}$$
+    We define the support of a continuous distribution with PDF $f$ as the set:
+    $$S=\{x|f(x)\geq0\}$$
+    \begin{marginfigure}%
+        \includegraphics[width=2.4\marginparwidth]{graphics/(41).png}
+    \end{marginfigure}
+    \section{Generalized Inverse}
+    \item \textbf{Definition: [Generalized Inverse]}\\We define the Generalized Inverse of a CDF $F$ as:
+    $$F^{-}(u)=\inf\{x|F(x)\geq u\}$$
+    \item We can generate a RV with $CDF$ $F$ and an uniform distribution $U$, If $X=F^{-}U$ then $X\sim F$.
+    \item Properties of Quantile Functions($F^-$)
+    \begin{enumerate}
+        \item $F^-(u)\leq x\Leftrightarrow u\leq F(x)$
+        \item $P(X\leq x)=F(x)$
+        \item $F^-$ is monotone increasing
+        \item It is left continuous
+        \item It has both left and right limits
+    \end{enumerate}
+    \section{Independence of events}
+    \item \textbf{Definition: [Independence of Events]}:
+    The set of events $\{A_i\}$ is said to be independent if for all finite subcollection we have:
+    $$P\left(\cap A_{i_k}\right)=\prod P(A_{i_k})$$ 
+    \item We can generalise this to sigma algebra where for each selection $A_i\in\mathcal M_i$ we have Independence.
+    \item \textbf{Definition: [Pairwise Independence of Events]}:
+    The set of events $\{A_i\}$ is said to be pairwise independent if for all finite subcollection we have:
+    $$P( A_{i}\cap A_j)= P(A_i)P(A_j)$$ 
+    Independence implies pairwise Independence, but the converse is not true.
+    \section{Kolmogorov's 0-1 law}
+    \item \textbf{Definition: [Tail of a sequence]}
+    Let $\{A_i\}_{i\in\mathbb N}$ be a sequence of events. Define:
+    $$\mathcal{A}_n=\sigma\{A_1,A_2\hdots A_n\}$$
+    $$\mathcal{A}'_n=\sigma\{A_n,A_{n+1},A_{n+2}\hdots\}$$
+    \item The Kolmogorov 0-1 law states that for any collection ${X_n}$ of independent random variables with a common distribution function $F$, and for any event $E$ determined by the tail $\sigma$-algebra $\mathcal{T}_n=\bigcap_{n=1}^\infty \sigma(X_n,X_{n+1},\dots)$, the probability of $E$ is either 0 or 1, i.e.,
+
+    \begin{equation*}
+    \mathbb{P}(E) = 0 \quad \text{or} \quad \mathbb{P}(E) = 1.
+    \end{equation*}
+    \item \textbf{Definition: [Limsup of sequence Events]}: This sigma algebra consisting of events occurring infinitely often. The limit superior (lim sup) of a sequence of events ${A_n}$ is defined as:
+
+    \begin{equation*}
+    \limsup_{n\to\infty} A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k = \{ \omega \in \Omega : \omega \in A_n \text{ for infinitely many } n \}.
+    \end{equation*}
+    \item \textbf{Definition: [Liminf of sequence Events]}: This sigma algebra consisting of events occurring always eventually. The limit inferior (lim inf) of a sequence of events ${A_n}$ is defined as:
+
+    \begin{equation*}
+    \liminf_{n\to\infty} A_n = \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k = \{ \omega \in \Omega : \omega \in A_n \text{ for all but finitely many } n \}.
+    \end{equation*}
+
+\section{Borel-Cantelli lemma}
+
+\item \textbf{Definition: [The first Borel-Cantelli lemma]}:The first Borel-Cantelli lemma states that if ${A_n}$ is a sequence of events such that $\sum_{n=1}^\infty \mathbb{P}(A_n) < \infty$, then
+
+\begin{equation*}
+{P}(\limsup_{n\to\infty} A_n) = 0,
+\end{equation*}
+
+where $\limsup_{n\to\infty} A_n$ is the lim sup of the sequence of events ${A_n}$. In other words, almost surely, only finitely many of the events $A_n$ occur.
+\item \textbf{Definition: [The second Borel-Cantelli lemma]}:The second Borel-Cantelli lemma states that if ${A_n}$ is a sequence of independent events and $\sum_{n=1}^\infty \mathbb{P}(A_n) = \infty$, then
+
+\begin{equation*}
+{P}(\limsup_{n\to\infty} A_n) = 1,
+\end{equation*}
+
+where $\limsup_{n\to\infty} A_n$ is the $\limsup$ of the sequence of events ${A_n}$. In other words, almost surely, infinitely many of the events $A_n$ occur. This also holds for pairwise independent events.
+
+
+\chapter{Convergence Shenanigans}
+\section{Almost sure convergence}
+\item \textbf{Definition: [Absolute convergence]}: Absolute convergence of a random variable is a property that applies to a sequence of random variables ${X_n}$. We say that the sequence is absolutely convergent if 
+\begin{equation*}
+\mathbb{P} \left(\omega\text{ such that }X_n(\omega)\to X(\omega) \right) = 1.
+\end{equation*}
+
+\item Equivalently if $X_n\to X$ almost surely then:
+$$P\left(|X_n-X|\geq 1/k\text{ infinitely often}\right)=0\forall k$$
+
+\item Suppose $\sum_{n\in\mathbb N}P\left(|X_n-X|\geq 1/k\right)< \infty\forall k$ then $X_n\to X$ a.s. (almost surely). This is sufficient but not necessary for a.s convergence. 
+
+\item If $X_n$ is sequence of independent R.V then $X_n\to c$ a.s.where $c$ is a constant iff $\sum_{n\in\mathbb N}P\left(|X_n-c|\geq \epsilon\right)< \infty\forall \epsilon>0$
+
+\item Let $\{X_n\}$ be a sequence of i.i.d random variable. Define $S_n=\sum_{i=1}^n X_i$. Then:
+\begin{enumerate}
+    \item $P\left(\left|\frac{S_n}{n}-\mu\right|>\epsilon\text{ i.o}\right)=0\Leftrightarrow E(|X_1|)<\infty,E(|X_1|)=\mu$
+    \item $\sum_{n\in\mathbb N} P\left(\left|\frac{S_n}{n}-\mu\right|>\epsilon\text{ i.o}\right)<\infty\Leftrightarrow E(|X_1|^2)<\infty,E(|X_1|)=\mu$
+\end{enumerate}
+\item \textbf{Definition: [Markov's inequality]}: Markov's inequality for random variables states that for any non-negative random variable $X$ and any $a > 0$,
+
+\begin{equation*}
+\mathbb{P}(|X| \geq a) \leq \frac{\mathbb{E}\left[|X|^p\right]}{a^p}\quad\forall p\in(0,\infty).
+\end{equation*}
+\item Suppose $E[e^{tz}]<\infty$. Then:
+    $$P(z\geq \delta)\geq \frac{E[e^{tz}]}{e^{-t\delta}}$$
+
+\section{Other modes of convergence}
+\item \textbf{Definition: [Convergence in probability]}: A sequence of random variables ${X_n}$ converges to a random variable $X$ in probability, denoted by $X_n \xrightarrow{p} X$, if for every $\epsilon > 0$,
+
+\begin{equation*}
+\lim_{n\to\infty} \mathbb{P} \left( |X_n - X| > \epsilon \right) = 0.
+\end{equation*}
+
+\item \textbf{Definition: [$L^r$ convergence]}: Let $X$ and $X_n$ be random variables, and let $r$ be a positive real number. We say that the sequence of random variables ${X_n}$ converges to the random variable $X$ in $L^r$ sense, denoted by $X_n \xrightarrow{L^r} X$, if
+
+\begin{equation*}
+\lim_{n\to\infty} \mathbb{E} \left[ |X_n - X|^r \right] = 0.
+\end{equation*}
+
+\item \textbf{Definition: [Convergence in distribution]}: Let $X$ and $X_n$ be random variables with distribution functions $F$ and $F_n$, respectively. We say that the sequence of random variables ${X_n}$ converges to the random variable $X$ in distribution, denoted by $X_n \xrightarrow{d} X$, if
+
+\begin{equation*}
+\lim_{n\to\infty} F_n(x) = F(x),
+\end{equation*}
+
+for all continuity points $x$ of the distribution function $F$.
+
+In other words, $X_n$ converges to $X$ in distribution if the distribution function $F_n$ of $X_n$ converges pointwise to the distribution function $F$ of $X$ at all continuity points of $F$.
+
+\item a.s convergence $\Rightarrow$ convergence in probability
+\item convergence in probability $\Rightarrow$ convergence in distribution
+\item $L^r$ convergence $\Rightarrow$ convergence in probability for $r\geq 1$
+\item $L^s$ convergence $\Rightarrow$ $L^r$ convergence, for $s\geq r\geq 1$. 
+\item If $X_n\to C$ in distribution for $c\in\mathbb R$, then $X_n\to C$ in probability.
+\item If $X_n\to X$ in probability, there exists a subsequence $\sigma(i)$ such that $X_{\sigma(n)}\to X$ almost surely
+\item If $X_n$ is almost surely monotone, and if $X_n\to X$ in probability then $X_n\to X$ almost, surely. 
+\item Ref: 
+\begin{verbatim}
+    https://en.wikipedia.org/wiki/Convergence_of_random_variables#
+\end{verbatim}
+\section{Uniform Integrability}
+
+\item \textbf{Definition: [Uniform integrability]}: Let $X_1, X_2, \ldots$ be a sequence of random variables defined on a probability space $(\Omega, \mathcal{F}, \mathbb{P})$. We say that the sequence is uniformly integrable if
+
+\begin{equation*}
+\lim_{M \rightarrow \infty} \sup_{n} \mathbb{E}[|X_n| \mathbb{I}_{{|X_n| > M}}] = 0,
+\end{equation*}
+
+where $\mathbb{I}_{{|X_n| > M}}$ is the indicator function of the event ${|X_n| > M}$.
+
+In other words, a sequence of random variables is uniformly integrable if the tails of the sequence are small in an integrable sense, meaning that the expectation of the absolute value of each random variable times an indicator function of its tail decreases to zero uniformly as the tail threshold increases.
+
+\item If $\{X_n\}$ is U.I then $\sup_{n\geq 1}E\left(|X_n|\right)<\infty$
+\item If $\{X_n\}$ is sequence of random variable, such that $\sup_{n\geq 1}E\left(|X_n|^k\right)<\infty$ for some $k>1$. Then $\{X_n\}$ is U.I. and $\{|X_n|^l\}$ is U.I. for $1<l<k$. 
+\item Let $X$ and $\{X_n\}$ be a sequence of R.V. and suppose that $X_n\to X$ in probability. Let $r\in(0,\infty)$ and suppose $E\left(|X_n|^r\right)<\infty\forall n$. Then the following are equivalent:
+\begin{itemize}
+    \item $\{|X_n|^r\}$ is U.I.
+    \item $X_n\to X$ in $L^r$.
+    \item $E\left(|X_n|^r\right)\to E\left(|X|^r\right)$ as $n\to\infty$.
+\end{itemize} 
+
+\section{Metrics of convergence}
+\item $L^r$ convergence follows just the $L^r$ metric.
+\item Convergence in probability is given by:
+    $$d_P(X,Y)=E\left[\frac{|X_n-X|}{1+|X_n-X|}\right]$$
+\item \textbf{Definition: [Ky Fan metric]}: Let $X$ and $Y$ be two random variables with distributions $P_X$ and $P_Y$ on a metric space $(\mathcal{X}, d)$. The Ky Fan metric between $X$ and $Y$, denoted by $d_{KF}(P_X, P_Y)$, is defined as
+
+\begin{equation*}
+d_{KF}(P_X, P_Y) = \inf {\epsilon > 0: \text{there exists a coupling } \Pi \text{ such that } \mathbb{P}(d(X,Y)>\epsilon) \leq \epsilon},
+\end{equation*}
+
+where $\epsilon > 0$ and $d(X,Y)$ denotes the distance between $X$ and $Y$ in the metric space $(\mathcal{X}, d)$.
+
+In other words, the Ky Fan metric measures the minimum amount of coupling required to ensure that the probability of the distance between $X$ and $Y$ exceeding a given threshold $\epsilon$ is no larger than $\epsilon$ itself.
+
+For a sequence of random variables ${X_n}$ converging in distribution to $X$, the Ky Fan metric can be used to measure the rate of convergence, as $d_{KF}(P_{X_n}, P_X)$ measures the distance between the distribution of $X_n$ and $X$ in the metric space $(\mathcal{X}, d)$ with respect to the Ky Fan metric.
+
+\item Almost sure convergence is not metrizable. A simple counterexample to this fact is as follows:
+
+Consider:
+$$P(X_n=0)=1-\frac{1}{n}\qquad P(X_n=1)=\frac{1}{n}$$
+Doesn't converge absolutely as:
+$$\sum P\left(|X_n|>\epsilon\right)<\infty$$
+But $X_n\to X$ in probability. Therefore, for all subsequence there  is some sub subsequence which converge absolutely. So the whole sequence converges almost surely. But this is clearly not true.
+
+\textbf{Definition: [Supremum norm metric]}: Let $X$ and $Y$ be two random variables with cumulative distribution functions $F_X$ and $F_Y$. Then, the supremum norm metric between $X$ and $Y$, denoted by $d_{\infty}(X,Y)$, is defined as
+
+\begin{equation*}
+d_{\infty}(X,Y) = \sup_{x\in\mathbb{R}} |F_X(x) - F_Y(x)|.
+\end{equation*}
+
+In other words, the supremum norm metric measures the maximum difference between the cumulative distribution functions of $X$ and $Y$.
+The supremum norm metric is a metric on the space of all random variables equipped with the convergence in distribution topology.
+
+\section{Continuous mapping theorem}
+\item \textbf{Theorem: [Continuous Mapping Theorem]}: Let $X_n$ be a sequence of random variables that converges in probability to a random variable $X$, and let $g:\mathbb{R}\to\mathbb{R}$ be a continuous function. Then, the sequence of random variables $Y_n = g(X_n)$ converges in probability to $Y = g(X)$.
+
+In other words, if $X_n \xrightarrow{P} X$, and $g$ is a continuous function, then $g(X_n) \xrightarrow{P} g(X)$.
+It extends similarly to a.s and convergence in distribution.
+\section{Slutsky's theorem} 
+\item  \textbf{Theorem: [Slutsky's Theorem]}: Let $X_n$ and $Y_n$ be sequences of random variables, and let $c$ be a constant. Assume that $X_n$ converges in distribution to a random variable $X$, and $Y_n$ converges in probability to a constant $c$. Then, the following statements hold:
+\begin{enumerate}
+    \item $X_n + Y_n$ converges in distribution to $X+c$.
+    \item $X_n Y_n$ converges in distribution to $cX$.
+    \item If $c\neq 0$, then $\frac{X_n}{Y_n}$ converges in distribution to $\frac{X}{c}$, provided that $Y_n$ does not converge to zero in probability.
+\end{enumerate}
+\item \textbf{Definition: [Convergence in distribution of $(X_n,Y_n)$]}: Let $(X_n, Y_n)$ be a sequence of bivariate random variables, and let $(X, Y)$ be a bivariate random variable. We say that $(X_n, Y_n)$ converges in distribution to $(X, Y)$, denoted as $(X_n, Y_n) \xrightarrow{d} (X, Y)$, if for any continuous bounded function $f: \mathbb{R}^2 \rightarrow \mathbb{R}$, we have:
+\begin{equation*}
+\lim_{n \rightarrow \infty} \mathbb{E}[f(X_n, Y_n)] = \mathbb{E}[f(X, Y)].
+\end{equation*}
+
+In other words, $(X_n, Y_n)$ converges in distribution to $(X, Y)$ if and only if the expected value of any continuous bounded function of $(X_n, Y_n)$ converges to the expected value of the same function of $(X, Y)$.
+
+This definition can be extended to sequences of $k$-dimensional random vectors similarly. The convergence in distribution of $(X_n, Y_n)$ has many applications in probability theory, statistics, and econometrics, especially in the study of multivariate stochastic processes and time series analysis.
+\section{Law of Large number}
+\item \textbf{Definition: [Kronecker's Lemma]}:  Let ${a_n}$ and ${b_n}$ be sequences of positive real numbers such that $\sum_{n=1}^\infty a_n < \infty$. If ${b_n}$ is a sequence of non-negative real numbers such that $b_n$ increases to infinity, then:
+$$\frac{1}{b_n}\sum_{i=1}^na_ib_i\to 0$$
+as $n\to 0$. Suppose $\sum_{k=1}\infty a_k/k$ converges then $\frac{1}{n}\sum_{i=1}^na_i$ converges. 
+
+\item \textbf{Theorem (Portmanteau Theorem)}: Let ${X_n}$ be a sequence of random variables and let $X$ be another random variable. The following conditions are equivalent:
+\begin{enumerate}
+\item $X_n \rightarrow X$ almost surely.
+\item $X_n \rightarrow X$ in probability.
+\item $X_n \rightarrow X$ in distribution.
+\item For all bounded and continuous functions $f: \mathbb{R} \rightarrow \mathbb{R}$, we have $\mathbb{E}[f(X_n)] \rightarrow \mathbb{E}[f(X)]$.
+\end{enumerate}
+\item In particular, for a sequence of random variables ${X_n}$ and a random variable $X$, the following conditions are equivalent:
+\begin{enumerate}
+\item $\sum_{n=1}^{\infty} X_n$ converges to $X$ almost surely.
+\item $\sum_{n=1}^{\infty} X_n$ converges to $X$ in probability.
+\item $\sum_{n=1}^{\infty} X_n$ converges to $X$ in distribution.
+\end{enumerate}
+\item \textbf{Theorem [Bessel's inequality]}: Let ${X_n}$ be a sequence of independent random variables with $\mathbb{E}[X_n] = 0$ and $\operatorname{Var}(X_n) = \sigma_n^2 < \infty$. Then, the following statements are equivalent:
+\begin{enumerate}
+\item The sum $\sum_{n=1}^\infty X_n$ converges in $L^2$.
+\item The series $\sum_{n=1}^\infty \sigma_n^2$ converges.
+\end{enumerate}
+\item \textbf{[Kolmogorov's One Series Theorem]}: Let $\{X_n\}$ be a sequence of independent random variables, $E(X_n)^2<\infty$ for all $n\geq 1$. Then, $\sum_{k=1}^\infty \frac{Var(X_k)}{k^2}<\infty \implies \frac{1}{n}\sum_{n=1}^\infty(X_n-E(X_n))\xrightarrow[]{a.s.}0$.
+\item \textbf{[Kolmogorov's Three Series Theorem]}:Suppose $\{X_n\}$ is a sequence of independent random variables. Set $Y_n=X_n1(|X_n|\leq A)$ (truncations) for any $A>0$. Then, $\sum_{n=1}^\infty X_n$ converges iff
+\begin{enumerate}
+    \item $\sum_{k=1}^\infty P(X_n\neq Y_n)=\sum_{n=1}^\infty P(|X_n|>A)<\infty$.
+    \item $\sum_{n=1}^\infty E(Y_n)$ converges.
+    \item $\sum_{n=1}^\infty \text{Var}(Y_n)$ converges.
+\end{enumerate}
+for some $A>0$.
+\item \textbf{[Kolmogorov's strong law of large numbers.]}: Let $\{X_n\}$ be a sequence of iid random variables.
+\begin{itemize}
+    \item If $E(|X_1|)<\infty, E(X_1)=\mu, \frac{s_n}{n}\xrightarrow[]{a.s.}\mu$.
+    \item If $\frac{s_n}{n}\xrightarrow[]{a.s.}\ c, c\in\mathbb{R}, E(|X_1|)<\infty$ and $E(X_1)=c$.
+    \item If $E(|X_1|)=\infty, P(\frac{|s_n|}{n}=\infty \text{i.o.})=1$.
+\end{itemize}
+\item \textbf{[Kolmogorov-Feller weak law of large numbers]}:  Let $\{X_n\}$ be an iid sequence. Then
+\[
+\frac{s_n-nE\{X_11(|X_1|\leq n)\}}{n} \xrightarrow[]{p}0 \iff nP(|X_1|>n)\rightarrow 0
+\]
+
+\section{Applications of LLN}
+
+\item \textbf{[The empirical cumulative distribution function (CDF)]}  of a finite sequence of random variables $X_1, X_2, \ldots, X_n$ is defined as:
+
+$$F_n(x)=\frac{1}{n}\sum_{i=1}^n1_{[X_i\leq n]}$$
+
+where $I_{{X_i \leq x}}$ is the indicator function that takes the value $1$ if $X_i \leq x$ and $0$ otherwise.
+
+Geometrically, the empirical CDF is a step function that starts from $0$ at $-\infty$ and jumps up by $1/n$ at each observation value $X_i$. At the end of the sample, the empirical CDF takes the value $1$ at $+\infty$.
+
+\item \textbf{[ Glivenko-Cantelli theorem]} For any distribution function $F$ and any sample of $n$ independent and identically distributed random variables $X_1, X_2, \dots, X_n$ with distribution function $F_n$, the empirical distribution function $F_n$ converges uniformly to $F$ almost surely, i.e.,
+
+\begin{equation*}
+\sup_{x\in\mathbb{R}}\left|F_n(x) - F(x)\right| \overset{\text{a.s.}}{\longrightarrow} 0 \quad \text{as } n \rightarrow \infty,
+\end{equation*}
+
+where the symbol $\overset{\text{a.s.}}{\longrightarrow}$ denotes almost sure convergence. This means that the probability of the event that $F_n$ converges uniformly to $F$ tends to $1$ as $n$ goes to infinity.
+
+\item \textbf{[Kolmogorov-Feller weak law of large numbers]} Let ${X_n}$ be an independent and identically distributed (iid) sequence of random variables with mean $\mu$ and let $s_n = \sum_{i=1}^n X_i$ be their partial sum. Then, the following are equivalent:
+
+(i) $\frac{s_n - nE{X_1 1(|X_1| \leq n)}}{n} \xrightarrow[]{p} 0$ as $n \rightarrow \infty$;
+
+(ii) $nP(|X_1| > n) \rightarrow 0$ as $n \rightarrow \infty$, where $P(|X_1| > n)$ is the tail probability of $|X_1|$.
+
+\item Note that $nP(|X_1|)>n\to 0$ is weakening of $E[|X_1|]<\infty$
+
+
+\item Let $\{X_n\}$ be a sequence of independent R.V. Let $\{b_n\}$ be a sequence of positive numbers with $b_n$ increasing to $\infty$. Define $S_n=\sum_{i=1}^n X_i$. Set $Y_{i,n}=X_k1_{|X_k\leq b_n|}$ and $\mu_n=\sum_{k=1}^nE[Y_{k,n}]$. If $\sum_{k=1}^n P(X_k\ne Y_{k,n})\to 0$ then $(S_n-\mu_n)/b_n\to 0$ in probability. Further if $\mu_n/b_n\to0$ then $S_n/b_n\to 0$ in probability.
+
+
+
+
+
+
+
+\chapter{Convergence in distribution}
+
+\item \textbf{[Convergence in distribution]} is a type of convergence for sequences of random variables. Let $X_1, X_2, \ldots$ be a sequence of random variables and let $F_n(x)$ be their cumulative distribution function (CDF). We say that $X_n$ converges in distribution to a random variable $X$, denoted $X_n \xrightarrow[]{d} X$ as $n \rightarrow \infty$, if $F_n(x)$ converges pointwise to the CDF $F(x)$ of $X$ at all continuity points of $F(x)$, i.e.,
+
+\begin{equation*}
+\lim_{n\rightarrow \infty}F_n(x) = F(x) \quad \text{for all } x \text{ such that } F(x) \text{ is continuous}.
+\end{equation*}
+
+\item  Let $X_1, X_2, \ldots$ be a sequence of random variables that converges in distribution to a random variable $X$, denoted $X_n \xrightarrow[]{d} X$. Let $h:[a,b] \rightarrow \mathbb{R}$ be a continuous function where $a,b\in C_c(F)$. Then, we have
+
+\begin{equation*}
+\lim_{n\rightarrow \infty} \mathbb{E}[h(X_n)] = \mathbb{E}[h(X)],
+\end{equation*}
+
+\item Let $X_1, X_2, \ldots$ be a sequence of random variables that converges in distribution to a random variable $X$, denoted $X_n \xrightarrow[]{d} X$. Let $h: \mathbb{R} \rightarrow \mathbb{R}$ be a bounded continuous function such that $\mathbb{E}[|h(X)|] < \infty$. Then, we have
+
+\begin{equation*}
+\lim_{n\rightarrow \infty} \mathbb{E}[h(X_n)] = \mathbb{E}[h(X)],
+\end{equation*}
+
+
+\item  Let $X_1,X_2,\ldots$ be a sequence of random variables with distribution functions $F_1,F_2,\ldots$, and let $F$ be another distribution function. If $\mathbb{E}[h(X_n)] \rightarrow \mathbb{E}[h(X)]$ for all continuous and bounded functions $h$, then $F_n(x) \rightarrow F(x)$ for all continuity points $x$ of $F$
+\item Pointwise convergence of densities almost everywhere implies convergence in distribution. The converse is not true.
+\item \textbf{[Scheffe's theorem]} Let $X, \{X_n\}$ be random variables with density functions $f_X, f_{X_n}$.
+\begin{enumerate}
+    \item If they are continuous, $f_{X_n}\xrightarrow{a.e.} f_X\implies X_n\xrightarrow[]{d}X$.
+    \item If they are integer-valued, $P(X_n=k)\rightarrow P(X=k) \forall k\implies X_n\xrightarrow{d}X$.
+\end{enumerate}
+
+
+\item \textbf{[Tightness]} In probability theory, a sequence of random variables ${X_n}$ is said to be tight if, roughly speaking, the probability mass of the sequence is "concentrated" around a compact set. More precisely, for any $\epsilon > 0$, there exists $M_\epsilon\in(0,\infty)$ such that
+
+\begin{equation*}
+\sup_{n\in\mathbb N} P(|X_n| > M_\epsilon) \leq \epsilon,
+\end{equation*}
+
+or
+
+
+\begin{equation*}
+    \inf_{n\in\mathbb N} P(|X_n|\leq  M_\epsilon) \geq1- \epsilon,
+\end{equation*}
+    
+\item Convergence of distribution implies tightness
+\item $$\sup P(|X_n|>M)<\sup\frac{E[|X_n|]}{M}$$
+\item $$\sup P(|X_n|>M)<\sup\frac{E[|X_n|^2]}{M^2}$$
+\item Boundedness of all $E[|X_n|]$ or $E[X_n^2]$ implies tightness
+\item \textbf{[Reletively compact]} A set $\mathcal{F}$ of probability measures on a metric space $(S,d)$ is said to be relatively compact, or precompact, if for any $\epsilon > 0$, there exists a compact set $K$ such that
+
+\begin{equation*}
+\sup_{P \in \mathcal{F}} P(S \setminus K) \leq \epsilon.
+\end{equation*}
+\item \textbf{[Pohorov's theorem]} Pohorov's theorem states that a family of probability measures on a metric space is tight if and only if it is relatively compact, i.e. for any subsequence $X_{i_n}$ there exists a subsubsequence $X_{i_{j_n}}$ which converges to some R.V $Y$ in distribution. 
+\item By pohorov's theorem, a sequence of R.V  converges in distribution iff it is tight and all subsequential limits are same. 
+\item \textbf{[Skorod Representation theorem]} Let $\{X_n\}$ be a sequence of random variables such that $X_n\xrightarrow{d} X$. Then, there exist random variables $\{Y_n\}, Y$ defined on the Lebesgue measure on $[0, 1]$ such that $Y_n=X_n, Y=X$ (up to distribution), and $Y_n\xrightarrow[]{a.s.}Y$.
+\item  $X_n\xrightarrow[]{d}X\implies E(|X|)\leq \mathrm{lim inf}_{n\rightarrow\infty}E(|X_n|)$
+\section{Method of moments}
+\item Let $\{X_n\}$ be a sequence of R.V. such that $m_k=\lim_{n\to\infty}E[X_n^k]$ exits for all $k$. If $\{m_k\}$ uniquely determine a probability distribution $X$ then $X_n\to X$ in distribution.
+\item \textbf{[Carleman's condition]} For the Hamburger moment problem (the moment problem on the whole real line), the theorem states the following:
+Let $\mu$ be a measure on $\mathbb{R}$ such that all the moments
+$$
+m_n=\int_{-\infty}^{+\infty} x^n d \mu(x), \quad n=0,1,2, \cdots
+$$
+are finite. If
+$$
+\sum_{n=1}^{\infty} m_{2 n}^{-\frac{1}{2 n}}=+\infty
+$$
+then the moment problem for $\left(m_n\right)$ is determinate; that is, $\mu$ is the only measure on $\mathbb{R}$ with $\left(m_n\right)$ as its sequence of moments.
+
+\chapter{Characteristic functions and CLT}
+\section{Characteristic function}
+\item \textbf{[Characteristic function(CF)]} The characteristic function of a random variable $X$ is a complex-valued function defined on the real line by
+
+\begin{equation*}
+\phi_X(t) = \mathbb{E}[e^{itX}],
+\end{equation*}
+
+where $i$ is the imaginary unit, $t$ is a real-valued parameter, and $\mathbb{E}$ denotes the expected value operator. The characteristic function of $X$ is essentially the Fourier transform of its probability distribution function. 
+\item The C.F always exists and is uniformly continuous
+\item $|\phi_X(t)|\leq\phi_X(0)=1$
+\item $\overline{\phi_X(t)}=\phi_X(-t)=\phi_{-X}(t)$
+\item For independent R.V $$\phi_{\sum_{i=1}^n X_i}(t)=\prod_{i=1}^n\phi_{X_i}(t)$$
+\item $\phi_{(X-a)/b}=e^{-ita/b}\phi_X(t/b)$
+\item \textbf{[Inversion theorem]} If $X$ is an R.V with cf $\phi_X$ and CDF $F$ then 
+$$F(b)-F(a)+\frac{1}{2}\left(P(X=a)-P(X=b)\right)=\lim_{T\to\infty}\frac{1}{2\pi}\int_{-T}^T\frac{e^{-itb}-e^{-ita}}{it}dt$$
+
+\item $\int_0^T\sin t/tdt\leq \pi\forall t$
+\item $\lim_{T\to\infty}\int_0^T \sin t/tdt\to\pi/2$
+\item \textbf{[Uniqueness theorem]}  Let $X$ and $Y$ be two random variables with characteristic functions $\phi_X(t)$ and $\phi_Y(t)$, respectively. If $\phi_X(t) = \phi_Y(t)$ for all $t$, then $X$ and $Y$ have the same distribution. 
+\item If $\phi_X$ is $L^1$ then $X$ admits a density given by $$f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-itx}\phi_X(t)dt$$
+\item If $X$ has a cts CDF $F$ with density $f$ then $\lim_{|t|\to\infty}|\phi_X(t)|=0$
+\item If $P(X=a)>0$ then $P(X=a)=\lim_{T\to\infty}\frac{1}{2T}\int_{-T}^Te^{-ita}\phi_X(t)dt$
+\item If $\phi_X$ has no imaginary part $X\equiv -X$ in distribution i.e distribution is symmetrical about 0. 
+\item If $E(|X|^n)<\infty$ for all $n\geq 1$ and $\frac{|t|^n}{n!}E(|X|^n)\rightarrow 0$ as $n\rightarrow\infty$ for all $t\in\mathbb{R}$, then $\phi_X(t)=1+\sum_{k=1}^\infty\frac{(it)^k}{k!}E(X^k)$.
+\item If $E(|X|^n)<\infty$ for some $n\in\mathbb{N}$,
+\[
+|\phi_X(t)-\sum_{k=0}^n\frac{(it)^k}{k!}E(X^k)|\leq E\{\mathrm{min}[\frac{2|tx|^n}{n!}, \frac{|tx|^{n+1}}{(n+1)!}]\}
+\]
+In particular, $$|\phi_X(t)-1|\leq E[\min\{2,tX\}]$$
+If $E[|X|]$ exists, 
+$$|\phi_X(t)-1-it E[X]|\leq E\left[\min\left(|Xt|,\frac{X^2t^2}{2}\right)\right]$$
+\item If $E[|X^n|]$ is finite then $k^{th}$ derivative of $\phi_X$ exists for $k\leq n$, they are uniformly continuous and $$\phi_X^{(k)}=\int_{-\infty}^\infty(ix)^ke^{itx}dF(x)$$
+$$\frac{d^k}{dx^k}E[itX]=\int_{-\infty}^\infty\left(\frac{d^k}{dx^k}e^{itx}\right)dF(x)$$
+\item $\phi_X^k(0)=i^kE[X^k]$
+\item $\phi_X(t)=1+\sum_{k=1}^n\frac{(it)^k}{k!}E[X^k]+o(|t|^n)$ as $t\to0$.
+\item If $X$ is an R.V such that $\phi_X$ has a finite derivative of order $2n$ at $t=0$ then $E(|X|^2n)<\infty$ (93,94 holds)
+ 
+\section{Multivariate CF}
+\item \textbf{[CF of  a random vector]} The characteristic function of a random vector $\mathbf{X}=(X_1,X_2,\ldots,X_n)$ is defined as $\varphi_{\mathbf{X}}(\mathbf{t})=\mathbb{E}\left[e^{i\mathbf{t}^{\top}\mathbf{X}}\right]$, where $\mathbf{t}=(t_1,t_2,\ldots,t_n)^{\top}\in\mathbb{R}^n$ is a vector of real numbers and $\mathbf{t}^{\top}\mathbf{X}=t_1X_1+t_2X_2+\cdots+t_nX_n$.
+\item If $t=(0,0,...t_j,0,0,0)$ then $\phi_X(t)=\phi_{X_j}(t_j)$
+\item If $t=(s,s,s,..)$ then $\phi_X(t)=E[e^{is\sum X_j}]$
+\item Uniqueness theorem holds for multivariate CF
+\item If $\phi_X(t)=e^{i(a_1t_1+a_2t_2-b_1t_1^2-b_2t_2^2-b_3t_1t_2)}$ then $X\sim N(\mu,\sum)$ where $\mu=\begin{bmatrix}
+    a_1\\a_2
+\end{bmatrix}$ and $\sum=\begin{bmatrix}
+    b_1&b_3/2\\
+    b_3/2&b_2
+\end{bmatrix}$
+
+\section{CF and distributional convergence}
+\item For a sequence of R.V, $X_n\to X$ in distribution iff $\phi_{X_n}\to\phi_X$ pointwise.
+\item For $h>0$:
+$$P(|X|>2/h)\leq \frac{1}{h}\int_{|t|<h}(1-\phi_X(t))dt$$
+
+
+\section{CF and weak convergence}
+
+
+
+
+\item Levy's continuity theorem states that for any sequence of random variables $X_n$ with characteristic functions $\varphi_n$, if $\varphi_n\to\varphi$ and if $\varphi$ is continuous at $t=0$ then $X_n\to X$ in distribution where $\phi_X=\varphi$.
+\item The Cramer-Wold device states that for a sequence of random vectors $X_n$, $X_n\to X$ in distribution iff $a^TX_n\to a^TX\forall a\in\mathbb R^d$
+
+\section{Central limit theorem}
+\item\textbf{[CLT]} For iid $\{X_n\}$, if $0<E[X_1^2]<\infty$ then $$\sqrt n\frac{\overline{X_n}-\mu}{\sigma}\xrightarrow[]{d}N(0,1)\quad \overline{X_n}=\frac{1}{n}\sum_{i=1}^nX_i$$
+\item For complex $z_1,z_2...$ and $w_1,w_2....$ where $|z_i|,|w_i|<1$, we have $$\left|\prod_{j=1}^nz_j-\prod_{j=1}^nw_j\right|\leq\sum_{j=1}^n|z_j-w_j|$$
+
+\item \textbf{[Multivariate CLT]} Let ${\mathbf{X}n}{n\geq 1}$ be a sequence of independent and identically distributed random vectors with mean vector $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$. Define $\mathbf{\bar{X}}n = \frac{1}{n} \sum{i=1}^n \mathbf{X}_i$. Then, as $n$ tends to infinity,
+
+\begin{equation*}
+\sqrt{n}(\mathbf{\bar{X}}_n - \boldsymbol{\mu}) \xrightarrow{d} \mathcal{N}(\mathbf{0},\boldsymbol{\Sigma}),
+\end{equation*}
+
+where $\xrightarrow{d}$ denotes convergence in distribution and $\mathcal{N}(\mathbf{0},\boldsymbol{\Sigma})$ is a multivariate normal distribution with mean vector $\mathbf{0}$ and covariance matrix $\boldsymbol{\Sigma}$.
+
+
+\section{CLT for independent but not identical sequence of R.V}
+\item Define $s_n^2=\sum_{i=1}^n\sigma_n^2$
+\item Define $L_1(n)=\max_{1\leq i\leq n}\sigma_n^2/s_n^2$
+\item For $\epsilon>0$, define $L_2(n)=\frac{1}{s_n^2}\sum_{i=1}^nE[(X_i=\mu_i)^21_{|X_i-\mu_i|>\epsilon s_n}]$
+\item \begin{enumerate}
+    \item If $L_2(n)\to 0$ for each $\epsilon>0$ then $L_1(n)\to 0$ and 
+    $$\frac{1}{s_n}\sum_{i=1}^n (X_i-\mu_i)\xrightarrow{d}N(0,1) $$
+    \item If $L_1(n)\to 0$ and $\frac{1}{s_n}\sum_{i=1}^n (X_i-\mu_i)\xrightarrow{d}N(0,1) $ then $L_2(n)\to 0$
+\end{enumerate}
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

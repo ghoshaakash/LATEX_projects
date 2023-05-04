@@ -1,0 +1,136 @@
+%!TEX program = lualatex
+\documentclass{beamer}
+\usetheme{metropolis} 
+
+% Presento style file
+\usepackage{config/presento}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{cancel}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{tabularx}
+\usepackage{extarrows}
+\usepackage{booktabs}
+\usetikzlibrary{fadings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes}
+\usepackage{pifont}
+
+% custom command and packages
+\input{config/custom-command}
+ 
+% Information
+\title{Proposal on Machine Learning Classification of dermatological diseases}
+\subtitle{}
+\author{Aakash Ghosh}
+\institute{19MS129}
+\date{$1^{st}$ April,2023}
+
+\begin{document}
+
+% Title page
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+
+% sections in the presentation
+\begin{frame}{Timeline}    
+    We are going to look at:
+    \begin{enumerate}
+        \item Current state
+        \item Problem Statement
+        \item Advantages, Issues and Prospective Remedies
+        \item A Naive Roadmap
+        \item Questions
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Current state of affairs}}}
+\begin{frame}{Current state of affairs}
+    We look at the current state of affairs regarding digital health records in India\pause
+    \begin{enumerate}
+         \item Post diagnosis treatment and prescription is done on a handwritten basis in India.\pause
+         \item There is no standardised digital system for storing data and using it for statistical analysis in India.\pause
+         \item National Health Stack and National Digital Health Mission (NDHM) are initiatives to create a digital health ecosystem in India.\pause
+         \item The benefits of a fully digital healthcare system include improved patient outcomes, reduced medical errors, and better management of chronic diseases.
+    \end{enumerate}
+\end{frame}
+\framecard[colorgreen]{{\color{white}\hugetext{Problem statement}}}
+\begin{frame}{Problem statement}
+    Ideally we would like to have a system:
+    \begin{enumerate}
+        \item Which stores a patients' health Information\pause
+        \item Gives predictive diagnosis based on history and symptoms\pause
+        \item Updates itself based on new information.
+    \end{enumerate}
+\end{frame}
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Advantages and Disadvantages}}}
+
+\begin{frame}{Advantages of ML based Diagnosis systems}
+    \begin{enumerate}
+        \item Improved Accuracy: Machine learning models can analyze vast amounts of data and provide accurate diagnoses based on patterns and trends that may be missed by human doctors.\pause
+        \item Early Detection: By analyzing patient data in real-time, machine learning models can detect potential health issues at an early stage, enabling prompt and effective treatment.\pause
+        \item Personalized Treatment: Machine learning models can analyze patient data and provide personalized treatment plans, taking into account individual factors such as age, gender, and medical history.\pause
+        \item Increased Efficiency: With the use of machine learning models, healthcare providers can make more efficient use of their time, reducing wait times for patients.
+        \end{enumerate}
+    
+\end{frame}
+\begin{frame}{Disadvantages of ML based Diagnosis systems}
+    \textbf{Presence of selection bias in training data}
+
+Medical diagnoses involve highly personal information, which can result in selection bias in the data used to train our models. To address this issue, we suggest two remedies:
+
+\begin{enumerate}
+\item \textbf{Short-term remedy:} Use matching techniques to minimize selection bias.\pause
+\item \textbf{Long-term remedy:} Obtain anonymous data at the time of diagnosis to eliminate initial bias.
+\end{enumerate}
+\end{frame}
+\begin{frame}{Disadvantages of ML based Diagnosis systems}
+    \textbf{Anchoring bias}
+
+Psychological constraints such as anchoring bias can affect diagnostic accuracy. To mitigate this issue, we suggest providing a small list of highly likely diagnoses in a randomized order. This approach can speed up the diagnostic process for medical professionals while avoiding the negative effects of anchoring.\pause
+
+One can argue that diagnosis after a machine prediction is made is equivalent to getting a second opinion: therefore there is as much anchoring as there would be in most general cases.
+\end{frame}
+
+
+\framecard[colorgreen]{{\color{white}\hugetext{Naive roadmap}}}
+
+\begin{frame}{Naive Roadmap}
+
+    \begin{enumerate}
+        \item Using a mixed mode: First use decision trees to segregate influencing factors such as demography, gender(?) and age, then using a model based on the leaf reached. \pause
+        \item Method of proper outlier analysis needed.\pause
+        \item Models can be parametric in low depth and unparametric in high depth. On can also go for efficient matching techniques(similar to KNN).
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Topics on which we need more Information}
+    \begin{enumerate}
+        \item In cases where the preliminary symptoms don't give conclusive results, how are further diagnosis steps taken?
+        \item Are symptoms dependent on demography/skin colour? How conclusively can demography be determined? How are mixed-racial patients treated?
+        \item How to determine cost function? Is it disease specific?
+    \end{enumerate}
+
+\end{frame}
+
+\end{document}
