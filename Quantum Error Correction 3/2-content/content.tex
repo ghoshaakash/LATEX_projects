@@ -1,0 +1,93 @@
+%introduction-example
+
+
+
+
+
+
+
+\begin{frame}{Timeline}    
+    We are going to look at:
+    \begin{itemize}
+        \item 1. Defining the space
+        \item 2. Defining Ergodicity
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Setting up our space}
+    \begin{itemize}[$\bullet$]
+        \item For an alphabet $A$ we define the space $\Omega$ such that if $x\in\Omega$ then
+        $$x=\{\hdots x_{-2},x_{-1},x_{0},x_1,x_2,hdots\}$$\pause
+        \item We define functions $X_i$ such that $X_i(x)=x_i\forall i\in\mathbb Z$\pause
+        \item We take the sample space $\mathcal F$ to be the smallest set such that all $X_i$ are measurable.
+        \item We define $[x_{i_1}x_{i_2}\hdots x_{i_n}]=\{y|y_{i_j}=x_{i_j}\forall 1\leq j\leq n\}$
+        \item we define a probability measure $\mu$ on such as space.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Shift transformation}
+\begin{itemize}[$\bullet$]
+    \item We want $x$ to be some kind of information stream from the same source. \pause
+    \item $\mu$ shouldn't depend on the point from where we are parsing our stream\pause i.e. $\mu$ is shift invariant.\pause
+    \item We define $T$ as the shift transformation. $Tx=y$ if $x_i=y_{i-1}\forall\in\mathbb Z$\pause
+    \item We assume $\mu T^{-1}=\mu$(i.e. $E$ and $T(E)$ have the same measure)\pause
+\end{itemize}    
+\end{frame}
+
+\begin{frame}{Relation between EIS and SIS}
+    \begin{itemize}[$\bullet$]
+        \item From the shift invariance, it follows that random vectors $\{X_0,X_1\hdots X_n\}$ and $\{X_i,X_{i+1},X_{i+2}\hdots X_{i+n}\}$ have the same distribution.
+        \item We can therefore define an EIS on $A^n$ defined by
+        $$\mu_n(\{x_1,x_2\hdots x_n\})=\mu([x_1,x_2,x_3\hdots x_n])$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Rate of information}
+    \begin{itemize}[$\bullet$]
+        \item We therefore have an average rate of information gain in the first $n$ steps as 
+        $$-\frac{1}{n}\log\mu([x_1,x_2,x_3\hdots x_n])$$
+        \item Expectation of our random vector is given by
+        $$\frac{1}{n}H([X_1X_2...X_n])$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Topological Nature of SIS}
+    \begin{itemize}[$\bullet$]
+        \item We use discrete topology on individual bits.
+        \item We define:
+        $$d(x,y)=\sum 2^{-|i|}d(x_i,y_i)$$
+        \item If $\mu,\nu$ are measures, then so is $t\mu+(1-t)\nu,0\leq t\leq 1$ i.e. the space of probability measures are convex and compact. 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Ergodicity}
+    \begin{itemize}[$\bullet$]
+        \item We say $f$ is $T$ invariant if $f=f\circ T$ a.e.
+        \item The indicator function $1_E$ is invariant  iff $\mu(E\Delta T(E))=0$
+        \item Define:
+        $$\mathcal I_{T,\mu}=\{E|\mu(E\Delta T(E))=0\}$$
+        All such sets are called invariant sets.
+        \item If for $E\in \mathcal I$, $\mu E=0$ or $1$, then $T$ is $\mu$ ergodic.
+        \item A random variable is $T$ invariant iff it is $I$ measurable.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Time average and space average}
+\begin{itemize}[$\bullet$]
+    \item We deine:
+    $$A_nf(\omega)=\frac{1}{n}\left(f(\omega)+f(T^{1}\omega)+f(T^{2}\omega)\hdots +f(T^{n-1}\omega)\right)$$
+    $A_n f(\omega)$ is the time average of $\omega$ under $T$ 
+    \item Similarly, $E[f]=\int_{\omega}f(\omega)\mu(d\omega)$ is the space average of $f$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Convergence of time average and space average}
+    For an $L^1$ random variable $f$, $\lim_{n\to\infty}A_nf(\omega)$ exists and $\lim_{n\to\infty}A_nf(\omega)=E[f]$ almost surely and in $L^1$.\\ \pause
+    Further, if  $\mu$ is ergodic then $E[f|\mathcal I](\omega)=E[f]$ almost surely, and if $f$ is $L^p$ then convergence is in $L^p$ as well.
+\end{frame}
+
