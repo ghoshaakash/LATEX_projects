@@ -1,3 +1,4 @@
+% !TeX TS-program = lualatex
 \documentclass[aspectratio=169]{beamer}
 \usepackage{panqueques}
 \usepackage{amsmath}
@@ -25,6 +26,7 @@
 
 
 \usepackage{pdfpages}
+\usepackage{caption}
 \usepackage{physics}
 \usepackage{amsmath}
 \usepackage{tikz}
@@ -44,12 +46,10 @@
 \usetikzlibrary{patterns}
 \usetikzlibrary{shadows.blur}
 \usetikzlibrary{shapes}
-\usepackage{caption}
+\usefonttheme[onlymath]{serif}
 \author{name}
 \date{\today}
-
 \begin{document}
-
 %title-page %%edit in 1-title-page folder
 \include{1-title-page/custom}
 
@@ -60,3 +60,4 @@
 \include{3-reference/ref}
 
 \end{document}
+
