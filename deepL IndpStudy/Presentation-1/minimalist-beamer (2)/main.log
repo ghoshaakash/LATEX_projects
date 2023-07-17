@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  15 JUL 2023 13:18
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  18 JUL 2023 00:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/repo/LATEX_projects/deepL IndpStudy/Presentation-1/minimalist-beamer (2)/main"
@@ -1083,34 +1083,34 @@ Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 Package caption Info: listings package is loaded.
 ) (c:/texlive/2022/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty)
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 52.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 53.
  (./main.aux (./1-title-page/custom.aux) (./2-content/content.aux) (./3-reference/ref.aux))
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 53.
  (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1165,7 +1165,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 53.
  (c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (c:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1175,9 +1175,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count402
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 
@@ -1185,41 +1185,41 @@ LaTeX Info: Redefining \nameref on input line 52.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 52.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 52.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 52.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 52.
+(Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 52.
+(Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 52.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/m/it on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 52.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/m/it on input line 53.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 52.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 52.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 53.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 52.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 53.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 52.
+(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 52.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 52.
+(Font)                  TU/lmr/b/n --> TU/lmr/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 52.
+(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 52.
+(Font)                  TU/lmr/m/it --> TU/lmr/b/it on input line 53.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/b/n on input line 52.
+(Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/b/n on input line 53.
  (c:/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (c:/texlive/2022/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1237,15 +1237,15 @@ Dictionary: translator-theorem-dictionary, Language: English
  (c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 52.
-LaTeX Info: Redefining \celsius on input line 52.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 52.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 53.
+LaTeX Info: Redefining \celsius on input line 53.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 52.
-Package gensymb Info: Using \Omega for \ohm on input line 52.
+LaTeX Info: Redefining \ohm on input line 53.
+Package gensymb Info: Using \Omega for \ohm on input line 53.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1558,25 +1558,358 @@ Package luatex.def Info: images/path comp.png  used on input line 286.
  [43
 
 ]
-File: images/grad-desc.png Graphic file (type png)
-<use images/grad-desc.png>
-Package luatex.def Info: images/grad-desc.png  used on input line 303.
-(luatex.def)             Requested size: 159.333pt x 83.64642pt.
+<images/stochastic gradient descent.png, id=431, 1013.7875pt x 643.40375pt>
+File: images/stochastic gradient descent.png Graphic file (type png)
+<use images/stochastic gradient descent.png>
+Package luatex.def Info: images/stochastic gradient descent.png  used on input line 302.
+(luatex.def)             Requested size: 159.333pt x 101.12064pt.
  [44
 
-]
-File: images/grad-desc.png Graphic file (type png)
-<use images/grad-desc.png>
-Package luatex.def Info: images/grad-desc.png  used on input line 303.
-(luatex.def)             Requested size: 159.333pt x 83.64642pt.
+<./images/stochastic gradient descent.png>]
+File: images/stochastic gradient descent.png Graphic file (type png)
+<use images/stochastic gradient descent.png>
+Package luatex.def Info: images/stochastic gradient descent.png  used on input line 302.
+(luatex.def)             Requested size: 159.333pt x 101.12064pt.
  [45
 
 ]
-File: images/grad-desc.png Graphic file (type png)
-<use images/grad-desc.png>
-Package luatex.def Info: images/grad-desc.png  used on input line 303.
-(luatex.def)             Requested size: 159.333pt x 83.64642pt.
+File: images/stochastic gradient descent.png Graphic file (type png)
+<use images/stochastic gradient descent.png>
+Package luatex.def Info: images/stochastic gradient descent.png  used on input line 302.
+(luatex.def)             Requested size: 159.333pt x 101.12064pt.
  [46
+
+]
+<images/normalise.png, id=455, 1203.49625pt x 463.7325pt>
+File: images/normalise.png Graphic file (type png)
+<use images/normalise.png>
+Package luatex.def Info: images/normalise.png  used on input line 314.
+(luatex.def)             Requested size: 239.00558pt x 92.09386pt.
+ [47
+
+<./images/normalise.png>]
+<images/momentum.png, id=464, 603.25375pt x 410.53375pt>
+File: images/momentum.png Graphic file (type png)
+<use images/momentum.png>
+Package luatex.def Info: images/momentum.png  used on input line 331.
+(luatex.def)             Requested size: 159.333pt x 108.4276pt.
+ [48
+
+<./images/momentum.png>]
+File: images/momentum.png Graphic file (type png)
+<use images/momentum.png>
+Package luatex.def Info: images/momentum.png  used on input line 331.
+(luatex.def)             Requested size: 159.333pt x 108.4276pt.
+ [49
+
+]
+File: images/momentum.png Graphic file (type png)
+<use images/momentum.png>
+Package luatex.def Info: images/momentum.png  used on input line 331.
+(luatex.def)             Requested size: 159.333pt x 108.4276pt.
+ [50
+
+]
+<images/momentum-zigzag.png, id=487, 1088.065pt x 642.4pt>
+File: images/momentum-zigzag.png Graphic file (type png)
+<use images/momentum-zigzag.png>
+Package luatex.def Info: images/momentum-zigzag.png  used on input line 348.
+(luatex.def)             Requested size: 159.333pt x 94.07191pt.
+ [51
+
+<./images/momentum-zigzag.png>]
+<images/nestov.png, id=497, 897.3525pt x 519.9425pt>
+File: images/nestov.png Graphic file (type png)
+<use images/nestov.png>
+Package luatex.def Info: images/nestov.png  used on input line 363.
+(luatex.def)             Requested size: 159.333pt x 92.31622pt.
+ [52
+
+<./images/nestov.png>]
+File: images/nestov.png Graphic file (type png)
+<use images/nestov.png>
+Package luatex.def Info: images/nestov.png  used on input line 363.
+(luatex.def)             Requested size: 159.333pt x 92.31622pt.
+ [53
+
+] [54
+
+] [55
+
+] [56
+
+]
+<images/learning rate schedule.png, id=534, 870.25125pt x 457.71pt>
+File: images/learning rate schedule.png Graphic file (type png)
+<use images/learning rate schedule.png>
+Package luatex.def Info: images/learning rate schedule.png  used on input line 390.
+(luatex.def)             Requested size: 159.333pt x 83.80202pt.
+ [57
+
+<./images/learning rate schedule.png>]
+File: images/learning rate schedule.png Graphic file (type png)
+<use images/learning rate schedule.png>
+Package luatex.def Info: images/learning rate schedule.png  used on input line 390.
+(luatex.def)             Requested size: 159.333pt x 83.80202pt.
+ [58
+
+]
+File: images/learning rate schedule.png Graphic file (type png)
+<use images/learning rate schedule.png>
+Package luatex.def Info: images/learning rate schedule.png  used on input line 390.
+(luatex.def)             Requested size: 159.333pt x 83.80202pt.
+ [59
+
+]
+File: images/learning rate schedule.png Graphic file (type png)
+<use images/learning rate schedule.png>
+Package luatex.def Info: images/learning rate schedule.png  used on input line 390.
+(luatex.def)             Requested size: 159.333pt x 83.80202pt.
+ [60
+
+] [61
+
+]
+<images/sgn.png, id=573, 590.205pt x 590.205pt>
+File: images/sgn.png Graphic file (type png)
+<use images/sgn.png>
+Package luatex.def Info: images/sgn.png  used on input line 410.
+(luatex.def)             Requested size: 199.1693pt x 199.16307pt.
+
+Overfull \vbox (15.4397pt too high) detected at line 410
+ []
+
+[62
+
+<./images/sgn.png>]
+<images/sigmoid.png, id=584, 884.30376pt x 882.29625pt>
+File: images/sigmoid.png Graphic file (type png)
+<use images/sigmoid.png>
+Package luatex.def Info: images/sigmoid.png  used on input line 422.
+(luatex.def)             Requested size: 199.1693pt x 198.71002pt.
+
+Overfull \vbox (14.71065pt too high) detected at line 422
+ []
+
+[63
+
+<./images/sigmoid.png>]
+<images/tanh.png, id=593, 885.3075pt x 885.3075pt>
+File: images/tanh.png Graphic file (type png)
+<use images/tanh.png>
+Package luatex.def Info: images/tanh.png  used on input line 434.
+(luatex.def)             Requested size: 199.1693pt x 199.15857pt.
+
+Overfull \vbox (15.1592pt too high) detected at line 434
+ []
+
+[64
+
+<./images/tanh.png>]
+<images/relu.png, id=602, 834.11626pt x 833.1125pt>
+File: images/relu.png Graphic file (type png)
+<use images/relu.png>
+Package luatex.def Info: images/relu.png  used on input line 446.
+(luatex.def)             Requested size: 199.1693pt x 198.92139pt.
+
+Overfull \vbox (14.92201pt too high) detected at line 446
+ []
+
+[65
+
+<./images/relu.png>]
+File: images/relu.png Graphic file (type png)
+<use images/relu.png>
+Package luatex.def Info: images/relu.png  used on input line 461.
+(luatex.def)             Requested size: 199.1693pt x 198.92139pt.
+
+Overfull \vbox (14.92201pt too high) detected at line 461
+ []
+
+[66
+
+]
+File: images/relu.png Graphic file (type png)
+<use images/relu.png>
+Package luatex.def Info: images/relu.png  used on input line 461.
+(luatex.def)             Requested size: 199.1693pt x 198.92139pt.
+
+Overfull \vbox (14.92201pt too high) detected at line 461
+ []
+
+[67
+
+]
+File: images/relu.png Graphic file (type png)
+<use images/relu.png>
+Package luatex.def Info: images/relu.png  used on input line 476.
+(luatex.def)             Requested size: 199.1693pt x 198.92139pt.
+
+Overfull \vbox (14.92201pt too high) detected at line 476
+ []
+
+[68
+
+]
+File: images/relu.png Graphic file (type png)
+<use images/relu.png>
+Package luatex.def Info: images/relu.png  used on input line 476.
+(luatex.def)             Requested size: 199.1693pt x 198.92139pt.
+
+Overfull \vbox (14.92201pt too high) detected at line 476
+ []
+
+[69
+
+]
+<images/LeakyRelu.png, id=640, 832.10875pt x 834.11626pt>
+File: images/LeakyRelu.png Graphic file (type png)
+<use images/LeakyRelu.png>
+Package luatex.def Info: images/LeakyRelu.png  used on input line 491.
+(luatex.def)             Requested size: 199.1693pt x 199.6447pt.
+
+Overfull \vbox (15.64532pt too high) detected at line 491
+ []
+
+[70
+
+<./images/LeakyRelu.png>]
+<images/ELU.png, id=649, 833.1125pt x 832.10875pt>
+File: images/ELU.png Graphic file (type png)
+<use images/ELU.png>
+Package luatex.def Info: images/ELU.png  used on input line 509.
+(luatex.def)             Requested size: 199.1693pt x 198.92296pt.
+
+Overfull \vbox (14.92358pt too high) detected at line 509
+ []
+
+[71
+
+<./images/ELU.png>]
+<images/SELU.png, id=659, 835.12pt x 835.12pt>
+File: images/SELU.png Graphic file (type png)
+<use images/SELU.png>
+Package luatex.def Info: images/SELU.png  used on input line 526.
+(luatex.def)             Requested size: 199.1693pt x 199.1586pt.
+
+Overfull \vbox (15.15923pt too high) detected at line 526
+ []
+
+[72
+
+<./images/SELU.png>]
+File: images/SELU.png Graphic file (type png)
+<use images/SELU.png>
+Package luatex.def Info: images/SELU.png  used on input line 544.
+(luatex.def)             Requested size: 199.1693pt x 199.1586pt.
+
+Overfull \vbox (15.15923pt too high) detected at line 544
+ []
+
+[73
+
+]
+<images/GELU.png, id=675, 831.105pt x 832.10875pt>
+File: images/GELU.png Graphic file (type png)
+<use images/GELU.png>
+Package luatex.def Info: images/GELU.png  used on input line 558.
+(luatex.def)             Requested size: 199.1693pt x 199.40546pt.
+
+Overfull \vbox (6.13213pt too high) detected at line 558
+ []
+
+[74
+
+<./images/GELU.png>]
+<images/SWISH.png, id=684, 832.10875pt x 832.10875pt>
+File: images/SWISH.png Graphic file (type png)
+<use images/SWISH.png>
+Package luatex.def Info: images/SWISH.png  used on input line 573.
+(luatex.def)             Requested size: 199.1693pt x 199.16422pt.
+
+Overfull \vbox (5.89088pt too high) detected at line 573
+ []
+
+[75
+
+<./images/SWISH.png>]
+<images/MISH.png, id=693, 832.10875pt x 833.1125pt>
+File: images/MISH.png Graphic file (type png)
+<use images/MISH.png>
+Package luatex.def Info: images/MISH.png  used on input line 589.
+(luatex.def)             Requested size: 199.1693pt x 199.40445pt.
+
+Overfull \vbox (6.13112pt too high) detected at line 589
+ []
+
+[76
+
+<./images/MISH.png>] [77
+
+] [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+] [85
+
+] [86
+
+] [87
+
+]
+<images/skip.png, id=781, 416.55624pt x 251.94125pt>
+File: images/skip.png Graphic file (type png)
+<use images/skip.png>
+Package luatex.def Info: images/skip.png  used on input line 628.
+(luatex.def)             Requested size: 159.333pt x 96.36913pt.
+ [88
+
+<./images/skip.png>]
+File: images/skip.png Graphic file (type png)
+<use images/skip.png>
+Package luatex.def Info: images/skip.png  used on input line 628.
+(luatex.def)             Requested size: 159.333pt x 96.36913pt.
+ [89
+
+]
+File: images/skip.png Graphic file (type png)
+<use images/skip.png>
+Package luatex.def Info: images/skip.png  used on input line 628.
+(luatex.def)             Requested size: 159.333pt x 96.36913pt.
+ [90
+
+]
+<images/maxout.png, id=804, 1067.99pt x 477.785pt>
+File: images/maxout.png Graphic file (type png)
+<use images/maxout.png>
+Package luatex.def Info: images/maxout.png  used on input line 643.
+(luatex.def)             Requested size: 159.333pt x 71.27826pt.
+ [91
+
+<./images/maxout.png>]
+File: images/maxout.png Graphic file (type png)
+<use images/maxout.png>
+Package luatex.def Info: images/maxout.png  used on input line 643.
+(luatex.def)             Requested size: 159.333pt x 71.27826pt.
+ [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
 
 ])
 \openout2 = 3-reference/ref.aux
@@ -1591,7 +1924,7 @@ LaTeX Warning: Citation `fraleigh2003first' undefined on input line 6.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [47
+) [97
 
 
 
@@ -1615,19 +1948,19 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44615 strings out of 477785
+ 45065 strings out of 477785
  125031,1373583 words of node,token memory allocated
  2158 words of node memory still in use:
    44 hlist, 8 vlist, 17 rule, 2 disc, 1 local_par, 22 glue, 12 kern, 10 penalty, 13 glyph, 122 attribute, 74 glue_spec, 122 attribute_list, 6 write, 24 pdf_literal, 40 pdf_colorstack nodes
-   avail lists: 1:1,2:680,3:528,4:145,5:419,6:34,7:2397,8:38,9:361,10:16,11:157
- 63029 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:680,3:528,4:151,5:577,6:34,7:2733,8:38,9:361,10:16,11:220
+ 63193 multiletter control sequences out of 65536+600000
  134 fonts using 14374851 bytes
  129i,13n,144p,1908b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-LightItalic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (47 pages, 1687067 bytes).
+<c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman7-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-LightItalic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-Light.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (97 pages, 2683771 bytes).
 
-PDF statistics: 530 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
- 95 named destinations out of 1000 (max. 131072)
+PDF statistics: 942 PDF objects out of 1000 (max. 8388607)
+ 700 compressed objects within 7 object streams
+ 195 named destinations out of 1000 (max. 131072)
  256 words of extra memory for PDF output out of 10000 (max. 100000000)
 
