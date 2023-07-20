@@ -621,7 +621,7 @@ Sum is taken over the product along each path, over all the paths. It is trivial
 			\begin{enumerate}[$\bullet$]
 				\item We might allow nodes from deeper layers to have direct access to nodes from shallower layers while \textit{skipping} the intermediate layers.\pause
 				\item This provides a kind of highway for the deeper layers to access simpler features.\pause
-				\item This is especially used in CNNs.
+				\item This is especially used in CNNs. A prominent example is the ResNet architecture
 			\end{enumerate}
     	\end{column}
     \end{columns}
@@ -644,8 +644,591 @@ Sum is taken over the product along each path, over all the paths. It is trivial
 
 \begin{frame}{Aspects of a deep neural network-navigating the loss landscape}
 	\begin{enumerate}[$\bullet$]
-		\item Generally, as far as decision boundaries are concerned, adding depth gives ore bang for the buck than adding more nodes in a single layer.\pause But depth comes with its own share of problems.\pause
+		\item Generally, as far as decision boundaries are concerned, adding depth gives more bang for the buck than adding more nodes in a single layer.\pause But depth comes with its own share of problems.\pause
 		\item Deeper networks have a harder time converging.\pause
 		\item If activation functions are not combined properly then there might be presence of local minimas
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Aspects of a deep neural network-Setting hyperparameters}
+	\begin{enumerate}[$\bullet$]
+		\item Apart from the usual parameters for activation functions, there are other hyperparameters to be set.\pause
+		\item Those include stuff like number of layers, number of nodes in a layer, presence and nature of skip connections, presence and nature of max-out layers, choice of activation  functions, choice of learning rates and schedules.\pause
+		\item It is not practical to test on the training dataset to prevent overfitting(discussed later) nor is it desired to test on the testing dataset. \pause
+		\item In such a scenario using the cross validation set is our best bet.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Aspects of a deep neural network-Grid Search}
+	\begin{enumerate}[$\bullet$]
+		\item For setting the hyperparameters we simply choose a possible set of values for each parameter and try everything on the Grid.\pause
+		\item We start with coarse grids and then move on to finer ones.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Practical aspects of a deep neural network-GPU}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/RTX.jpg}
+			\includegraphics[width=\textwidth]{images/GPUvsCPU.png}
+			\tiny{\textit{Comparison of architecture of CPU vs GPU\\ Src:NVIDEA developer's blog}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item A GPU has more compute units as compared to CPU. It can perform less complicated tasks faster and has the ability to execute the same instruction parallelly. This architecture is often needed in graphics rendering.
+				\item A GPU supports the concept of Single Instruction Multiple
+				Threads (SIMT) which helps in parallelizing the computation pipeline.
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Practical aspects of a deep neural network-GPU}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/RTX.jpg}
+			\includegraphics[width=\textwidth]{images/GPUvsCPU.png}
+			\tiny{\textit{Comparison of architecture of CPU vs GPU\\ Src:NVIDEA developer's blog}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item We can use this in back propagation where repeated matrix multiplications are used in the forward phase\pause
+				\item Uses can also be found in batch gradient descent(or mini-batch gradient descent) where the same computation is repeated across multiple records.\pause
+				\item Often the network is big enough that it doesn't fit in the CPU cache, therefore a CPU has no advantage in terms of bandwidth either. 
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}{Practical aspects of a deep neural network- Distributed computation}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/GPU division.png}
+			\tiny{\textit{Distributed computation in AlexNet\\ Src:Couldn't trace original source}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item With GPU partitioning/ Using multiple GPUs, computation can be distributed. \pause
+				\item \textbf{Hyperparameter search} We simply run with different hyperparameters on different units to make grid search faster.\pause
+				\item  \textbf{Model parallelism} Parts of the model reside in one unit and the rest in others. Examples include Alex-Net which was trained on two GTX 580 GPU. Such models are helpful if and only if the model is large enough to not fit in one GPU: doing this needlessly only increases compute time as data is transferred between different units.
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Practical aspects of a deep neural network- Distributed computation}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/GPU division.png}
+			\tiny{\textit{Distributed computation in AlexNet\\ Src:Couldn't trace original source}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item \textbf{Data parallelism} when the model is small, but there is a large amount of training data, each data can be operated upon in different computational unit and then pooled together.\pause
+				\item Hybrid parallelism which combines  parts of all the above models is discussed in One weird trick for parallelizing convolutional neural networks, Alex Krizhevsky
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Practical aspects of a deep neural network- Pretrained Layers}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/training.png}
+			\tiny{\textit{Training\\ Src:XKCD}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item It takes too long to training neural networks\pause
+				\item But one can claim that the low level features remains more or less the same:\pause  We only need to know how to re-combine the high level features and relabel things on the output layer.\pause
+				\item We look at some ways to do this. 
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Practical aspects of a deep neural network- Pretrained Layers}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/pre-trainedLyers.png}
+			\tiny{\textit{Using pre trained layers\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item As mentioned earlier: we argue that low level features can be reused.\pause
+				\item There are two ways we might do this:\pause
+					\begin{enumerate}[$\bullet$]
+						\item Recompute the weights of the higher layers\pause
+						\item Remake the higher layers from scratch\pause
+					\end{enumerate}
+				\item May requires some data strangling. This whole thing is very empirical in nature. Transfer learning works best with deep
+				CNNs, which tend to learn feature detectors that are
+				much more general (especially in the lower layers)
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Practical aspects of a deep neural network- Unsupervised Pretraining}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/unsupervised pretraining.png}
+			\tiny{\textit{Unsupervised pre training\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item In unsupervised training, a model is trained on all data, including the unlabeled data,
+				using an unsupervised learning technique, then it is fine-tuned for the final task on just the labeled data
+				using a supervised learning technique; the unsupervised part may train one layer at a time as shown
+				here, or it may train the full model directly.
+				\item Traditionally(upto 2010ish) Random Boltzman Machines(RBMs) were used. Now we use GANs.
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Practical aspects of a deep neural network- Unsupervised Pretraining}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/unsupervised pretraining.png}
+			\tiny{\textit{Unsupervised pre training\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			\begin{enumerate}[$\bullet$]
+				\item Unsupervised pre-training can also be used on auxiliary data.\pause
+				\item For example, consider a NLP word prediction case. Even for specialised cases, one doesn't need a specific corpus to predict what comes in \textit{An Apple \textcolor{red}{\_\_} red } 
+			\end{enumerate}
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+
+usebackgroundtemplate{%             declare it
+\tikz[overlay,remember picture] \node[opacity=1, at=(current page.center)] {
+   \includegraphics[height=\paperheight,width=\paperwidth]{images/cnn.pdf}};
+}
+\begin{frame}
+\end{frame}
+
+\usebackgroundtemplate{ }
+
+\begin{frame}{Why CNN?}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+			\begin{center}
+				\includegraphics[width=0.5\textwidth]{images/mnist.png}\\
+				\includegraphics[width=0.5\textwidth]{images/mnist_f.png}\\
+			\end{center}
+			\tiny{\textit{Samples from the MNIST handwriting and fashion dataset\\ Src: www.TensorFlow.org}}
+        \end{column}
+	    \begin{column}{0.6\textwidth} 
+			For images the spatial arrangement of the pixels matter. Therefore, it is unintuitive for dense layers to perform well as all the spatial information is lost.\\\pause
+			We again take inspiration from biology. Hubel and Wiesel's work showed certain neurons were triggered when particular patterns were seen by the eye. We take a similar approach and use activation functions which search for specific patterns.
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Convolutional Filters}
+	\begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/CNN_filter.png}
+			\tiny{\textit{CNN filter to detect horizontal edges\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+        \end{column}
+	    \begin{column}{0.5\textwidth} 
+			We "look for" low level features by taking a matrix which gives a high value on element-wise product and then summing when it detects a feature and preferably 0 or some  other low-value otherwise. We don't create the filters, we let the machine learn them. The output of an image after a particular filter is applied is the feature map corresponding to the feature the filter is trying to capture.
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Convolutional Filters}
+	\begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/CNN_filter_ex.png}
+			\tiny{\textit{Example of a CNN filter\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+        \end{column}
+		\begin{column}{0.5\textwidth}
+	    An example is show on the left. If we convolve with some "stride" or space between consecutive placement of filters, we are also looking to reducing the dimension of the image: essentially a reduction in number of parameters to be considered.
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Convolutional Filters}
+	\begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/CNN_filter_pad.png}
+			\tiny{\textit{Example of a CNN filter with padding\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+        \end{column}
+		\begin{column}{0.5\textwidth}
+			We might make it so that we simply don't go far enough towards the edges that the filter gets stuck. Another method is to "pad" the edges with 0 
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Pooling Filters}
+	\begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/CNN_pool.png}
+			\tiny{\textit{Example of a CNN filter\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+        \end{column}
+		\begin{column}{0.5\textwidth}
+	    We consider another type of filter called a pooling filter. This essentially captures the "essence" of the part of the image where the filter is placed making by only taking the max value while making it indifferent to small changes in the picture. The goal is to decrease the size by subsampling while retaining the useful features
+		
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Pooling Filters-invariance}
+	\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/inv ex.png} 
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        	\includegraphics[width=\textwidth]{images/pooling_inv.png}
+        \end{column}
+    \end{columns}
+	\tiny{\textit{Invariance due to pooling\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+\end{frame}
+
+
+\begin{frame}{Data augmentation}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/Data Aug.png}
+			\tiny{\textit{Example of a data augmentation\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item Data augmentation artificially increases the size of the training set by
+				generating many realistic variants of each training instance. This reduces
+				overfitting, making this a regularization technique.\pause
+				\item Simply adding white noise will not help; the
+				modifications should be learnable. The generated
+				instances should be as realistic as possible: ideally, given an image from
+				the augmented training set, a human should not be able to tell whether it
+				was augmented or not.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+\begin{frame}{Data augmentation}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/Data Aug.png}
+			\tiny{\textit{Example of a data augmentation\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron}}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item For example, you can slightly shift, rotate, and resize every picture in the
+				training set by various amounts and add the resulting pictures to the
+				training set. This forces the model to be more tolerant to
+				variations in the position, orientation, and size of the objects in the
+				pictures. \pause
+				\item To produce a model that's more tolerant of different lighting
+				conditions, you can similarly generate many images with various
+				contrasts. 
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+\begin{frame}{Inception Module}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/Inception module without bottlenecks.png}
+			\tiny{\textit{Schematic of an Inception Module\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item Instead of deciding what size of filter, or which filter to use, we kind of do all of them together.\pause
+				\item The 1$\times$1 filters are kept to:
+					\begin{enumerate}[$\bullet$]
+						\item They can capture patterns
+						along the depth dimension\pause
+						\item They are configured to output fewer feature maps than their inputs, so
+						they serve as bottleneck layers, meaning they reduce dimensionality.\pause
+					\end{enumerate}
+				\item The whole thing can be though of applying a single filter but on steroids.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+\begin{frame}{Inception Module}
+	\includegraphics[width=\textwidth]{images/Inception module with bottlenecks.png}
+	\tiny{\textit{Schematic of an Inception Module with and without bottlenecks\\ Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+\end{frame}
+\begin{frame}{Res-Net Skip connections}
+	\begin{enumerate}[$\bullet$]
+		\item CNNs also use skip connections
+		\item The main idea is only essential high level features propagate forward.
+		\item The higher layers may learn faster than the shallower layers due to presence of low level feature highways.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Squeeze and excite architecture}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/S&E.png}
+			\tiny{\textit{Squueze and excite architecture\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item The idea stems from the fact that not all features are equally important.\pause
+				\item To recognize the essential feature we train a shallow neural network and scale the feature map  with respect to the outputs. \pause
+				\item This is essentially a cross feature map transformation and less of a within feature transformation.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+\begin{frame}{Squeeze and excite architecture}
+	\includegraphics[width=\textwidth]{images/SEoverview.png}
+	\tiny{\textit{Squeeze and Excititation overview\\ Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+\end{frame}
+\begin{frame}{Squeeze and excite architecture}
+	\begin{center}
+		\includegraphics[width=0.69\textwidth]{images/SE implementations.png}%nice~
+	\end{center}
+	\tiny{\textit{Squeeze and Excite Implementation\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron  }}
+\end{frame}
+
+\begin{frame}{Object localization}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/loca.png}
+			\tiny{\textit{Object localization\\Src:Video C4W3L02 by DeepLearningAI, Andrew Ng}}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item We would like to detect the location (or absence) of an object in an image.\pause
+				\item This is a two-part process: We need to recognize that there is an object centered in the bounding box, and then we identify what object it is. \pause
+				\item This can be done together by taking them to be output of a single Neural Network. For example Output 1 to 10 gives class probability, output 11 gives objectness probability, output 12-15 gives opposite corners of the bounding box.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+\begin{frame}{Object localization}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/landmark detection.png}
+			\tiny{\textit{Object localization\\ Src:Video C4W3L02 by DeepLearningAI, Andrew Ng}}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item It might lead to detection of the same object multiple times. To prevent this we might discard overlapping boxes whose object detection confidence is low.\pause
+				\item Instead of bounding boxes we might also try to detect landmarks such as corners of eyes, border of face, lips etc. They are an integral part of emotion recognition from images and augmented reality
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Object detection by sliding window}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/object detecton sliding CNN.png}
+			\tiny{\textit{Object detection by sliding window\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item For detecting multiple object in a single image, one might use a sliding window of boxes and run object detection in each of them.
+				\item It might lead to detection of the same object multiple times. To prevent this we might discard overlapping boxes whose object detection confidence is low.\pause
+				\item This is computationally expensive
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Fully Convolutional Networks(FCN)}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/FCN.png}
+			\tiny{\textit{FCN\\ Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item Consider a CNN which does single class prediction on a 224$\times$224 image and outputs a class prediction probability output, an objectness probability output and a bounding box.\pause
+				\item We might consider this particular network as a filter in itself and run it on larger images.\pause
+				\item We are therefore essentially removing dense layers and replacing it with an convolutional layer.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{YOLO: You only look once}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/YOLO.png}
+			\tiny{\textit{YOLO\\Src:Video C4W3L09 by DeepLearningAI, Andrew Ng }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item For each class, the machine learns the approximate shape of the object bounding box. This is an anchor\pause
+				\item The image is divided in a grid and for each grid object localization is done. For object of class $i$, the bounding box is chosen such that it is most similar in shape to anchor of class $i$.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+usebackgroundtemplate{%             declare it
+\tikz[overlay,remember picture] \node[opacity=1, at=(current page.center)] {
+   \includegraphics[height=\paperheight,width=\paperwidth]{images/RNN.pdf}};
+}
+\begin{frame}
+\end{frame}
+
+\usebackgroundtemplate{ }
+
+\begin{frame}{Why RNN?}
+	\begin{columns}[T]
+        \begin{column}{0.7\textwidth}
+			\includegraphics[width=\textwidth]{images/why RNN.png}
+			\tiny{\textit{Why RNN is needed\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+        \end{column}
+	    \begin{column}{0.3\textwidth} 
+			RNN is used on data with a temporal sequence. For sequences like text, what comes after another words plays an important role. We also need to factor in the fact that there is 1 dimension to consider and the sequence length may vary. 
+    	\end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{RNN variants}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{images/RNN variant.png}
+	\end{center}
+	\tiny{\textit{RNN variants with respect to different inputs and outputs\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal }}
+\end{frame}
+\begin{frame}{RNN Structure and Trainig}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/RNN struct.png}
+			\tiny{\textit{Structure of an RNN\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal  }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item A sequence starts with a $start$ and $end$ tokem\pause
+				\item We assume $W_{xh},W_{hh},W_{hy}$ remains constant.\pause
+				\item We use back propagation through time to calculate all parameters.\pause Note, since the temporal sequence matters, we can no longer use stochastic/mini batch gradient descent methods. This is a reason why training RNN is difficult.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Bidirectional RNN}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/BiRNN.png}
+			\tiny{\textit{Structure of an Bidirectional RNN\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal  }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item Note that going in one direction is not always accurate: for languages text which is going to appear later might influence text which is predicted now. 
+				\item A toy example might be \textit{"She has  a \textcolor{red}{\_\_} \textcolor{blue}{apple}"} vs \textit{"She has  a \textcolor{red}{\_\_} \textcolor{blue}{banana}"} 
+				\item Therefore, we might go bi directionally during training to make the network more robust.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{The problem with RNN}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/RNN struct.png}
+			\tiny{\textit{Structure of an RNN\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal  }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item With RNN, as training is done over sequences of arbitrary length, the problem of unstable gradient is vastly exaggerated\pause
+				\item Moreover, intuitively it can be seen that long patterns can't be captured.\pause
+				\item Therefore, we build upon this basic idea by allowing the machine to have a separate channel for capturing long term memory. 
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Long Term Short Memory(LSTM)}
+	\includegraphics[width=\textwidth]{images/LSTM.png}
+	\tiny{\textit{LSTM architecture\\SrcYT video Long Short-Term Memory (LSTM), Clearly Explained, StatQuest with Josh Starmer}}
+\end{frame}
+
+
+usebackgroundtemplate{%             declare it
+\tikz[overlay,remember picture] \node[opacity=1, at=(current page.center)] {
+   \includegraphics[height=\paperheight,width=\paperwidth]{images/reg.pdf}};
+}
+\begin{frame}
+\end{frame}
+
+\usebackgroundtemplate{ }
+
+\begin{frame}{Bias, Variance and need for regularization}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/overfit and underfit.png}
+			\tiny{\textit{Bias, Variance and need for regularization\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal  }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item We wish for our model to learn the patterns of the distribution the data is taken from: not the patterns of the subsample it is trained on.\pause
+				\item Simpler model don't have the capability to learn advanced sub-sample features. But they can't model the underlying distribution either 
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Bias, Variance and need for regularization}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/overfit and underfit.png}
+			\tiny{\textit{Bias, Variance and need for regularization\\Src:Neural Networks and Deep Learning: A Textbook, Charu C. Aggarwal  }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item For more complicated models, the machine may learn patterns unique to the sub-sample but not present in distribution.\pause
+				\item Therefore, fundamentally there is a trade off between bias(the model learning sub sample specific patterns) and variance(the complexity of the model)\pause
+				\item The best way to proceed is to get a middle ground and use regularization methods to lower the bias while increasing variance.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Regularization methods: Early stopping}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\includegraphics[width=\textwidth]{images/early Stopping.png}
+			\tiny{\textit{Early Stopping\\Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item With increasing epoch the loss function on the training set decreases\pause
+				\item We argue when the model starts overfitting and learning parameters specific to the training data subsample, the loss on the validation set will start to increase. \pause
+				\item The moment when it starts to increase, we stop training. 
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Regularization methods: Dropouts}
+	\begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+        	\begin{center}
+				\includegraphics[width=0.7\textwidth]{images/dropout.png}
+			\end{center}
+			\tiny{\textit{Dropout\\Src:Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow  Concepts, Tools, and Techniques to Build Intelligent Systems-O'Reilly Media, Inc, Aurélien Géron }}
+        \end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{enumerate}[$\bullet$]
+				\item On each epoch a certain amount of nodes on each layer will be dropped\pause
+				\item This would make sure all the nodes learn in a "uniform" fashion\pause
+				\item One should make sure to lower the input values by the same value as which the neurons are dropped during deployment to make sure the strength of the input signal is consistent.\pause
+				\item We have a solid theory of why dropout works and based on it, better methods like Monte Carlo dropout has been proposed.
+			\end{enumerate}
+		\end{column} 
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Other topics}
+	\begin{enumerate}[$\bullet$]
+		\item Attention mechanisms and transformers\pause
+		\item GANs\pause
+		\item Auto Endcoders and decoders\pause
+		\item Reinforcement learning\pause
+		\item Boltzman Random Machines\pause
 	\end{enumerate}
 \end{frame}
