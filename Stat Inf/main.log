@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  6 AUG 2023 13:05
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  6 AUG 2023 19:39
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/repo/LATEX_projects/Stat Inf/main"
@@ -1297,12 +1297,12 @@ Here is how much of LuaTeX's memory you used:
  100000,1373583 words of node,token memory allocated
  4663 words of node memory still in use:
    56 hlist, 8 vlist, 14 rule, 11 disc, 4 local_par, 6 math, 104 glue, 4 kern, 12 penalty, 150 glyph, 242 attribute, 102 glue_spec, 242 attribute_list, 2 write, 98 pdf_literal, 2 pdf_dest, 20 pdf_colorstack nodes
-   avail lists: 1:1,2:861,3:476,4:98,5:278,6:73,7:3783,8:51,9:725,10:7,11:231
+   avail lists: 1:1,2:861,3:476,4:98,5:278,6:73,7:3783,8:51,9:727,10:7,11:231
  58038 multiletter control sequences out of 65536+600000
  80 fonts using 3639339 bytes
  84i,19n,85p,574b,917s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/ghosh/AppData/Local/Microsoft/Windows/Fonts/IndieFlower-Regular.ttf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (12 pages, 3652125 bytes).
+Output written on main.pdf (12 pages, 3652124 bytes).
 
 PDF statistics: 326 PDF objects out of 1000 (max. 8388607)
  258 compressed objects within 3 object streams
