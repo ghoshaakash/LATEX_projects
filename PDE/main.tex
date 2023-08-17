@@ -1,0 +1,78 @@
+% !TeX program = LuaLaTeX
+\documentclass[12pt,oneside]{book}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage[left=0.5in,right=1.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+            minimum height=1cm,
+            minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{mhchem}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{titlesec, blindtext, color}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{sidenotes} 
+\usepackage{esdiff}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\usepackage{esvect}
+
+
+
+\renewcommand{\qed}{\quad\qedsymbol}
+\setlength\parindent{0pt}
+
+
+\begin{document}
+\begin{titlepage}
+
+\end{titlepage}
+\clearpage
+
+%\setmainfont{KITTY CAT}
+\setmainfont{Meows}
+
+\tableofcontents
+
+\chapter{Basic Stuff}
+\section{Probability measures and Random variable}
+\begin{marginfigure}%
+    \includegraphics[width=2.4\marginparwidth]{graphics/(40).png}
+\end{marginfigure}%
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

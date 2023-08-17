@@ -1,0 +1,147 @@
+% !TeX program = LuaLaTeX
+\documentclass[a4paper,oneside]{book}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
+\usepackage{lipsum} %This package just generates Lorem Ipsum filler text. 
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usetikzlibrary{arrows,calc,positioning}
+
+    \tikzset{
+        block/.style = {draw, rectangle,
+                        minimum height=1cm,
+                        minimum width=1.5cm},
+        input/.style = {coordinate,node distance=1cm},
+        output/.style = {coordinate,node distance=4cm},
+        arrow/.style={draw, -latex,node distance=2cm},
+        pinstyle/.style = {pin edge={latex-, black,node distance=2cm}},
+        sum/.style = {draw, circle, node distance=1cm},
+    }
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{mhchem}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{titlesec, blindtext, color}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{sidenotes} 
+\usepackage{esdiff}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\usepackage{esvect}
+\usepackage{pdfpages}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+\setlength\parindent{0pt}
+
+\usepackage{listings}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\hypersetup{pdfborder=0 0 0}
+
+
+\begin{document}
+\begin{titlepage}
+    \includepdf[fitpaper]{images/cover}
+\end{titlepage}
+\clearpage
+\newpage
+\newpage
+%\setmainfont{KITTY CAT}
+%\setmainfont{Meows}
+
+\tableofcontents
+
+\newgeometry{top=5mm, bottom=10mm,left=0.5in,right=0.5in}
+
+\part{Cops and Robbers}
+
+\restoregeometry
+
+
+\include{Cr}
+
+
+
+
+
+
+\newgeometry{top=5mm, bottom=10mm,left=0.5in,right=0.5in}
+
+\part{Markov Decision Process (MDP)}
+
+\restoregeometry
+
+\include{MDP}
+
+
+
+
+
+\newgeometry{top=5mm, bottom=10mm,left=0.5in,right=0.5in}
+
+\part{Fun with Algorithms (FUN Conf)}
+
+\restoregeometry
+
+
+\include{Fun}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+

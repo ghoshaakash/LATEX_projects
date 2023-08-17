@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  6 AUG 2023 19:39
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  14 AUG 2023 10:30
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/repo/LATEX_projects/Stat Inf/main"
@@ -960,34 +960,34 @@ File: tikzlibraryshadows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 \pgfbs@fading@count=\count384
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 70.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 73.
  (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 73.
  (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1042,7 +1042,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 73.
  (c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (c:/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1052,15 +1052,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count391
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 
 \openout5 = main.out
 
-Package chemgreek Info: Activating mapping `fontspec' on line 70.
+Package chemgreek Info: Activating mapping `fontspec' on line 73.
 
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
@@ -1068,56 +1068,56 @@ Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 
 \symlegacymaths=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 70.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 70.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 70.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 70.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 70.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 70.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 70.
-LaTeX Font Info:    Redeclaring math accent \check on input line 70.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 70.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 70.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 70.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 70.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 70.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 73.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 73.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 73.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 73.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 73.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 73.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 73.
+LaTeX Font Info:    Redeclaring math accent \check on input line 73.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 73.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 73.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 73.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 73.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 73.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 70.
+(Font)              `operators' in the math version `normal' on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 70.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 70.
+(Font)              `operators' in the math version `bold' on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 70.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 70.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 70.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 70.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 70.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 70.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 73.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 70.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 70.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 70.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 73.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 70.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 73.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen325
@@ -1133,55 +1133,55 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (c:/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 70.
-LaTeX Info: Redefining \celsius on input line 70.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 70.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 73.
+LaTeX Info: Redefining \celsius on input line 73.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 73.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 70.
-Package gensymb Info: Using \Omega for \ohm on input line 70.
+LaTeX Info: Redefining \ohm on input line 73.
+Package gensymb Info: Using \Omega for \ohm on input line 73.
 
 Package gensymb Warning: Not defining \micro.
 
 
 warning  (file graphics/cover.pdf) (pdf inclusion): PDF inclusion: found PDF version '1.7', but at most version '1.5' allowed
-<graphics/cover.pdf, id=131, 597.50804pt x 845.0471pt>
+<graphics/cover.pdf, id=175, 597.50804pt x 845.0471pt>
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf>
-Package luatex.def Info: graphics/cover.pdf  used on input line 72.
+Package luatex.def Info: graphics/cover.pdf  used on input line 75.
 (luatex.def)             Requested size: 597.50658pt x 845.04504pt.
 
 warning  (file graphics/cover.pdf) (pdf inclusion): PDF inclusion: found PDF version '1.7', but at most version '1.5' allowed
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf>
-Package luatex.def Info: graphics/cover.pdf  used on input line 72.
+Package luatex.def Info: graphics/cover.pdf  used on input line 75.
 (luatex.def)             Requested size: 597.50658pt x 845.04504pt.
 
 warning  (file graphics/cover.pdf) (pdf inclusion): PDF inclusion: found PDF version '1.7', but at most version '1.5' allowed
 
 warning  (file graphics/cover.pdf) (pdf inclusion): PDF inclusion: found PDF version '1.7', but at most version '1.5' allowed
-<graphics/cover.pdf, id=134, page=1, 597.50804pt x 845.0471pt>
+<graphics/cover.pdf, id=178, page=1, 597.50804pt x 845.0471pt>
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf, page 1>
-Package luatex.def Info: graphics/cover.pdf , page1 used on input line 72.
+Package luatex.def Info: graphics/cover.pdf , page1 used on input line 75.
 (luatex.def)             Requested size: 597.50658pt x 845.04504pt.
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf, page 1>
-Package luatex.def Info: graphics/cover.pdf , page1 used on input line 72.
+Package luatex.def Info: graphics/cover.pdf , page1 used on input line 75.
 (luatex.def)             Requested size: 597.53392pt x 845.08372pt.
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf, page 1>
-Package luatex.def Info: graphics/cover.pdf , page1 used on input line 72.
+Package luatex.def Info: graphics/cover.pdf , page1 used on input line 75.
 (luatex.def)             Requested size: 597.53392pt x 845.08372pt.
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf, page 1>
-Package luatex.def Info: graphics/cover.pdf , page1 used on input line 72.
+Package luatex.def Info: graphics/cover.pdf , page1 used on input line 75.
 (luatex.def)             Requested size: 597.53392pt x 845.08372pt.
 File: graphics/cover.pdf Graphic file (type pdf)
 <use graphics/cover.pdf, page 1>
-Package luatex.def Info: graphics/cover.pdf , page1 used on input line 72.
+Package luatex.def Info: graphics/cover.pdf , page1 used on input line 75.
 (luatex.def)             Requested size: 597.53392pt x 845.08372pt.
 [1
 
@@ -1216,7 +1216,7 @@ Package fontspec Info: Font family 'IndieFlower(0)' created for font 'Indie
 
 
 LaTeX Font Warning: Font shape `TU/IndieFlower(0)/b/n' undefined
-(Font)              using `TU/IndieFlower(0)/m/n' instead on input line 80.
+(Font)              using `TU/IndieFlower(0)/m/n' instead on input line 83.
 
 (./main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
@@ -1235,77 +1235,300 @@ LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 2
  (c:/texlive/2022/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
-))
-\tf@toc=\write6
-
-\openout6 = main.toc
-
+)
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package marginnote Info: Using workaround for absolute page number on input line 82.
+Package marginnote Info: Using workaround for absolute page number on input line 35.
+)
+\tf@toc=\write6
 
+\openout6 = main.toc
+
+
+LaTeX Font Warning: Font shape `TU/IndieFlower(0)/m/sl' undefined
+(Font)              using `TU/IndieFlower(0)/m/n' instead on input line 86.
+
+[2]
 Chapter 1.
-[2
+<chibis/file_001.png, id=234, 185.69376pt x 160.6pt>
+File: chibis/file_001.png Graphic file (type png)
+<use chibis/file_001.png>
+Package luatex.def Info: chibis/file_001.png  used on input line 89.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_002.png, id=235, 185.69376pt x 160.6pt>
+File: chibis/file_002.png Graphic file (type png)
+<use chibis/file_002.png>
+Package luatex.def Info: chibis/file_002.png  used on input line 101.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_003.png, id=236, 185.69376pt x 160.6pt>
+File: chibis/file_003.png Graphic file (type png)
+<use chibis/file_003.png>
+Package luatex.def Info: chibis/file_003.png  used on input line 130.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+[3
 
-]
-Overfull \hbox (20.59502pt too wide) in paragraph at lines 196--197
+<./chibis/file_001.png><./chibis/file_002.png>]
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+Overfull \hbox (20.59502pt too wide) in paragraph at lines 209--210
 [][] 
  []
 
 
-LaTeX Font Warning: Font shape `TU/IndieFlower(0)/m/sl' undefined
-(Font)              using `TU/IndieFlower(0)/m/n' instead on input line 245.
+LaTeX Warning: Marginpar on page 4 moved.
 
-[3] [4]
+<chibis/file_004.png, id=255, 185.69376pt x 160.6pt>
+File: chibis/file_004.png Graphic file (type png)
+<use chibis/file_004.png>
+Package luatex.def Info: chibis/file_004.png  used on input line 245.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_005.png, id=256, 185.69376pt x 160.6pt>
+File: chibis/file_005.png Graphic file (type png)
+<use chibis/file_005.png>
+Package luatex.def Info: chibis/file_005.png  used on input line 253.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_006.png, id=257, 185.69376pt x 160.6pt>
+File: chibis/file_006.png Graphic file (type png)
+<use chibis/file_006.png>
+Package luatex.def Info: chibis/file_006.png  used on input line 263.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+[4<./chibis/file_003.png><./chibis/file_004.png><./chibis/file_005.png>]
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5<./chibis/file_006.png>]
 Chapter 2.
-[5
+<chibis/file_007.png, id=281, 185.69376pt x 160.6pt>
+File: chibis/file_007.png Graphic file (type png)
+<use chibis/file_007.png>
+Package luatex.def Info: chibis/file_007.png  used on input line 274.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_008.png, id=282, 185.69376pt x 160.6pt>
+File: chibis/file_008.png Graphic file (type png)
+<use chibis/file_008.png>
+Package luatex.def Info: chibis/file_008.png  used on input line 286.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
 
-] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+LaTeX Warning: Marginpar on page 6 moved.
+
+<chibis/file_009.png, id=283, 185.69376pt x 160.6pt>
+File: chibis/file_009.png Graphic file (type png)
+<use chibis/file_009.png>
+Package luatex.def Info: chibis/file_009.png  used on input line 296.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6
+
+<./chibis/file_007.png><./chibis/file_008.png><./chibis/file_009.png>]
+<chibis/file_010.png, id=298, 185.69376pt x 160.6pt>
+File: chibis/file_010.png Graphic file (type png)
+<use chibis/file_010.png>
+Package luatex.def Info: chibis/file_010.png  used on input line 316.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_011.png, id=299, 185.69376pt x 160.6pt>
+File: chibis/file_011.png Graphic file (type png)
+<use chibis/file_011.png>
+Package luatex.def Info: chibis/file_011.png  used on input line 331.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+ [7<./chibis/file_010.png><./chibis/file_011.png>]
+<chibis/file_012.png, id=311, 185.69376pt x 160.6pt>
+File: chibis/file_012.png Graphic file (type png)
+<use chibis/file_012.png>
+Package luatex.def Info: chibis/file_012.png  used on input line 347.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_013.png, id=312, 185.69376pt x 160.6pt>
+File: chibis/file_013.png Graphic file (type png)
+<use chibis/file_013.png>
+Package luatex.def Info: chibis/file_013.png  used on input line 355.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_014.png, id=313, 185.69376pt x 160.6pt>
+File: chibis/file_014.png Graphic file (type png)
+<use chibis/file_014.png>
+Package luatex.def Info: chibis/file_014.png  used on input line 364.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_015.png, id=314, 185.69376pt x 160.6pt>
+File: chibis/file_015.png Graphic file (type png)
+<use chibis/file_015.png>
+Package luatex.def Info: chibis/file_015.png  used on input line 372.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+ [8<./chibis/file_012.png><./chibis/file_013.png><./chibis/file_014.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 [][]\TU/IndieFlower(0)/m/n/8 The den-sity is
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 366--367
+Underfull \hbox (badness 1590) in paragraph at lines 414--415
 \TU/IndieFlower(0)/m/n/8 con-cern-trated here,
  []
 
 
-Underfull \hbox (badness 7099) in paragraph at lines 366--367
+Underfull \hbox (badness 7099) in paragraph at lines 414--415
 \TU/IndieFlower(0)/m/n/8 which gives more
  []
 
-[8]
+<chibis/file_016.png, id=326, 185.69376pt x 160.6pt>
+File: chibis/file_016.png Graphic file (type png)
+<use chibis/file_016.png>
+Package luatex.def Info: chibis/file_016.png  used on input line 429.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+[9<./chibis/file_015.png><./chibis/file_016.png>]
+<chibis/file_017.png, id=340, 185.69376pt x 160.6pt>
+File: chibis/file_017.png Graphic file (type png)
+<use chibis/file_017.png>
+Package luatex.def Info: chibis/file_017.png  used on input line 537.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_018.png, id=341, 185.69376pt x 160.6pt>
+File: chibis/file_018.png Graphic file (type png)
+<use chibis/file_018.png>
+Package luatex.def Info: chibis/file_018.png  used on input line 543.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+
+LaTeX Warning: Marginpar on page 10 moved.
+
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 494.
+(amsmath)                 on input line 551.
 
-[9] [10] [11] (./main.aux)
+<chibis/file_019.png, id=342, 185.69376pt x 160.6pt>
+File: chibis/file_019.png Graphic file (type png)
+<use chibis/file_019.png>
+Package luatex.def Info: chibis/file_019.png  used on input line 560.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+[10<./chibis/file_017.png><./chibis/file_018.png><./chibis/file_019.png>] [11]
+<chibis/file_020.png, id=368, 185.69376pt x 160.6pt>
+File: chibis/file_020.png Graphic file (type png)
+<use chibis/file_020.png>
+Package luatex.def Info: chibis/file_020.png  used on input line 596.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+
+LaTeX Font Warning: Font shape `TU/IndieFlower(0)/m/it' undefined
+(Font)              using `TU/IndieFlower(0)/m/sl' instead on input line 604.
+
+<chibis/file_021.png, id=369, 185.69376pt x 160.6pt>
+File: chibis/file_021.png Graphic file (type png)
+<use chibis/file_021.png>
+Package luatex.def Info: chibis/file_021.png  used on input line 610.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_022.png, id=370, 185.69376pt x 160.6pt>
+File: chibis/file_022.png Graphic file (type png)
+<use chibis/file_022.png>
+Package luatex.def Info: chibis/file_022.png  used on input line 618.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_023.png, id=371, 185.69376pt x 160.6pt>
+File: chibis/file_023.png Graphic file (type png)
+<use chibis/file_023.png>
+Package luatex.def Info: chibis/file_023.png  used on input line 629.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+[12<./chibis/file_020.png><./chibis/file_021.png><./chibis/file_022.png>]
+<chibis/file_024.png, id=386, 185.69376pt x 160.6pt>
+File: chibis/file_024.png Graphic file (type png)
+<use chibis/file_024.png>
+Package luatex.def Info: chibis/file_024.png  used on input line 637.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+
+LaTeX Font Warning: Font shape `TU/IndieFlower(0)/m/it' undefined
+(Font)              using `TU/IndieFlower(0)/m/sl' instead on input line 639.
+
+
+LaTeX Font Warning: Font shape `TU/IndieFlower(0)/b/sl' undefined
+(Font)              using `TU/IndieFlower(0)/b/n' instead on input line 640.
+
+
+LaTeX Font Warning: Font shape `TU/IndieFlower(0)/m/it' undefined
+(Font)              using `TU/IndieFlower(0)/m/sl' instead on input line 642.
+
+<chibis/file_027.png, id=387, 185.69376pt x 160.6pt>
+File: chibis/file_027.png Graphic file (type png)
+<use chibis/file_027.png>
+Package luatex.def Info: chibis/file_027.png  used on input line 649.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+<chibis/file_029.png, id=388, 185.69376pt x 160.6pt>
+File: chibis/file_029.png Graphic file (type png)
+<use chibis/file_029.png>
+Package luatex.def Info: chibis/file_029.png  used on input line 665.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+[13<./chibis/file_023.png><./chibis/file_024.png><./chibis/file_027.png><./chibis/file_029.png>] [14]
+Chapter 3.
+luaotfload | aux : font no 89 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 90 (nil) does not define feature smcp for script latn with language dflt
+
+Package fontspec Info: Font family 'CMUSerif(0)' created for font 'CMU Serif'
+(fontspec)             with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"CMUSerif:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"CMUSerif:mode=node;script=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"CMUSerif/B:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"CMUSerif/B:mode=node;script=latn;language=dflt;+tlig;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"CMUSerif/I:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"CMUSerif/BI:mode=node;script=latn;language=dflt;+tlig;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+luaotfload | aux : font no 18 (nil) defines no feature for script latn
+luaotfload | aux : font no 18 (nil) defines no feature for script dflt
+<chibis/file_025.png, id=408, 185.69376pt x 160.6pt>
+File: chibis/file_025.png Graphic file (type png)
+<use chibis/file_025.png>
+Package luatex.def Info: chibis/file_025.png  used on input line 682.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
+
+ []
+
+<chibis/file_026.png, id=409, 185.69376pt x 160.6pt>
+File: chibis/file_026.png Graphic file (type png)
+<use chibis/file_026.png>
+Package luatex.def Info: chibis/file_026.png  used on input line 702.
+(luatex.def)             Requested size: 108.405pt x 93.75824pt.
+luaotfload | aux : font no 18 (nil) defines no feature for script latn
+luaotfload | aux : font no 18 (nil) defines no feature for script dflt [15
+
+<./chibis/file_025.png><./chibis/file_026.png>] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 326D3C31ECA4D0CF3C4F57534B45BB8F;3346.
+(rerunfilecheck)             Checksum: A4F6DDD6CC8EA815FE14D247F5A61ECC;4729.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38908 strings out of 477785
+ 39354 strings out of 477785
  100000,1373583 words of node,token memory allocated
- 4663 words of node memory still in use:
-   56 hlist, 8 vlist, 14 rule, 11 disc, 4 local_par, 6 math, 104 glue, 4 kern, 12 penalty, 150 glyph, 242 attribute, 102 glue_spec, 242 attribute_list, 2 write, 98 pdf_literal, 2 pdf_dest, 20 pdf_colorstack nodes
-   avail lists: 1:1,2:861,3:476,4:98,5:278,6:73,7:3783,8:51,9:727,10:7,11:231
- 58038 multiletter control sequences out of 65536+600000
- 80 fonts using 3639339 bytes
+ 13718 words of node memory still in use:
+   305 hlist, 80 vlist, 86 rule, 14 disc, 52 local_par, 54 math, 366 glue, 28 kern, 134 penalty, 247 glyph, 619 attribute, 102 glue_spec, 619 attribute_list, 2 write, 16 pdf_literal, 26 pdf_dest, 68 pdf_colorstack, 24 pdf_setmatrix, 24 pdf_save, 24 pdf_restore nodes
+   avail lists: 1:1,2:807,3:488,4:84,5:294,6:54,7:3852,8:51,9:644,10:7,11:280
+ 58262 multiletter control sequences out of 65536+600000
+ 91 fonts using 6103959 bytes
  84i,19n,85p,574b,917s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/ghosh/AppData/Local/Microsoft/Windows/Fonts/IndieFlower-Regular.ttf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
-Output written on main.pdf (12 pages, 3652124 bytes).
+<c:/texlive/2022/texmf-dist/fonts/opentype/public/cm-unicode/cmunrm.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/ghosh/AppData/Local/Microsoft/Windows/Fonts/IndieFlower-Regular.ttf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/yhmath/yhcmex.pfb>
+Output written on main.pdf (16 pages, 4132887 bytes).
 
-PDF statistics: 326 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 131072)
- 401 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 503 PDF objects out of 1000 (max. 8388607)
+ 371 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 131072)
+ 489 words of extra memory for PDF output out of 10000 (max. 100000000)
 

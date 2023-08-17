@@ -1,0 +1,32 @@
+\chapter{Tensorflow ANN Cookbook}
+
+\section{Introduction}
+
+\section{Include Script}
+We will be using TensorFlow for our works here. The \verb|include| script looks like the following:
+\begin{lstlisting}
+    import tensorflow as tf
+    import numpy as np
+    import pandas as pd
+    import matplotlib
+\end{lstlisting}
+
+\section{Loading Data}
+For the examples we mentioned above we can simply use already available datasets:
+\begin{lstlisting}
+    fashion_mnist = tf.keras.datasets.fashion_mnist.load_data()
+\end{lstlisting}
+We split in train-validation-test segments:
+\begin{lstlisting}
+    (X_train_full, y_train_full), (X_test, y_test) = fashion_mnist
+    X_train, y_train = X_train_full[:-5000], y_train_full[:-5000]
+    X_valid, y_valid = X_train_full[-5000:], y_train_full[-5000:]
+\end{lstlisting}
+Now define the class labels:
+\begin{lstlisting}
+    class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat","Sandal", "Shirt", "Sneaker", "Bag", "Ankle boot"]
+\end{lstlisting}
+And we are ready to go. Things to note:
+\begin{enumerate}
+    \item Inputs must be \verb|numpy| arrays.
+\end{enumerate}

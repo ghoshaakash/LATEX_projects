@@ -1,25 +1,36 @@
-\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Why statistical inference?}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Problem of non-indetifiability}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.a}Example}{3}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Parameter}{3}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.a}Examples}{3}{subsection.1.3.1}%
-\contentsline {section}{\numberline {1.4}Regular families}{4}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Statistic}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Ancillary Statistics}{5}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.a}Example 1}{5}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.b}Example 2}{6}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.c}Example 3}{6}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Scale Family}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Location Family}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Location-Scale Family}{7}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Limiting conditions}{8}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Characterization in terms of level sets}{8}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Sufficient Statistic}{9}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.a}Example}{9}{subsection.2.8.1}%
-\contentsline {section}{\numberline {2.9}Fisher-Neyman factorization}{9}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.a}Example 1}{10}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.b}Example 2}{10}{subsection.2.9.2}%
-\contentsline {subsection}{\numberline {2.9.c}Example 3}{10}{subsection.2.9.3}%
-\contentsline {subsection}{\numberline {2.9.d}Example 4}{10}{subsection.2.9.4}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Why statistical inference?}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problem of non-indetifiability}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.a}Example}{4}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Parameter}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.a}Examples}{4}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Regular families}{5}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Statistic}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ancillary Statistics}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.a}Example 1}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.b}Example 2}{7}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.c}Example 3}{7}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Scale Family}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Location Family}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Location-Scale Family}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Limiting conditions}{9}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Characterization in terms of level sets}{9}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Sufficient Statistic}{10}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.a}Example}{10}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}Fisher-Neyman factorization}{10}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.a}Example 1}{11}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.b}Example 2}{11}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.c}Example 3}{11}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.d}Example 4}{11}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Minimal sufficient Statistic}{12}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Example}{12}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.a}Example 1}{12}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.b}Example 2}{12}{subsection.2.11.2}%
+\contentsline {section}{\numberline {2.12}Complete statistics}{13}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Misc. Theorems}{13}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Exponential Families}{13}{section.2.14}%
+\contentsline {section}{\numberline {2.15}Examples}{13}{section.2.15}%
+\contentsline {subsection}{\numberline {2.15.a}Example 1}{13}{subsection.2.15.1}%
+\contentsline {subsection}{\numberline {2.15.b}Example 2}{14}{subsection.2.15.2}%
+\contentsline {chapter}{\numberline {3}Assignment-1}{15}{chapter.3}%

@@ -66,6 +66,9 @@
 \renewcommand{\qed}{\quad\qedsymbol}
 \setlength\parindent{0pt}
 
+\definecolor{bgcol}{HTML}{e1e0e5}
+\definecolor{bodercol}{HTML}{69667c}
+
 
 \begin{document}
 \begin{titlepage}
@@ -79,8 +82,12 @@
 
 \tableofcontents
 
+
 \chapter{Introduction}
 \section{Why statistical inference?}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_001.png}
+\end{marginfigure}%
 There are three main questions we would like to answer:
 \begin{enumerate}
     \item Given a random vector $X$, determine which $\theta\in \Theta$ is most compatible with the data given [i.e. which $\theta\in\Theta$ generates $X$]. This is point estimation.
@@ -90,6 +97,9 @@ There are three main questions we would like to answer:
 We would also like our answers to be optimal in each of the above cases. 
 
 \section{Problem of non-indetifiability}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_002.png}
+\end{marginfigure}%
 This is a problem which arises when more than one value of $\theta\in\Theta$ can give rise to the same $f_\theta$. 
 
 \begin{center}
@@ -116,6 +126,9 @@ This is a problem which arises when more than one value of $\theta\in\Theta$ can
 $\exists \theta_1,\theta_2$ such that $g(\theta_1)=g(\theta_2)$. The difficulty arising from this is very obvious: with non-identifiability, $\theta_1$ can be confused with $\theta_2$ as we are essentially claiming that both $\theta_1$ and $\theta_2$ results in the same data generating mechanism.  \textbf{We must understand that this is an inherent problem of our data generating mechanism/experiment and must be addressed before any further analysis is carried out.} 
 
 \subsection{Example}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_003.png}
+\end{marginfigure}%
 Consider a scenario where we want to test the effectiveness of two fertilizers on a field. What we might do is divide the field in two divisions such, use fertilizer one on the first half and fertilizer two on the second half and then record our crop yield. Assume that the field has yield follows a normal distribution with mean $\alpha$ with standard deviation $1$. Further, assume that each fertilizer $i$ increases yield by $\alpha_i$. We repeat this process several($=n$) times.
 
 
@@ -228,10 +241,17 @@ Again note this inability is an inherent flaw in the experiment itself, and we c
 
 
 \section{Parameter}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_004.png}
+\end{marginfigure}%
 A parameter is a function $$\nu:\mathcal{F}_\theta\to\mathcal N$$
 where $\mathcal N$ is an arbitrary set. When $F_\theta$ is an identifiable parameterization, then there exists function $q$ such that:
 $$\nu(F_\theta)=q(\theta)$$
+Identifiability ensures that we can recover $\nu$ from $q$: Going from $\nu$ to $q$ requires no conditions on indetifiability. 
 \subsection{Examples}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_005.png}
+\end{marginfigure}%
 \begin{enumerate}
     \item $\mu(\theta)=\int xdF_\theta(x)$
     \item $\sigma^2(\theta)=\int x^2dF_\theta(x)-(\mu(\theta)^2)$
@@ -239,6 +259,9 @@ $$\nu(F_\theta)=q(\theta)$$
 \end{enumerate}
 
 \section{Regular families}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_006.png}
+\end{marginfigure}%
 For our work we will assume that:
 \begin{enumerate}
     \item All $F_\theta\in\mathcal F$ have continuous CDF with density $f_\theta$ or are discrete with pmf $f_\theta$
@@ -247,7 +270,9 @@ For our work we will assume that:
 
 
 \chapter{Statistic}
-\section{Introduction}
+\section{Introduction}\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_007.png}
+\end{marginfigure}%
 Any measurable function $T:X\to \mathbb R^k$ is called a statistic. 
 
 The idea is to compress the given data without losing valuable information. We look at two extreme cases:
@@ -257,6 +282,9 @@ The idea is to compress the given data without losing valuable information. We l
 \end{itemize}
 
 \section{Ancillary Statistics}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_008.png}
+\end{marginfigure}%
 We wish to find good statistics. And it turns out that to achieve this it is better to sieve out the bad ones and then look further in whatever is left$^*$.\\
 \begin{marginfigure}%
     \footnotesize $^*$Honestly, this feels like something you find on cleanup: You do everything and then understand that doing it this way is smoother.
@@ -264,7 +292,9 @@ We wish to find good statistics. And it turns out that to achieve this it is bet
 
 
 An ancillary statistic $T=T(X)$ is such that the distribution of $T(X)$ is independent of $\theta$. 
-\subsection{Example 1}
+\subsection{Example 1}\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_009.png}
+\end{marginfigure}%
 Assume $X_1,X_2\hdots X_n\sim\mathcal(\mu,1),\mu\in\mathbb R$. Let
 $$T(X)=\sum_{i=0}^n\sum_{j=0}^n(X_i-X_j)^2$$ 
 Two approaches for solving this are:
@@ -282,6 +312,9 @@ Two approaches for solving this are:
     \item The above argument can be considerable shortened by arguing that the distribution of $X_i-X_j$ is independent of $\mu$, and therefore the whole sum is independent of $\mu$.
 \end{enumerate}
 \subsection{Example 2}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_010.png}
+\end{marginfigure}%
 Assume $X_1,X_2\hdots X_n\sim Exp(\theta)$. The density function is given by: $f_\theta(x)=\theta e^{-\theta x}$. Such a distribution often occurs when modelling things like lifetime of a particular make of a bulb, etc. Define:
 $$T(X)=\frac{\max_i X_i}{\min_i X_i}$$
 Finding the distribution of $T$ explicitly is a nightmare. Instead, what we do is define $Y_i=\theta X_i$. Note that:
@@ -294,6 +327,9 @@ $$T(X)=\frac{\max_i X_i}{\min_i X_i}=\frac{\max_i Y_i}{\min_i Y_i}=T(Y)$$
 But, it is trivial to note that any parameter on $Y$ is independent of $\theta$. Therefore, $T(X)$ is ancillary. 
 
 \subsection{Example 3}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_011.png}
+\end{marginfigure}%
 Assume $X_1,X_2\hdots X_n\sim Unif(0,\theta)$. Define:
 $$T(X)=\frac{\max_i X_i}{\min_i X_i}$$
 Define $Y_i=X_i/\theta$. Note that:
@@ -307,22 +343,34 @@ Again as any parameter on $Y$ is independent of $\theta$. Therefore, $T(X)$ is a
 
 The idea in the examples above is that we are "scaling" the function to fit our needs. 
 \section{Scale Family}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_012.png}
+\end{marginfigure}%
 A scale family is a family $\mathcal F$ of distribution given by:
 $$\left\{f_\theta|f_\theta(x)=\frac{1}{\theta}g\left(\frac{x}{\theta}\right)\right\}$$
 Where $g$ is a known distribution. Set $Y_i=X_i/\theta$. Any $T(X)$ which can be written as $S(Y)$ is ancillary. 
 
 \section{Location Family}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_013.png}
+\end{marginfigure}%
 A scale family is a family $\mathcal F$ of distribution given by:
 $$\left\{f_\theta|f_\theta(x)=g\left(x-\theta\right)\right\}$$
 Where $g$ is a known distribution. Set $Y=X_i-\theta$. Any $T(X)$ which can be written as $S(y)$ is ancillary. 
 
 
 \section{Location-Scale Family}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_014.png}
+\end{marginfigure}%
 A scale family is a family $\mathcal F$ of distribution given by:
 $$\left\{f_\theta|f_\theta(x)=\frac{1}{\sigma}g\left(\frac{x-\mu}{\sigma}\right)\right\}$$
 Where $g$ is a known distribution. Set $Y_i=(X_i-\mu)/\sigma$. Any $T(X)$ which can be written as $S(Y)$ is ancillary. 
 
 \section{Limiting conditions}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_015.png}
+\end{marginfigure}%
 Other ways of identifying a "bad-statisttic" is to look at limiting conditions. For example, let $X_i\sim Unif(0,\theta)$. Consider two candidates:
 $$T_1(X)=\max_i X_i$$
 $$T_2(X)=\min_i X_i$$
@@ -377,6 +425,9 @@ $$f_{T_1}(t)=\frac{n}{\theta}\left(\frac{t}{\theta}\right)^{n-1},0<t<\theta$$
 
 
 \section{Characterization in terms of level sets}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_016.png}
+\end{marginfigure}%
 Consider a level set of $T$
 $$A_t=\left\{x\in\mathbb R^n|T(x)=t \right\}$$
 
@@ -482,9 +533,15 @@ pattern radius = 1pt}
 \end{center}
 Such a $T$ is called a sufficient statistic.
 \section{Sufficient Statistic}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_017.png}
+\end{marginfigure}%
 $T=T(x)$ is said to be sufficient for $\theta$ if $P(X=B|T=t)$ is independent of $\theta$ for all $B\in\mathcal B_{\mathbb R^n},t\in\mathbb R^k$.
 Note that any one-one map of a sufficient statistic is also sufficient.
 \subsection{Example}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_018.png}
+\end{marginfigure}%
 Let $X_1,X_2\hdots X_i$ be Bernoulli iid with parameter $\theta$, i.e.
 $$P(X_i=1)=\theta\qquad P(X_i=0)=1-\theta$$
 Take $T=\sum X_i$. We calculate $P(X=x_i|T=t)$. 
@@ -499,6 +556,9 @@ the denominator easily comes out to be ${n\choose t}\theta^t(1-\theta)^{n-t}$. F
 In either case, we see that the value of the expression is independent of $\theta$.
 
 \section{Fisher-Neyman factorization}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_019.png}
+\end{marginfigure}%
 Calculating conditional probabilities is hard for continuous distributions. Finding candidate $T$ for checking is even harder. A nice characterization for overcoming these difficulties is Fisher-Neyman factorization. $T(X)$ s sufficient for $X$ if and only if $f_\theta(x)$ can be written as 
 $$f_\theta(x)=g(T(x),\theta)h(x)$$
 \subsection{Example 1}
@@ -531,6 +591,141 @@ Let $X_i$s be iid uniform with parameter $\theta$.
 Let $X_i$s be iid Cauchy with parameter $\theta$ (pmf $\frac{1}{\pi}\frac{1}{(x-\theta)^2}$). 
 $$f_\theta(x)=\frac{1}{\pi^n}\prod\frac{1}{1+(x_i-\theta)^2}$$
 Note there is not much to exploit over here. The best(to be proven later) that we can do is to order them in increasing order. This does not provide a reduction in dimensionality but compresses some information as there are multiple combinations of $x$ which results in the same order. 
+\section{Minimal sufficient Statistic}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_020.png}
+\end{marginfigure}%
+$T$ is said to be minimally sufficient for $\theta$ if
+\begin{enumerate}
+    \item $T$ is sufficient for $\theta$.
+    \item If $S$ is any other sufficient statistic for $\theta$, then there exists $h$ such that $$T=h(S)$$
+\end{enumerate}
+It trivially follows that two minimally sufficient statistics are related by a one-one function.
+\begin{theorem}
+    Let $X$ have the joint pmf/pdf $f_\theta(X)$ and let $T$ be a statistic. Then $T$ is minimally sufficient for $\theta$ if the following holds:
+    $$\frac{f_\theta(x)}{f_\theta(y)}\text{ is independent of $\theta$ iff }T(x)=T(y)$$
+\end{theorem}
+\section{Example}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_021.png}
+\end{marginfigure}%
+\subsection{Example 1}
+If $X_1,X_2\hdots X_n\sim \mathcal N(0,\sigma^2),\sigma>0$ then we have:
+$$\frac{f_\theta(X)}{f_\theta(Y)}=e^{-\left(-\frac{1}{2\sigma^2}\left(\sum x_i^2-\sum y_i^2\right)\right)}$$
+It is easy to see that $T(X)=\sum x_i^2$ is minimally sufficient.
+\subsection{Example 2}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_022.png}
+\end{marginfigure}%
+If $X_1,X_2\hdots X_n\sim Unif(\theta,\theta+1),\sigma>0$ then we have:
+\begin{align*}
+    \frac{f_\theta(x)}{f_\theta(y)}=\frac{1_{x_{(n)}-1<\theta<x_{(1)}}}{1_{y_{(n)}-1<\theta<y_{(1)}}}
+    \tag*{\text{[$X_{(i)}$ is the $i^{th}$ order statistic]}}
+\end{align*}
+Define $c_x=(x_{(n)}-1,x_{(1)}),c_y=(y_{(n)}-1,y_{(1)})$. We get different values of the ratios for each of $\theta\in c_x\cap c_y$,$\theta\in c_x^c\cap c_y$, $\theta\in c_x\cap c_y^c$ and $\theta\in c_x^c\cap c_y^c$. Set $T(X)=\{X_{(n)},X_{(1)}\}$. It is trivially obvious that if $T(X)=T(Y)$ then $c_x=c_y$ and the ratio becomes 1[$\theta$ is kinda restricted in $c_x$ or $c_y$], 
+
+\section{Complete statistics}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_023.png}
+\end{marginfigure}%
+We say a statistic $T$ is complete if for any $h$
+\begin{align*}
+    E_\theta\left[h(T)\right]=0\Rightarrow P_\theta(h(T)=0)=1\forall\theta\in\Theta
+\end{align*}
+\section{Misc. Theorems}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_024.png}
+\end{marginfigure}%
+\begin{theorem}
+    \textbf{Debobroto Basu's theorem- }Any boundedly complete minimal sufficient statistic is independent of any ancillary statistic.
+\end{theorem}
+\begin{theorem}
+    A complete sufficient statistic is a minimal statistic.
+\end{theorem}
+The converse is not true.
+
+\section{Exponential Families}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_027.png}
+\end{marginfigure}%
+A family of distribution $\mathcal F\theta$ is called an exponential family with $k$ parameters if the joint distribution can be written as:
+$$f_\theta=\exp \left\{C(\theta)\cdot T(X)-d(\theta)\right\}S(x)$$
+and 
+$$\text{Support}(x)=\{x\in\mathbb R^n|f_\theta(x)\ne0\}\text{is independent of }\theta$$
+where:
+\begin{itemize}
+    \item The vector $C(\theta)$ is independent of $X$
+    \item The vector $T(X)$ is independent of $\theta$
+    \item $C,T$ are vectors in $\mathbb R^k$
+    \item Parameterization by $C(\theta)$ is identifiable. This parameterization is called the natural/canonical parameterization. A bit of calculation implies that this requires $T(X)$ to be full rank[not restricted to some hyperplane]. Similarly, we want $C(\theta)$ to be in the lowest form: i.e. no linear dependence among terms.
+\end{itemize}
+\section{Examples}
+\subsection{Example 1}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_029.png}
+\end{marginfigure}%
+Let $X_1,X_2\hdots X_n\sim Unif(0,\theta)$. $X$ is not an exponential family as the support is dependent of $\theta$.
+\subsection{Example 2}
+Let $X_1,X_2\hdots X_n\in\mathcal N(\theta,\theta^2),\theta>0$*\
+\begin{marginfigure}
+    * I know it and present me knows that future me knows it, it is not worthwhile to look through tedious calculations. So will just put the result here. 
+\end{marginfigure}
+Then $C(\theta)=(\theta^2,\theta)$. Now note, while the parameterization takes two argument, those two arguments are dependent on each other: knowledge of $\theta$ is enough. Therefore, while the parameters are 2 dimensional, the parameter space is 1 dimensional. Cases where the parameter space is of the form $(\theta,\gamma(\theta))$ where $\gamma$ is a curve is known as curved exponential family. 
+\chapter{Assignment-1}
+
+\setmainfont{CMU Serif}
+\begin{tcolorbox}[colback=bgcol,colframe=bodercol,title=Problem 1]
+    Let $X_{1}, \ldots, X_{n}$ be a sample from the uniform distribution on $(0, \theta)(\theta>0)$. Show that $S=X_{(n)}$ is a complete sufficient statistic for $\theta$. Show that $T=X_{(1)} / X_{(n)}$ is ancillary for $\theta$. Use Basu's theorem to show that $S$ and $T$ are independent.
+\end{tcolorbox}
+\setmainfont{Indie Flower}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_025.png}
+\end{marginfigure}%
+Solution:\\
+\begin{enumerate}
+    \item We start with finding the max order statistics. Note 
+    $$P\left(X_{(n)}<k\right)=\prod P(x_i<k)$$
+    We set $Y=X_{(n)}$ and get:
+    $$f_\theta(y)=\frac{ny^{n-1}}{\theta^n}1_{0<y<\theta}$$
+    Now for any $h(Y)$, if $E[h(Y)]=0$ then $h(Y)=0$ a.e in $(0,\theta)$. Therefore, $Y$ is sufficent.
+    \item $T$ is ancillary as $unif(0,\theta)$ is scale family. Set $y_i=x_i/\theta$. Then $y_i\sim Unif(0,1)$ and $Y_{(i)}=X_{(i)}$. So $\frac{X_{(1)}}{X_(n)}=\frac{Y_{(1)}}{Y_(n)}$ which is independent of $\theta$. 
+    \item -
+\end{enumerate}
+
+
+
+\setmainfont{CMU Serif}
+\begin{tcolorbox}[colback=bgcol,colframe=bodercol,title=Problem 2]
+    Let $X_{1}, \ldots, X_{n}$ be a sample from the uniform distribution on $(-\theta, \theta)(\theta>0)$. Show that $S=\left(X_{(1)}, X_{(n)}\right)$ is a sufficient statistic for $\theta$ and it is not complete. Show that $\max \left(-X_{(1)}, X_{(n)}\right)$ is minimal sufficient. Is it complete?
+\end{tcolorbox}
+\begin{marginfigure}%
+    \includegraphics[width=1.5in]{chibis/file_026.png}
+\end{marginfigure}%
+\setmainfont{Indie Flower}
+\begin{enumerate}
+    \item  Ez to see that $S$ is sufficient. 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

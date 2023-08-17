@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  2 AUG 2023 20:58
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2023.3.1)  16 AUG 2023 13:18
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/repo/LATEX_projects/deepL IndpStudy/write up/main"
@@ -849,7 +849,7 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
  (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (./main.aux)
+) (./main.aux (./theory.aux) (./NLP.aux) (./cookbook.aux))
 \openout1 = main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -1021,7 +1021,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \c@lstlisting=\count384
-<images/cover.pdf, id=35, 597.63766pt x 845.1575pt>
+<images/cover.pdf, id=59, 597.63766pt x 845.1575pt>
 File: images/cover.pdf Graphic file (type pdf)
 <use images/cover.pdf>
 Package luatex.def Info: images/cover.pdf  used on input line 78.
@@ -1030,7 +1030,7 @@ File: images/cover.pdf Graphic file (type pdf)
 <use images/cover.pdf>
 Package luatex.def Info: images/cover.pdf  used on input line 78.
 (luatex.def)             Requested size: 597.6362pt x 845.15544pt.
-<images/cover.pdf, id=38, page=1, 597.63766pt x 845.1575pt>
+<images/cover.pdf, id=62, page=1, 597.63766pt x 845.1575pt>
 File: images/cover.pdf Graphic file (type pdf)
 <use images/cover.pdf, page 1>
 Package luatex.def Info: images/cover.pdf , page1 used on input line 78.
@@ -1113,8 +1113,11 @@ Package marginnote Info: Using workaround for absolute page number on input line
 
 
 ]
+\openout2 = theory.aux
+ (./theory.tex
 Chapter 1.
-[3
+) [3
+
 
 
 ]
@@ -1153,30 +1156,85 @@ Chapter 1.
  [4
 
 
+
+
 ]
+\openout2 = NLP.aux
+ (./NLP.tex
 Chapter 2.
 [5
 
 
-] [6] (./main.aux)
+
+]
+Chapter 3.
+[6
+
+]) [7]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(36.135pt, 525.23788pt, 36.135pt)
+* v-part:(T,H,B)=(14.22636pt, 802.36774pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=525.23788pt
+* \textheight=802.36774pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-88.11111pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=61.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ [8
+
+
+
+
+]
+\openout2 = cookbook.aux
+ (./cookbook.tex
+Chapter 4.
+) [9
+
+
+
+] (./main.aux (./theory.aux) (./NLP.aux) (./cookbook.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1C48DECFB997AB78E54297D0AD2F98FF;1240.
+(rerunfilecheck)             Checksum: 1048E61D18B6D9D64DEDE9F1DEFEF603;2101.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35371 strings out of 477785
+ 35554 strings out of 477785
  100000,1648299 words of node,token memory allocated
- 1140 words of node memory still in use:
-   13 hlist, 8 vlist, 6 rule, 2 local_par, 4 math, 12 glue, 4 kern, 8 penalty, 1 glyph, 32 attribute, 98 glue_spec, 32 attribute_list, 2 write, 2 pdf_dest, 4 pdf_colorstack nodes
-   avail lists: 1:1,2:2261,3:166,4:650,5:1445,6:43,7:4574,8:38,9:3384,10:12,11:268
- 54662 multiletter control sequences out of 65536+600000
- 50 fonts using 2679599 bytes
- 84i,17n,85p,640b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (7 pages, 1446731 bytes).
+ 1154 words of node memory still in use:
+   13 hlist, 8 vlist, 6 rule, 2 local_par, 4 math, 12 glue, 4 kern, 8 penalty, 1 glyph, 34 attribute, 98 glue_spec, 34 attribute_list, 4 write, 2 pdf_dest, 4 pdf_colorstack nodes
+   avail lists: 1:1,2:2258,3:195,4:650,5:1446,6:56,7:4641,8:38,9:3384,10:12,11:268
+ 54753 multiletter control sequences out of 65536+600000
+ 52 fonts using 2860087 bytes
+ 84i,17n,85p,654b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmmono9-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (10 pages, 1460503 bytes).
 
-PDF statistics: 157 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 131072)
- 72 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 227 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 131072)
+ 120 words of extra memory for PDF output out of 10000 (max. 100000000)
 
